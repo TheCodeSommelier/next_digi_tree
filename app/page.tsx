@@ -1,64 +1,187 @@
-import Image from "next/image";
+import Button from "./components/UI/Button";
+import Card from "./components/UI/Card";
+import EmailForm from "./components/UI/EmailForm";
+import FAQ from "./components/UI/FAQ";
+import Navbar from "./components/UI/Navbar";
+import TextArea from "./components/UI/TextArea";
+import TextInput from "./components/UI/TextInput";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-white to-accent/10 text-primary">
+      <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-10 px-6 py-12">
+        <header className="space-y-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/60">
+            UI kit
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+          <h1 className="text-4xl font-semibold leading-tight text-primary sm:text-5xl">
+            DigiTree UI kit
+          </h1>
+          <p className="max-w-3xl text-primary/70">
+            Navržené komponenty, které drží jednotnou vizuální linku značky.
+            Každý blok drží silný kontrast, mikro stíny a jemné gradienty, aby
+            působily prémiově a zároveň zůstaly čitelné.
+          </p>
+        </header>
+
+        <section className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/60">
+                Navigace
+              </p>
+              <h2 className="text-2xl font-semibold text-primary">
+                Pevná top bar navigace
+              </h2>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary shadow-sm shadow-primary/10">
+              Navbar
+            </span>
+          </div>
+          <div className="rounded-[26px] border border-primary/10 bg-white/80 p-5 shadow-xl shadow-primary/10 backdrop-blur">
+            <Navbar />
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/60">
+                Buttons
+              </p>
+              <h2 className="text-2xl font-semibold text-primary">
+                Kontrastní akční prvky
+              </h2>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary shadow-sm shadow-primary/10">
+              Buttons
+            </span>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-3">
+            <div className="rounded-2xl border border-primary/10 bg-white p-4 shadow-md shadow-primary/10">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-primary/60">
+                Primary
+              </p>
+              <Button primary className="w-full justify-center">
+                Přehled balíčků
+              </Button>
+            </div>
+            <div className="rounded-2xl border border-primary/10 bg-white p-4 shadow-md shadow-primary/10">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-primary/60">
+                Secondary
+              </p>
+              <Button primary={false} className="w-full justify-center">
+                Kontaktujte nás
+              </Button>
+            </div>
+            <div className="rounded-2xl border border-primary/10 bg-white p-4 shadow-md shadow-primary/10">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-primary/60">
+                Ghost
+              </p>
+              <Button primary className="w-full justify-center bg-white text-primary hover:bg-accent">
+                Přihlásit demo
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/60">
+                Inputs
+              </p>
+              <h2 className="text-2xl font-semibold text-primary">
+                Pole pro sběr dat
+              </h2>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary shadow-sm shadow-primary/10">
+              Text input / Text area
+            </span>
+          </div>
+          <div className="grid gap-4 lg:grid-cols-2">
+            <div className="rounded-2xl border border-primary/10 bg-white p-5 shadow-md shadow-primary/10">
+              <TextInput
+                label="Email"
+                placeholder="vaše@email.cz"
+                helperText="Validace e-mailu řeší backend / form lib."
+              />
+            </div>
+            <div className="rounded-2xl border border-primary/10 bg-white p-5 shadow-md shadow-primary/10">
+              <TextArea
+                label="Zpráva"
+                placeholder="Napište pár vět..."
+                helperText="Text area pro delší vstupy. Výška je responzivní."
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/60">
+                Cards
+              </p>
+              <h2 className="text-2xl font-semibold text-primary">
+                Moduly pro zvýraznění obsahu
+              </h2>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary shadow-sm shadow-primary/10">
+              Cards
+            </span>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-2">
+            <Card
+              badge="Balíček"
+              title="Firemní růst"
+              description="Kompletní balíček pro firmy, které chtějí rychle spustit e‑commerce projekty, držet kvalitu kódu a mít jasný reporting."
+              actionLabel="Vybrat balíček"
+              tone="bright"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+            <Card
+              badge="Premium"
+              title="Onboarding s expertem"
+              description="Osobní konzultace, prioritní support a přístup k našim produktovým šablonám, které urychlí integraci."
+              actionLabel="Domluvit call"
+              tone="night"
+            />
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/60">
+                Formulář
+              </p>
+              <h2 className="text-2xl font-semibold text-primary">
+                Email pro lead generation
+              </h2>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary shadow-sm shadow-primary/10">
+              Email form
+            </span>
+          </div>
+          <EmailForm />
+        </section>
+
+        <section className="space-y-4 pb-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/60">
+                FAQ
+              </p>
+              <h2 className="text-2xl font-semibold text-primary">
+                Rozbalovací odpovědi
+              </h2>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary shadow-sm shadow-primary/10">
+              FAQ
+            </span>
+          </div>
+          <FAQ />
+        </section>
       </main>
     </div>
   );
