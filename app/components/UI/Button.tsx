@@ -1,21 +1,21 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode } from 'react';
 
 type Props = {
   primary?: boolean;
   children: ReactNode;
   className?: string;
-  type?: "button" | "submit" | "reset";
+  type?: 'button' | 'submit' | 'reset';
 };
 
 const Button: FC<Props> = ({
   primary = true,
   children,
-  className = "",
-  type = "button",
+  className = '',
+  type = 'button',
 }) => {
   const variantClasses = primary
-    ? "bg-accent text-white border border-transparent hover:border-primary hover:bg-white hover:text-primary"
-    : "border border-primary text-primary hover:border-primary hover:bg-primary hover:text-white";
+    ? 'bg-accent text-white border border-transparent hover:border-primary hover:bg-white hover:text-primary'
+    : 'border border-primary text-primary hover:border-primary hover:bg-primary hover:text-white';
 
   return (
     <button

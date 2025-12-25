@@ -1,7 +1,7 @@
-import { FC } from "react";
-import Button from "./Button";
-import TextArea from "./TextArea";
-import TextInput from "./TextInput";
+import { FC } from 'react';
+import Button from './Button';
+import TextArea from './TextArea';
+import TextInput from './TextInput';
 
 type Props = {
   title?: string;
@@ -10,9 +10,9 @@ type Props = {
 };
 
 const EmailForm: FC<Props> = ({
-  title = "Přihlaste se k odběru novinek",
-  description = "Aktualizace o nových funkcích, cenách a inspiraci do vaší schránky jednou týdně.",
-  buttonLabel = "Odeslat",
+  title = 'Přihlaste se k odběru novinek',
+  description = 'Aktualizace o nových funkcích, cenách a inspiraci do vaší schránky jednou týdně.',
+  buttonLabel = 'Odeslat',
 }) => {
   return (
     <div className="relative overflow-hidden rounded-3xl border border-primary px-6 py-7 text-white shadow-2xl shadow-primary/25">

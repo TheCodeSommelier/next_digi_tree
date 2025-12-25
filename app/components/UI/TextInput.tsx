@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes } from "react";
+import { FC, InputHTMLAttributes } from 'react';
 
 type Props = {
   label?: string;
@@ -9,12 +9,12 @@ type Props = {
 const TextInput: FC<Props> = ({
   label,
   helperText,
-  className = "",
+  className = '',
   id,
   required,
   ...rest
 }) => {
-  const inputId = id || rest.name || "text-input";
+  const inputId = id || rest.name || 'text-input';
 
   return (
     <div className="space-y-1.5">
