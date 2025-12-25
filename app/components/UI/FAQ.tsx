@@ -27,11 +27,9 @@ const faqItems: FaqItem[] = [
 const Faq: FC = () => {
   return (
     <div className="space-y-3">
-      {faqItems.map((item) => {
-        return (
-          <DropdownCard key={crypto.randomUUID()} title={item.question} text={item.answer} />
-        );
-      })}
+      {faqItems.map((item) => (
+        <DropdownCard key={item.question} title={item.question} text={item.answer} />
+      ))}
     </div>
   );
 };
