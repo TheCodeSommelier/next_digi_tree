@@ -1,4 +1,4 @@
-import { FC, TextareaHTMLAttributes } from "react";
+import { FC, TextareaHTMLAttributes } from 'react';
 
 type Props = {
   label?: string;
@@ -9,13 +9,13 @@ type Props = {
 const TextArea: FC<Props> = ({
   label,
   helperText,
-  className = "",
+  className = '',
   id,
   required,
   rows = 4,
   ...rest
 }) => {
-  const textareaId = id || rest.name || "textarea";
+  const textareaId = id || rest.name || 'textarea';
 
   return (
     <div className="space-y-1.5">

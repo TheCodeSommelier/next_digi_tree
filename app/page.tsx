@@ -1,10 +1,10 @@
-import Button from "./components/UI/Button";
-import Card from "./components/UI/Card";
-import EmailForm from "./components/UI/EmailForm";
-import Faq from "./components/UI/Faq";
-import Navbar from "./components/UI/Navbar";
-import TextArea from "./components/UI/TextArea";
-import TextInput from "./components/UI/TextInput";
+import Button from './components/UI/Button';
+import Card from './components/UI/Card';
+import EmailForm from './components/UI/EmailForm';
+import Faq from './components/UI/Faq';
+import Navbar from './components/UI/Navbar';
+import TextArea from './components/UI/TextArea';
+import TextInput from './components/UI/TextInput';
 
 export default function Home() {
   return (
@@ -34,11 +34,15 @@ export default function Home() {
                 Pevná top bar navigace
               </h2>
             </div>
-            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary shadow-sm shadow-primary/10">
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold
+            text-primary shadow-sm shadow-primary/10"
+            >
               Navbar
             </span>
           </div>
-          <div className="rounded-[26px] border border-primary/10 bg-white/80 p-5 shadow-xl shadow-primary/10 backdrop-blur">
+          <div className="rounded-[26px] border border-primary/10 bg-white/80 p-5
+          shadow-xl shadow-primary/10 backdrop-blur"
+          >
             <Navbar />
           </div>
         </section>
@@ -53,7 +57,9 @@ export default function Home() {
                 Kontrastní akční prvky
               </h2>
             </div>
-            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary shadow-sm shadow-primary/10">
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold
+            text-primary shadow-sm shadow-primary/10"
+            >
               Buttons
             </span>
           </div>
@@ -87,7 +93,9 @@ export default function Home() {
                 Pole pro sběr dat
               </h2>
             </div>
-            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary shadow-sm shadow-primary/10">
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold
+            text-primary shadow-sm shadow-primary/10"
+            >
               Text input / Text area
             </span>
           </div>
@@ -119,19 +127,23 @@ export default function Home() {
                 Moduly pro zvýraznění obsahu
               </h2>
             </div>
-            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary shadow-sm shadow-primary/10">
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold
+            text-primary shadow-sm shadow-primary/10"
+            >
               Cards
             </span>
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
             <Card
               title="Firemní růst"
-              description="Kompletní balíček pro firmy, které chtějí rychle spustit e‑commerce projekty, držet kvalitu kódu a mít jasný reporting."
+              description="Kompletní balíček pro firmy, které chtějí rychle spustit
+              e‑commerce projekty, držet kvalitu kódu a mít jasný reporting."
               imageUrl="/window.svg"
             />
             <Card
               title="Onboarding s expertem"
-              description="Osobní konzultace, prioritní support a přístup k našim produktovým šablonám, které urychlí integraci."
+              description="Osobní konzultace, prioritní support a přístup k našim
+              produktovým šablonám, které urychlí integraci."
               imageUrl="/globe.svg"
             />
           </div>
@@ -147,7 +159,9 @@ export default function Home() {
                 Email pro lead generation
               </h2>
             </div>
-            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary shadow-sm shadow-primary/10">
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold
+            text-primary shadow-sm shadow-primary/10"
+            >
               Email form
             </span>
           </div>
@@ -164,12 +178,16 @@ export default function Home() {
                 Rozbalovací odpovědi
               </h2>
             </div>
-            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary shadow-sm shadow-primary/10">
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold
+            text-primary shadow-sm shadow-primary/10"
+            >
               FAQ
             </span>
           </div>
           <Faq />
         </section>
+
+
       </main>
     </div>
   );
