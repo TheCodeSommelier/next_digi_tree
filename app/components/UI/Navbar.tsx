@@ -29,9 +29,6 @@ const Navbar: FC = () => {
               priority
             />
           </Link>
-          <span className="hidden rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-primary/70 sm:inline-flex">
-            UI kit
-          </span>
         </div>
 
         <div className="relative hidden items-center gap-7 md:flex">
