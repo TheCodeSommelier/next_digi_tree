@@ -8,7 +8,7 @@ import TextInput from "./components/UI/TextInput";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-linear-to-br from-primary/5 via-white to-accent/10 text-primary">
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-white to-accent/10 text-primary">
       <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-10 px-6 py-12">
         <header className="space-y-4">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/60">
@@ -129,14 +129,14 @@ export default function Home() {
               title="Firemní růst"
               description="Kompletní balíček pro firmy, které chtějí rychle spustit e‑commerce projekty, držet kvalitu kódu a mít jasný reporting."
               actionLabel="Vybrat balíček"
-              tone="bright"
+              imageUrl="/window.svg"
             />
             <Card
               badge="Premium"
               title="Onboarding s expertem"
               description="Osobní konzultace, prioritní support a přístup k našim produktovým šablonám, které urychlí integraci."
               actionLabel="Domluvit call"
-              tone="night"
+              imageUrl="/globe.svg"
             />
           </div>
         </section>
