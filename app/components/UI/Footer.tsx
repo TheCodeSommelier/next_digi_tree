@@ -36,9 +36,9 @@ const Footer: FC = () => {
   return (
     <footer className="relative overflow-hidden rounded-tl-3xl rounded-tr-3xl bg-primary text-white">
 
-      <div className="relative flex flex-col gap-10 px-8 py-10 sm:px-12 lg:px-16">
+      <div className="relative flex flex-col gap-10 pt-10 px-8 pb-20 sm:px-12 lg:px-page-padding">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-          <div className="space-y-2">
+          <div className="flex flex-col gap-4 space-y-2">
             <Image src="/images/logo_light.svg" alt="DigiTree company logo" width={150} height={100} />
 
             <p className="max-w-xl text-sm text-white">
@@ -53,7 +53,7 @@ const Footer: FC = () => {
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white">
                 {section.label}
               </p>
-              <ul className="space-y-2 text-sm font-light">
+              <ul className="space-y-2 text-sm font-light text-gray-40">
                 {section.items.map((item) => (
                   <li key={item.name}>
                     {item.href ?
@@ -75,7 +75,7 @@ const Footer: FC = () => {
         </div>
       </div>
 
-      <div className="flex justify-between w-full border-t-[0.5px] border-accent py-4 px-15 text-sm text-white">
+      <div className="flex justify-between w-full border-t-[0.5px] border-accent py-4 px-page-padding text-sm text-white">
         <p>© {new Date().getFullYear()} DigiTree. Všechna práva vyhrazena.</p>
         <p>Designed by KeySpace</p>
       </div>
