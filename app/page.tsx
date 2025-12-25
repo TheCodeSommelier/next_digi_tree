@@ -1,14 +1,14 @@
 import Button from "./components/UI/Button";
 import Card from "./components/UI/Card";
 import EmailForm from "./components/UI/EmailForm";
-import FAQ from "./components/UI/FAQ";
+import Faq from "./components/UI/Faq";
 import Navbar from "./components/UI/Navbar";
 import TextArea from "./components/UI/TextArea";
 import TextInput from "./components/UI/TextInput";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-white to-accent/10 text-primary">
+    <div className="min-h-screen bg-linear-to-br from-primary/5 via-white to-accent/10 text-primary">
       <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-10 px-6 py-12">
         <header className="space-y-4">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/60">
@@ -125,17 +125,13 @@ export default function Home() {
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
             <Card
-              badge="Balíček"
               title="Firemní růst"
               description="Kompletní balíček pro firmy, které chtějí rychle spustit e‑commerce projekty, držet kvalitu kódu a mít jasný reporting."
-              actionLabel="Vybrat balíček"
               imageUrl="/window.svg"
             />
             <Card
-              badge="Premium"
               title="Onboarding s expertem"
               description="Osobní konzultace, prioritní support a přístup k našim produktovým šablonám, které urychlí integraci."
-              actionLabel="Domluvit call"
               imageUrl="/globe.svg"
             />
           </div>
@@ -172,7 +168,7 @@ export default function Home() {
               FAQ
             </span>
           </div>
-          <FAQ />
+          <Faq />
         </section>
       </main>
     </div>

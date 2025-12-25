@@ -1,17 +1,12 @@
 'use client';
 
-import { FC, useState } from "react";
+import { FC } from "react";
 
-type Item = {
-  question: string;
-  answer: string;
-};
+import DropdownCard from "./DropdownCard";
 
-type Props = {
-  items?: Item[];
-};
+import type { FaqItem } from "@/app/types/Faq";
 
-const defaultItems: Item[] = [
+const faqItems: FaqItem[] = [
   {
     question: "Co znamená DigiTree UI kit pro náš projekt?",
     answer:
@@ -29,55 +24,16 @@ const defaultItems: Item[] = [
   },
 ];
 
-const FAQ: FC<Props> = ({ items = defaultItems }) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
+const Faq: FC = () => {
   return (
     <div className="space-y-3">
-      {items.map((item, index) => {
-        const isOpen = openIndex === index;
-        const openClasses = isOpen
-          ? "grid-rows-[1fr] opacity-100 px-5 pb-4"
-          : "grid-rows-[0fr] opacity-0";
-
+      {faqItems.map((item) => {
         return (
-          <article
-            key={item.question}
-            className="overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-md shadow-primary/10 transition-transform duration-200 hover:-translate-y-0.5"
-          >
-            <button
-              type="button"
-              className="flex w-full items-center justify-between cursor-pointer gap-4 px-5 py-4 text-left"
-              aria-expanded={isOpen}
-              onClick={() => setOpenIndex(isOpen ? null : index)}
-            >
-              <div className="flex items-center gap-3">
-                <p className="text-base font-semibold text-primary">
-                  {item.question}
-                </p>
-              </div>
-              <span
-                className={`flex h-9 w-9 items-center justify-center rounded-full text-primary transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`}
-                aria-hidden
-              >
-                +
-              </span>
-            </button>
-
-            <div
-              className={`grid transform transition-all duration-300 ease-out ${openClasses}`}
-            >
-              <div className="overflow-hidden">
-                <p className="text-sm leading-relaxed text-primary/70">
-                  {item.answer}
-                </p>
-              </div>
-            </div>
-          </article>
+          <DropdownCard key={crypto.randomUUID()} title={item.question} text={item.answer} />
         );
       })}
     </div>
   );
 };
 
-export default FAQ;
+export default Faq;
