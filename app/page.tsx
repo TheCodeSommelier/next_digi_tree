@@ -8,7 +8,7 @@ import TextInput from './components/UI/TextInput';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-linear-to-br from-primary/5 via-white to-accent/10 text-primary">
+    <div className="min-h-screen bg-linear-to-br from-primary/5 via-white to-accent/10 text-primary px-page-padding">
       <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-10 px-6 py-12">
         <header className="space-y-4">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/60">

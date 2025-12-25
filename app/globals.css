@@ -31,6 +31,8 @@
   --color-error: #d32e37;
   --color-warning: #f1c21b;
   --color-success: #25a249;
+
+  --spacing-page-padding: 8rem;
 }
 
 @media (prefers-color-scheme: dark) {
