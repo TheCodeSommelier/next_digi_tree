@@ -9,7 +9,7 @@ import PagePadding from './PagePadding';
 const Navbar: FC = () => {
   const navigation = [
     { href: '/products', label: 'Produkty' },
-    { href: '/about-us-dawg', label: 'O nás' },
+    { href: '/about-us', label: 'O nás' },
     { href: '/faq', label: 'FAQ' },
     { href: '/contacts', label: 'Kontakty' },
   ];
@@ -18,17 +18,17 @@ const Navbar: FC = () => {
     <nav className="w-full my-12">
       <PagePadding>
         <div className="relative flex items-center justify-between gap-6 overflow-hidden
-      rounded-full border border-primary/10 bg-white/85 px-6 py-3 shadow-xl shadow-primary/10 backdrop-blur-lg"
+      rounded-full border border-primary/10 bg-white/85 px-6 py-2 shadow-sm shadow-primary/10 backdrop-blur-lg"
         >
-          <div className="absolute -left-10 -top-12 h-24 w-24 rounded-full bg-accent/20 blur-3xl" />
-          <div className="absolute -right-8 -bottom-16 h-28 w-28 rounded-full bg-primary/10 blur-3xl" />
+          <div className="absolute -left-10 -top-12 h-24 w-24 rounded-full blur-3xl" />
+          <div className="absolute -right-8 -bottom-16 h-28 w-28 rounded-full blur-3xl" />
 
           <div className="relative flex items-center gap-3">
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/images/logo_dark.svg"
                 alt="DigiTree logo"
-                width={150}
+                width={120}
                 height={25}
                 priority
               />
