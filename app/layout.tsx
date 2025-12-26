@@ -4,6 +4,8 @@ import { Figtree } from 'next/font/google';
 import './globals.css';
 
 import Footer from './components/UI/Footer';
+import Navbar from './components/UI/Navbar';
+import PagePadding from './components/UI/PagePadding';
 
 const figtree = Figtree({
   variable: '--font-figtree',
@@ -25,7 +27,10 @@ export default function RootLayout({
       <body
         className={`${figtree.variable} antialiased`}
       >
-        {children}
+        <Navbar />
+        <PagePadding>
+          {children}
+        </PagePadding>
         <Footer />
       </body>
     </html>

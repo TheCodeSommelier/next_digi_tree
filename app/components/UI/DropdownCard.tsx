@@ -9,7 +9,7 @@ type Props = {
 const DropdownCard: FC<Props> = ({title, text}) => {
   const [isOpen, setIsOpen] = useState<boolean>();
 
-  const openClasses = isOpen ? 'grid-rows-[1fr] opacity-100 px-5 pb-4' : 'grid-rows-[0fr] opacity-0';
+  const openClasses = isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0';
 
   const iconPath = isOpen ? '/images/accent_minus.svg' : '/images/primary_plus.svg';
   const iconAlt = isOpen ? 'Minus icon in a green color' : 'Plus icon in a dark blue color';
@@ -20,12 +20,12 @@ const DropdownCard: FC<Props> = ({title, text}) => {
          >
     <button
       type="button"
-      className="flex w-full items-center justify-between cursor-pointer gap-4 px-5 py-4 text-left"
+      className="flex w-full items-center justify-between cursor-pointer p-7 gap-4 text-left"
       aria-expanded={isOpen}
       onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex items-center gap-3">
-        <p className="text-base font-semibold text-primary">
+        <p className={`text-2xl font-semibold ${isOpen ? 'text-accent' : 'text-primary'}`}>
           {title}
         </p>
       </div>
@@ -41,7 +41,7 @@ const DropdownCard: FC<Props> = ({title, text}) => {
       className={`grid transform transition-all duration-300 ease-out ${openClasses}`}
     >
       <div className="overflow-hidden">
-        <p className="text-sm leading-relaxed text-primary/70">
+        <p className="text-base leading-relaxed p-7 text-primary">
           {text}
         </p>
       </div>
