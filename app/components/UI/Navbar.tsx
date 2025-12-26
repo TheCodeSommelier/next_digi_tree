@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import NavbarItem from './NavbarItem';
 import Button from './Button';
+import PagePadding from './PagePadding';
 
 const Navbar: FC = () => {
   const navigation = [
@@ -14,37 +15,39 @@ const Navbar: FC = () => {
   ];
 
   return (
-    <nav className="w-full">
-      <div className="relative flex items-center justify-between gap-6 overflow-hidden
+    <nav className="w-full my-12">
+      <PagePadding>
+        <div className="relative flex items-center justify-between gap-6 overflow-hidden
       rounded-full border border-primary/10 bg-white/85 px-6 py-3 shadow-xl shadow-primary/10 backdrop-blur-lg"
-      >
-        <div className="absolute -left-10 -top-12 h-24 w-24 rounded-full bg-accent/20 blur-3xl" />
-        <div className="absolute -right-8 -bottom-16 h-28 w-28 rounded-full bg-primary/10 blur-3xl" />
+        >
+          <div className="absolute -left-10 -top-12 h-24 w-24 rounded-full bg-accent/20 blur-3xl" />
+          <div className="absolute -right-8 -bottom-16 h-28 w-28 rounded-full bg-primary/10 blur-3xl" />
 
-        <div className="relative flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/images/logo_dark.svg"
-              alt="DigiTree logo"
-              width={150}
-              height={25}
-              priority
-            />
-          </Link>
-        </div>
+          <div className="relative flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/images/logo_dark.svg"
+                alt="DigiTree logo"
+                width={150}
+                height={25}
+                priority
+              />
+            </Link>
+          </div>
 
-        <div className="relative hidden items-center gap-7 md:flex">
-          {navigation.map((item) => (
-            <NavbarItem key={item.href} href={item.href}>
-              {item.label}
-            </NavbarItem>
+          <div className="relative hidden items-center gap-7 md:flex">
+            {navigation.map((item) => (
+              <NavbarItem key={item.href} href={item.href}>
+                {item.label}
+              </NavbarItem>
           ))}
-        </div>
+          </div>
 
-        <div className="relative flex items-center gap-3">
-          <Button primary>Přehled balíčků</Button>
+          <div className="relative flex items-center gap-3">
+            <Button primary>Přehled balíčků</Button>
+          </div>
         </div>
-      </div>
+      </PagePadding>
     </nav>
   );
 };

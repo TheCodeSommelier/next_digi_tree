@@ -1,7 +1,6 @@
 import Button from './components/UI/Button';
 import Card from './components/UI/Card';
 import EmailForm from './components/UI/EmailForm';
-import Faq from './components/UI/Faq';
 import Navbar from './components/UI/Navbar';
 import TextArea from './components/UI/TextArea';
 import TextInput from './components/UI/TextInput';
@@ -167,27 +166,6 @@ export default function Home() {
           </div>
           <EmailForm />
         </section>
-
-        <section className="space-y-4 pb-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/60">
-                FAQ
-              </p>
-              <h2 className="text-2xl font-semibold text-primary">
-                Rozbalovací odpovědi
-              </h2>
-            </div>
-            <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold
-            text-primary shadow-sm shadow-primary/10"
-            >
-              FAQ
-            </span>
-          </div>
-          <Faq />
-        </section>
-
-
       </main>
     </div>
   );
