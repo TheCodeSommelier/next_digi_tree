@@ -1,7 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 
 import Button from '../components/UI/Button';
-import Card from '../components/UI/Card';
+import Card from '../components/UI/cards/Card';
 import CtaSection from '../components/UI/CtaSection';
 
 export default function AboutUs() {
@@ -12,14 +14,14 @@ export default function AboutUs() {
           className="overflow-hidden w-full h-[550px] mb-32 rounded-3xl border border-primary/10 bg-primary text-white shadow-xl shadow-primary/20"
           style={{
             backgroundImage:
-              "linear-gradient(120deg, rgba(26,26,65,0.85), rgba(26,26,65,0.7)), url('/window.svg')",
+              "linear-gradient(120deg, rgba(26,26,65,0.85), rgba(26,26,65,0.4)), url('/images/david_presenting.jpg')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         >
 
           <div className="space-y-4 flex flex-col justify-between h-[550px] px-8 py-10">
-            <h1 className="text-6xl font-semibold leading-tight sm:text-5xl">Digitree</h1>
+            <h1 className="text-7xl font-semibold leading-tight">Digitree</h1>
             <div className='flex flex-col gap-4'>
               <p className="text-base leading-relaxed text-white/80">
                 Naše společnost se specializuje na rychlou a efektivní implementaci technologií, které skutečně mění
@@ -53,18 +55,21 @@ export default function AboutUs() {
           <div className="grid gap-6 md:grid-cols-3">
             <Card
               title="Okamžitá měřitelná efektivita"
-              description="Automatizace rutinních úkolů, rychlé dashboardy a jasná data pro rozhodnutí."
-              imageUrl="/file.svg"
+              description="Automatizujeme klíčové procesy a zkracujeme čas na rutinní úkoly až o 60 %. Váš tým se soustředí na růst, ne na rutinu."
+              imageUrl="/images/metrics.png"
+              imageAlt=''
             />
             <Card
               title="Kybernetická bezpečnost"
-              description="Bezpečnostní standardy, které chrání vaše zákazníky i reputaci značky."
-              imageUrl="/globe.svg"
+              description="GDPR, NIS2, AI Act. Neztrácejte spánek kvůli pokutám. Implementujeme robustní pravidla a školíme tým, abychom garantovali ochranu dat a vaši reputaci."
+              imageUrl="/images/cyber_sec.png"
+              imageAlt=''
             />
             <Card
               title="Udržitelný tech stack"
-              description="Škálovatelná architektura bez vendor lock-inu, která roste s vaším byznysem."
-              imageUrl="/window.svg"
+              description="Investice do technologií se musí vyplatit. Navrhujeme architektury, které vás osvobodí od závislosti na dodavateli a minimalizují budoucí náklady."
+              imageUrl="/images/server_room.png"
+              imageAlt=''
             />
           </div>
         </section>
@@ -72,10 +77,11 @@ export default function AboutUs() {
         <section className="grid gap-8 py-32">
           <div className="relative flex w-full justify-start items-center gap-48">
             <Image
-              src="/file.svg"
+              src="/images/book.png"
               alt="Digitální zlato kniha"
-              width={260}
-              height={360}
+              width={320}
+              height={400}
+              className='rounded-lg'
             />
 
             <div className="space-y-2 flex flex-col gap-4">

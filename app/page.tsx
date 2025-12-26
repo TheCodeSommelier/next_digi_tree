@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import Button from './components/UI/Button';
-import Card from './components/UI/Card';
+import ProudctCard from './components/UI/cards/ProductCard';
 import EmailForm from './components/UI/EmailForm';
 
 export default function Home() {
@@ -73,17 +73,17 @@ export default function Home() {
             <h2 className="mt-2 text-3xl font-semibold text-primary">Postavte se na jisté základy</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
-            <Card
+            <ProudctCard
               title="Okamžitá měřitelná efektivita"
               description="Automatizace rutinních úkolů, rychlé dashboardy a jasná data pro rozhodnutí."
               imageUrl="/file.svg"
             />
-            <Card
+            <ProudctCard
               title="Kybernetická bezpečnost"
               description="Bezpečnostní standardy, které chrání vaše zákazníky i reputaci značky."
               imageUrl="/globe.svg"
             />
-            <Card
+            <ProudctCard
               title="Udržitelný tech stack"
               description="Škálovatelná architektura bez vendor lock-inu, která roste s vaším byznysem."
               imageUrl="/window.svg"

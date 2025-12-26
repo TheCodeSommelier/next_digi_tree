@@ -8,7 +8,7 @@ type Props = {
   imageUrl?: string;
 };
 
-const Card: FC<Props> = ({
+const ProudctCard: FC<Props> = ({
   title,
   description,
   icon,
@@ -82,4 +82,4 @@ const Card: FC<Props> = ({
   );
 };
 
-export default Card;
+export default ProudctCard;
