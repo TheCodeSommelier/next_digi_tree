@@ -18,7 +18,7 @@ const navigation = [
   {
     label: 'Kontakt',
     items: [
-      { text: 'DIGITREE EDUCATION' },
+      { name: 'digitree label', text: 'DIGITREE EDUCATION' },
       { name: 'info@digitree.cz', href: `mailto:${contacts.email}` },
       { name: formatPhoneNum(contacts.tel), href: `tel:${contacts.tel}` },
     ],
