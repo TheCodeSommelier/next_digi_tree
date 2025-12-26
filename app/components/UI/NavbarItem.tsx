@@ -9,7 +9,7 @@ type Props = {
 const NavbarItem: FC<Props> = ({ href, children }) => {
   return (
     <Link
-      className="cursor-pointer text-sm font-semibold text-primary transition-colors duration-200 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+      className="cursor-pointer text-lg text-primary transition-colors duration-200 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
       href={href}
     >
       {children}

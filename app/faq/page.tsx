@@ -1,6 +1,7 @@
 'use client';
 
 import Button from '../components/UI/Button';
+import CtaSection from '../components/UI/CtaSection';
 import DropdownCard from '../components/UI/DropdownCard';
 import { FaqItem } from '../types/Faq';
 
@@ -50,19 +51,14 @@ export default function FAQPage() {
         ))}
       </section>
 
-      <section className="flex flex-col justify-center items-center py-50 gap-4">
-        <h2 className='text-4xl font-bold'>Máte jiné dotazy?</h2>
-        <p className='w-5/12 text-center'>
-          Naším cílem je transparentnost a rychlá akcelerace vašeho růstu.
+      <CtaSection
+        title='Máte jiné dotazy?' subtitle='Naším cílem je transparentnost a rychlá akcelerace vašeho růstu.
           Pokud potřebujete probrat specifický problém nebo se ujistit o
-          detailech balíčku, neváhejte nás kontaktovat.
-        </p>
-
-        <div className='flex justify-between items-center gap-3 mt-4'>
-          <Button primary>Kontaktovat</Button>
-          <Button primary={false}>Přehled balíčků</Button>
-        </div>
-      </section>
+          detailech balíčku, neváhejte nás kontaktovat.'
+      >
+        <Button primary>Kontaktovat</Button>
+        <Button primary={false}>Přehled balíčků</Button>
+      </CtaSection>
     </main>
   );
 }
