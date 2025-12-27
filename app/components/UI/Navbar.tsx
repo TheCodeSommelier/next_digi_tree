@@ -5,13 +5,14 @@ import Link from 'next/link';
 import NavbarItem from './NavbarItem';
 import Button from './Button';
 import PagePadding from './PagePadding';
+import { ROUTES } from '@/app/routes';
 
 const Navbar: FC = () => {
   const navigation = [
-    { href: '/products', label: 'Produkty' },
-    { href: '/about-us', label: 'O nás' },
-    { href: '/faq', label: 'FAQ' },
-    { href: '/contacts', label: 'Kontakty' },
+    { href: ROUTES.products(), label: 'Produkty' },
+    { href: ROUTES.aboutUs(), label: 'O nás' },
+    { href: ROUTES.faq(), label: 'FAQ' },
+    { href: ROUTES.contact(), label: 'Kontakty' },
   ];
 
   return (
@@ -24,7 +25,7 @@ const Navbar: FC = () => {
           <div className="absolute -right-8 -bottom-16 h-28 w-28 rounded-full blur-3xl" />
 
           <div className="relative flex items-center gap-3">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href={ROUTES.home()} className="flex items-center gap-2">
               <Image
                 src="/images/logo_dark.svg"
                 alt="DigiTree logo"

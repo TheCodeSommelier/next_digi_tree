@@ -5,24 +5,16 @@ import Image from 'next/image';
 import Button from '../components/UI/Button';
 import Card from '../components/UI/cards/Card';
 import CtaSection from '../components/UI/CtaSection';
+import ImageWithOverlay from '../components/UI/ImageWithOverlay';
 
 export default function AboutUs() {
   return (
     <main className="min-h-screen text-primary">
       <div className="flex w-full flex-col gap-16">
-        <section
-          className="overflow-hidden w-full h-[550px] mb-32 rounded-3xl border border-primary/10 bg-primary text-white shadow-xl shadow-primary/20"
-          style={{
-            backgroundImage:
-              "linear-gradient(120deg, rgba(26,26,65,0.85), rgba(26,26,65,0.4)), url('/images/david_presenting.jpg')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
-
+        <ImageWithOverlay imageUrl="/images/david_presenting.jpg">
           <div className="space-y-4 flex flex-col justify-between h-[550px] px-8 py-10">
             <h1 className="text-7xl font-semibold leading-tight">Digitree</h1>
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-4 w-2/3'>
               <p className="text-base leading-relaxed text-white/80">
                 Naše společnost se specializuje na rychlou a efektivní implementaci technologií, které skutečně mění
                 způsob, jakým firmy fungují.
@@ -33,8 +25,7 @@ export default function AboutUs() {
               </p>
             </div>
           </div>
-
-        </section>
+        </ImageWithOverlay>
 
         <section className="flex gap-16 space-y-3 py-32">
           <h2 className="text-5xl w-9/10 font-semibold text-primary">Svoboda růstu</h2>
