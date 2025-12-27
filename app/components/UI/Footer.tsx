@@ -4,31 +4,34 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import PagePadding from './PagePadding';
+import { ROUTES } from '@/app/routes';
 
 const navigation = [
   {
     label: 'Navigace',
     items: [
-      { name: 'Produkty', href: '/products' },
-      { name: 'O nás', href: '/about-us-dawg' },
-      { name: 'FAQ', href: '/faq' },
-      { name: 'Kontakt', href: '/contact-us' },
+      { name: 'Produkty', href: ROUTES.products() },
+      { name: 'O nás', href: ROUTES.aboutUs() },
+      { name: 'FAQ', href: ROUTES.faq() },
+      { name: 'Kontakt', href: ROUTES.contact() },
     ],
   },
   {
     label: 'Kontakt',
     items: [
-      { name: 'digitree label', text: 'DIGITREE EDUCATION' },
-      { name: 'info@digitree.cz', href: `mailto:${contacts.email}` },
+      { name: 'digitree label', text: contacts.companyName },
+      { name: 'digitree address', text: contacts.address },
+      { name: 'digitree ico', text: contacts.ico },
+      { name: contacts.email, href: `mailto:${contacts.email}` },
       { name: formatPhoneNum(contacts.tel), href: `tel:${contacts.tel}` },
     ],
   },
   {
     label: 'Důležité dokumenty',
     items: [
-      { name: 'Zásady ochrany osobních údajů', href: '/contacts' },
-      { name: 'Terms of Service', href: '/privacy' },
-      { name: 'Cookies', href: '/privacy' },
+      { name: 'Zásady ochrany osobních údajů', href: ROUTES.termsOfService() },
+      { name: 'Terms of Service', href: ROUTES.privacPolicy() },
+      { name: 'Cookies', href: ROUTES.cookies() },
     ],
   },
 ];
@@ -43,7 +46,7 @@ const Footer: FC = () => {
             <div className="flex flex-col gap-4 space-y-2">
               <Image src="/images/logo_light.svg" alt="DigiTree company logo" width={150} height={100} />
 
-              <p className="max-w-xl text-sm text-white">
+              <p className="max-w-xl w-4/5 text-white">
                 Digitree je váš partner, který implementuje AI, moderní software
                 a neprůstřelnou bezpečnost pro akceleraci měřitelného růstu vaší firmy.
               </p>
@@ -52,7 +55,7 @@ const Footer: FC = () => {
 
             {navigation.map((section) => (
               <div key={section.label} className="space-y-3">
-                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white">
+                <p className="font-semibold tracking-[0.16em] text-white">
                   {section.label}
                 </p>
                 <ul className="space-y-2 text-sm font-light text-gray-40">
