@@ -11,7 +11,7 @@ import PagePadding from './components/UI/PagePadding';
 export default function Home() {
   return (
     <div className="min-h-screen from-primary/5 text-primary">
-      <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-14 px-6 py-12">
+      <main className="mx-auto flex min-h-screen w-full flex-col gap-14">
         <PagePadding>
           {/* hero section */}
           <section className="h-[50vh] text-center flex flex-col items-center justify-center gap-6">
@@ -35,15 +35,36 @@ export default function Home() {
             />
           </section>
 
-          {/* Three pillars */}
           <ThreePillarsSection />
         </PagePadding>
 
-        {/* Meet digitree section */}
-        <section></section>
+        {/* About us section */}
+        <section
+          className="relative isolate min-h-[600px] overflow-hidden px-32"
+          style={{
+            backgroundImage:
+              "linear-gradient(120deg, rgba(26,26,65,0), rgba(26,26,65,0.90)) , url('/images/david_classroom.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/40 to-transparent" aria-hidden />
+          <div className="relative right-0 top-1/2 translate-y-2/3 mx-auto flex h-full w-full max-w-6xl flex-col justify-center items-end px-6">
+            <div className="max-w-xl space-y-4">
+              <h2 className="text-5xl font-semibold text-white sm:text-6xl">Poznejte DigiTree</h2>
+              <p className="text-base leading-relaxed text-white/85">
+                Transformujeme strategii v měřitelné zisky. Dodáváme konkrétní, akční řešení, která spojují umělou
+                inteligenci, moderní software a kybernetickou bezpečnost do jednoho systému. Implementujeme řešení bez
+                vendor lock-inu, s prokazatelným dopadem už v prvních měsících spolupráce.
+              </p>
+              <Button primary className="bg-accent text-primary hover:bg-white">
+                Více o nás
+              </Button>
+            </div>
+          </div>
+        </section>
 
         <PagePadding>
-          {/* Products section */}
           <ProductsSection />
 
           {/* Balls section */}
