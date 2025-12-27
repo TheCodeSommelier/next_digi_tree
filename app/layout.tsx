@@ -5,7 +5,6 @@ import './globals.css';
 
 import Footer from './components/UI/Footer';
 import Navbar from './components/UI/Navbar';
-import PagePadding from './components/UI/PagePadding';
 
 const figtree = Figtree({
   variable: '--font-figtree',
@@ -28,9 +27,7 @@ export default function RootLayout({
         className={`${figtree.variable} antialiased`}
       >
         <Navbar />
-        <PagePadding>
-          {children}
-        </PagePadding>
+        {children}
         <Footer />
       </body>
     </html>

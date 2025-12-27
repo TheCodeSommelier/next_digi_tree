@@ -1,7 +1,7 @@
 'use client';
 
 import Button from '../components/UI/Button';
-import CtaSection from '../components/UI/CtaSection';
+import CtaSection from '../components/CtaSection';
 import DropdownCard from '../components/UI/DropdownCard';
 import { FaqItem } from '../types/Faq';
 
