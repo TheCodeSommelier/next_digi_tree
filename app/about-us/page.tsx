@@ -3,9 +3,9 @@
 import Image from 'next/image';
 
 import Button from '../components/UI/Button';
-import Card from '../components/UI/cards/Card';
-import CtaSection from '../components/UI/CtaSection';
+import CtaSection from '../components/CtaSection';
 import ImageWithOverlay from '../components/UI/ImageWithOverlay';
+import ThreePillarsSection from '../components/ThreePillarsSection';
 
 export default function AboutUs() {
   return (
@@ -37,33 +37,7 @@ export default function AboutUs() {
           </p>
         </section>
 
-        <section className="space-y-6 py-32">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold tracking-[0.2em] text-primary">
-              3 pilíře, které změní vaše podnikání
-            </h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            <Card
-              title="Okamžitá měřitelná efektivita"
-              description="Automatizujeme klíčové procesy a zkracujeme čas na rutinní úkoly až o 60 %. Váš tým se soustředí na růst, ne na rutinu."
-              imageUrl="/images/metrics.png"
-              imageAlt=''
-            />
-            <Card
-              title="Kybernetická bezpečnost"
-              description="GDPR, NIS2, AI Act. Neztrácejte spánek kvůli pokutám. Implementujeme robustní pravidla a školíme tým, abychom garantovali ochranu dat a vaši reputaci."
-              imageUrl="/images/cyber_sec.png"
-              imageAlt=''
-            />
-            <Card
-              title="Udržitelný tech stack"
-              description="Investice do technologií se musí vyplatit. Navrhujeme architektury, které vás osvobodí od závislosti na dodavateli a minimalizují budoucí náklady."
-              imageUrl="/images/server_room.png"
-              imageAlt=''
-            />
-          </div>
-        </section>
+        <ThreePillarsSection />
 
         <section className="grid gap-8 py-32">
           <div className="relative flex w-full justify-start items-center gap-48">
