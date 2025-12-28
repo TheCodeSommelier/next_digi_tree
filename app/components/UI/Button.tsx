@@ -4,7 +4,7 @@ type Props = {
   primary?: boolean;
   children: ReactNode;
   className?: string;
-  onClick: (e: MouseEvent) => void
+  onClick?: (e: MouseEvent) => void
   type?: 'button' | 'submit' | 'reset';
 };
 
@@ -20,6 +20,14 @@ const Button: FC<Props> = ({
     : 'border border-primary text-primary hover:border-primary hover:bg-primary hover:text-white';
 
     const handleClick = (e: MouseEvent) => {
+      if (type === 'submit') {
+        return;
+      }
+
+      if (!onClick) {
+        throw new Error('No onClick function provided');
+      }
+
       e.preventDefault();
       onClick(e);
     };
