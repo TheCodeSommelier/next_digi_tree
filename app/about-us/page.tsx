@@ -6,8 +6,12 @@ import Button from '../components/UI/Button';
 import CtaSection from '../components/CtaSection';
 import ImageWithOverlay from '../components/UI/ImageWithOverlay';
 import ThreePillarsSection from '../components/ThreePillarsSection';
+import { useRouter } from 'next/navigation';
+import { ROUTES } from '../routes';
 
 export default function AboutUs() {
+  const router = useRouter();
+
   return (
     <main className="min-h-screen text-primary">
       <div className="flex w-full flex-col gap-16">
@@ -55,7 +59,7 @@ export default function AboutUs() {
                 Získejte praktický průvodce, jak postavit bezpečné a škálovatelné digitální produkty. Žádné bullshity,
                 jen ověřené postupy.
               </p>
-              <Button primary className='w-1/5'>
+              <Button onClick={() => router.push(ROUTES.getBook())} className='w-1/5'>
                 Chci knihu
               </Button>
             </div>
@@ -67,8 +71,8 @@ export default function AboutUs() {
           title='Investujte do růstu' subtitle='Naším cílem je posílit vás k soběstačnosti a akcelerovat váš růst. Domluvte si nezávaznou diagnostiku a
               odhalte největší příležitosti.'
         >
-          <Button primary>Konzultace zdarma</Button>
-          <Button primary={false}>Přehled balíčků</Button>
+          <Button onClick={() => router.push(ROUTES.contact())}>Konzultace zdarma</Button>
+          <Button primary={false} onClick={() => router.push(ROUTES.products())}>Přehled balíčků</Button>
         </CtaSection>
       </div>
     </main>

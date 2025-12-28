@@ -1,14 +1,19 @@
 'use client';
 
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+
 import Button from './components/UI/Button';
 import ThreePillarsSection from './components/ThreePillarsSection';
 import ProductsSection from './components/ProductsSection';
 import CtaSection from './components/CtaSection';
 import PagePadding from './components/UI/PagePadding';
+import { ROUTES } from './routes';
 
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen from-primary/5 text-primary">
       <main className="mx-auto flex min-h-screen w-full flex-col gap-14">
@@ -24,8 +29,8 @@ export default function Home() {
               do komplexního řešení s prokazatelným dopadem na zisk.
             </p>
             <div className="flex gap-3 mt-4">
-              <Button primary>Přehled balíčků</Button>
-              <Button primary={false}>Kontakt</Button>
+              <Button primary onClick={() => router.push(ROUTES.products())}>Přehled balíčků</Button>
+              <Button primary={false} onClick={() => router.push(ROUTES.contact())}>Kontakt</Button>
             </div>
             <Image
               src="/images/ellipse.svg"
@@ -57,7 +62,7 @@ export default function Home() {
                 inteligenci, moderní software a kybernetickou bezpečnost do jednoho systému. Implementujeme řešení bez
                 vendor lock-inu, s prokazatelným dopadem už v prvních měsících spolupráce.
               </p>
-              <Button primary className="bg-accent text-primary hover:bg-white">
+              <Button primary onClick={() => router.push(ROUTES.aboutUs())} className="bg-accent text-primary hover:bg-white">
                 Více o nás
               </Button>
             </div>
@@ -72,8 +77,8 @@ export default function Home() {
 
           {/* CTA section */}
           <CtaSection title='Domluvte si zdarma audit vašich procesů' subtitle='Integrace AI, robustního softwaru a bezpečnosti už není jen trend, ale kritický faktor pro přežití a dominantní růst ve vašem odvětví. Čekání znamená zaostávání.' >
-            <Button>Konuzltace zdarma</Button>
-            <Button primary={false}>Přehled balíčků</Button>
+            <Button onClick={() => router.push(ROUTES.contact())} >Konuzltace zdarma</Button>
+            <Button primary={false} onClick={() => router.push(ROUTES.products())} >Přehled balíčků</Button>
 
           </CtaSection>
         </PagePadding>

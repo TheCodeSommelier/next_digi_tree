@@ -11,5 +11,6 @@ export const ROUTES = {
   faq: () => '/faq',
   termsOfService: () => '/terms-of-service',
   privacPolicy: () => '/privacy-policy',
-  cookies: () => '/cookies'
+  cookies: () => '/cookies',
+  getBook: () => '/'
 };

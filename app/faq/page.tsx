@@ -1,9 +1,12 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+
 import Button from '../components/UI/Button';
 import CtaSection from '../components/CtaSection';
 import DropdownCard from '../components/UI/DropdownCard';
 import { FaqItem } from '../types/Faq';
+import { ROUTES } from '../routes';
 
 const faqItems: FaqItem[] = [
   {
@@ -39,6 +42,8 @@ const faqItems: FaqItem[] = [
 ];
 
 export default function FAQPage() {
+  const router = useRouter();
+
   return (
     <main className="min-h-screen from-primary/5 text-primary">
       <header className="space-y-3 w-full flex justify-center items-center mb-7">
@@ -56,8 +61,8 @@ export default function FAQPage() {
           Pokud potřebujete probrat specifický problém nebo se ujistit o
           detailech balíčku, neváhejte nás kontaktovat.'
       >
-        <Button primary>Kontaktovat</Button>
-        <Button primary={false}>Přehled balíčků</Button>
+        <Button onClick={() => router.push(ROUTES.contact())}>Kontaktovat</Button>
+        <Button primary={false} onClick={() => router.push(ROUTES.products())}>Přehled balíčků</Button>
       </CtaSection>
     </main>
   );
