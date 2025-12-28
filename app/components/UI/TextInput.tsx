@@ -21,30 +21,37 @@ const TextInput: FC<Props> = ({
   const inputId = id || rest.name || 'text-input';
 
   return (
-    <div className="space-y-1.5">
+    <div className="space-y-1.5" data-error-indicator>
       {label && (
         <label
           htmlFor={inputId}
-          className="text-primary"
+          className="text-primary data-[error=true]:text-error"
         >
           {label}
         </label>
       )}
-      {isTextArea ?
+      {isTextArea ? (
         <textarea
           id={inputId}
           required={required}
           rows={rows}
-          className={`w-full border-b border-b-gray-50 py-3 text-sm font-medium text-primary placeholder:text-gray-50 focus:border-accent focus:outline-none ${className}`}
+          className={`w-full border-b border-b-gray-50 py-3 text-sm font-medium
+            text-primary placeholder:text-gray-50 focus:border-accent
+            focus:outline-none data-[error=true]:border-error
+            data-[error=true]:placeholder:text-error ${className}`}
           {...rest}
-        /> :
+        />
+      ) : (
         <input
           id={inputId}
           required={required}
-          className={`w-full border-b border-b-gray-50 bg-none py-3 text-sm font-medium text-primary placeholder:text-gray-50 duration-200 focus:border-accent focus:outline-none ${className}`}
+          className={`w-full border-b border-b-gray-50 bg-none py-3 text-sm
+            font-medium text-primary placeholder:text-gray-50 duration-200
+            focus:border-accent focus:outline-none data-[error=true]:border-error
+            data-[error=true]:placeholder:text-error ${className}`}
           {...rest}
         />
-      }
+      )}
 
       {helperText && (
         <p className="text-xs text-primary/60">{helperText}</p>
