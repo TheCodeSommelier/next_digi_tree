@@ -1,6 +1,9 @@
+'use client';
+
 import { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import NavbarItem from './NavbarItem';
 import Button from './Button';
@@ -14,6 +17,8 @@ const Navbar: FC = () => {
     { href: ROUTES.faq(), label: 'FAQ' },
     { href: ROUTES.contact(), label: 'Kontakty' },
   ];
+
+  const router = useRouter();
 
   return (
     <nav className="w-full my-12">
@@ -45,7 +50,7 @@ const Navbar: FC = () => {
           </div>
 
           <div className="relative flex items-center gap-3">
-            <Button primary>Přehled balíčků</Button>
+            <Button onClick={() => router.push(ROUTES.products())}>Přehled balíčků</Button>
           </div>
         </div>
       </PagePadding>
