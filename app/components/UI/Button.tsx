@@ -1,3 +1,5 @@
+'use client';
+
 import { FC, MouseEvent, ReactNode } from 'react';
 
 type Props = {
@@ -19,18 +21,18 @@ const Button: FC<Props> = ({
     ? 'bg-accent text-white border border-transparent hover:border-primary hover:bg-transparent hover:text-primary'
     : 'border border-primary text-primary hover:border-primary hover:bg-primary hover:text-white';
 
-    const handleClick = (e: MouseEvent) => {
-      if (type === 'submit') {
-        return;
-      }
+  const handleClick = (e: MouseEvent) => {
+    if (type === 'submit') {
+      return;
+    }
 
-      if (!onClick) {
-        throw new Error('No onClick function provided');
-      }
+    if (!onClick) {
+      return;
+    }
 
-      e.preventDefault();
-      onClick(e);
-    };
+    e.preventDefault();
+    onClick(e);
+  };
 
   return (
     <button
