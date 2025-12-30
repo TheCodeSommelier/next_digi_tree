@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+
 import SectionHeading from './UI/SectionHeading';
 
 type Props = {
@@ -7,12 +8,13 @@ type Props = {
   children: ReactNode
 }
 
-const CtaSection: FC<Props> = ({title, subtitle, children}) => {
+const CtaSection: FC<Props> = ({ title, subtitle, children }) => {
   return <section className="flex flex-col justify-center items-center py-32 gap-4">
     <SectionHeading className='mb-4'>
       {title}
     </SectionHeading>
-    <p className='w-5/12 text-center'>
+
+    <p className='w-5/12 text-center text-primary'>
       {subtitle}
     </p>
 
