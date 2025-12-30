@@ -2,11 +2,11 @@
 
 import { useRouter } from 'next/navigation';
 
-import Button from '../components/UI/Button';
-import CtaSection from '../components/CtaSection';
-import DropdownCard from '../components/UI/DropdownCard';
-import { FaqItem } from '../types/Faq';
-import { ROUTES } from '../routes';
+import Button from '../../components/UI/Button';
+import CtaSection from '../../components/CtaSection';
+import DropdownCard from '../../components/UI/DropdownCard';
+import { FaqItem } from '../../types/Faq';
+import { ROUTES } from '../../routes';
 
 const faqItems: FaqItem[] = [
   {
