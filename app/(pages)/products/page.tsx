@@ -18,6 +18,10 @@ import RadarChartDefault from '@/app/components/UI/charts/radar/RadarChart';
 import Table from '@/app/components/UI/Table';
 
 export default function Products() {
+  const chartsProps = [
+    { config: chartWithoutDigiConfig, data: chartWithoutDigiData},
+    { config: chartWithDigiConfig, data: chartWithDigiData }
+  ];
 
   return (
     <main className="min-h-screen">
@@ -28,15 +32,17 @@ export default function Products() {
           Nadpis
         </SectionHeading>
         <div className="grid gap-6 md:grid-cols-2">
-          {/* Without digitree */}
-          <RadarChartDefault chartConfig={chartWithoutDigiConfig} chartData={chartWithoutDigiData} />
-
-          {/* Without digitree */}
-          <RadarChartDefault chartConfig={chartWithDigiConfig} chartData={chartWithDigiData} />
-
+          {chartsProps.map(({ config, data }) => (
+            <RadarChartDefault
+              key={crypto.randomUUID()}
+              chartConfig={config}
+              chartData={data}
+              height={300}
+            />
+            )
+          )}
         </div>
-        <div className='w-full h-60 flex justify-center items-center'>
-          {/* Without digitree */}
+        <div className='w-full h-60 flex justify-center items-center mt-24'>
           <DualRadarChart chartConfig={chartDiffConfig} chartData={chartDiffData} />
         </div>
       </section>
