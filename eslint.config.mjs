@@ -23,6 +23,7 @@ const eslintConfig = defineConfig([
       'react/jsx-indent-props': ['error', 2],
       'react/jsx-closing-bracket-location': ['error', 'tag-aligned'],
       'react/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
+      'no-console': ['error', { allow: ['warn', 'error'] }],
     },
   },
   // Override default ignores of eslint-config-next.
