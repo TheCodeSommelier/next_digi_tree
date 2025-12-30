@@ -29,8 +29,6 @@ const EmailForm: FC<Props> = ({ buttonLabel = 'Poslat zprávu' }) => {
 
     const payload = Object.fromEntries(formData.entries());
 
-    console.log('Payload:', payload);
-
     const response = await fetch('/api/email', {
       method: 'POST',
       headers: {
