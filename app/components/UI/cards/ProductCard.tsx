@@ -24,7 +24,7 @@ const ProudctCard: FC<Props> = ({
   );
 
   return (
-    <article className="group relative h-96 overflow-hidden rounded-3xl border
+    <article className="group relative h-[550px] overflow-hidden rounded-3xl border
     border-primary/10 bg-primary/5 shadow-lg shadow-primary/10
     transition-transform duration-300 cursor-pointer"
     >
