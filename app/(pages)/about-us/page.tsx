@@ -2,12 +2,12 @@
 
 import Image from 'next/image';
 
-import Button from '../components/UI/Button';
-import CtaSection from '../components/CtaSection';
-import ImageWithOverlay from '../components/UI/ImageWithOverlay';
-import ThreePillarsSection from '../components/ThreePillarsSection';
+import Button from '../../components/UI/Button';
+import CtaSection from '../../components/CtaSection';
+import ImageWithOverlay from '../../components/UI/ImageWithOverlay';
+import ThreePillarsSection from '../../components/ThreePillarsSection';
 import { useRouter } from 'next/navigation';
-import { ROUTES } from '../routes';
+import { ROUTES } from '../../routes';
 
 export default function AboutUs() {
   const router = useRouter();

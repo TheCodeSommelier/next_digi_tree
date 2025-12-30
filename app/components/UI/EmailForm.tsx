@@ -4,7 +4,7 @@ import { FC, FormEvent } from 'react';
 
 import Button from './Button';
 import TextInput from './TextInput';
-import { validateEmailForm } from '@/app/utils/validateEmailForm';
+import { validateEmailForm } from '@/app/utils/feValidations/validateEmailForm';
 import { setFieldErrorState } from '@/app/utils/setFieldErrorState';
 
 type Props = {
@@ -27,7 +27,23 @@ const EmailForm: FC<Props> = ({ buttonLabel = 'Poslat zprávu' }) => {
 
     if (!validationResult.isValid) return;
 
-    // TODO: handle submission
+    const payload = Object.fromEntries(formData.entries());
+
+    console.log('Payload:', payload);
+
+    const response = await fetch('/api/email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await response.json();
+
+    if (!result.ok) {
+      throw new Error('Email could not be sent');
+    }
   };
 
   return (
