@@ -5,9 +5,6 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export const validateEmailPayload = (payload: EmailPayload) => {
   const errors: string[] = [];
 
-  console.log('Payload:', payload);
-
-
   if (!payload.email || !emailRegex.test(payload.email.trim())) {
     errors.push('Valid "email" is required.');
   }
