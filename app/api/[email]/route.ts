@@ -1,4 +1,4 @@
-import { contacts } from '@/app/consts';
+import { contacts } from '@/app/consts/consts';
 import { EmailPayload } from '@/app/types/Email';
 import { createEmailMessage } from '@/app/utils/createEmailMessage';
 import { validateEmailPayload } from '@/app/utils/beValidations/validateEmailPayload';

@@ -1,7 +1,7 @@
-import EmailForm from '../../components/UI/EmailForm';
-import ImageWithOverlay from '../../components/UI/ImageWithOverlay';
-import { contacts } from '../../consts';
-import { formatPhoneNum } from '../../utils/stringUtils';
+import EmailForm from '../../../components/UI/EmailForm';
+import ImageWithOverlay from '../../../components/UI/ImageWithOverlay';
+import { contacts } from '../../../consts/consts';
+import { formatPhoneNum } from '../../../utils/stringUtils';
 
 const contactSections = [
   {
