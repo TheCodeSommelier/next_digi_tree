@@ -1,7 +1,12 @@
+import { FC, MouseEvent, ReactNode, useMemo } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { FC, ReactNode, useMemo } from 'react';
+
+import { ROUTES } from '@/app/routes';
+import { ProductId } from '@/app/types/Product';
 
 type Props = {
+  productId: ProductId;
   title: string;
   description: string;
   icon?: ReactNode;
@@ -9,6 +14,7 @@ type Props = {
 };
 
 const ProudctCard: FC<Props> = ({
+  productId,
   title,
   description,
   icon,
@@ -23,10 +29,19 @@ const ProudctCard: FC<Props> = ({
     [imageUrl]
   );
 
+  const router = useRouter();
+
+  const handleClick = (e: MouseEvent) => {
+    e.preventDefault();
+    router.push(ROUTES.product({ productId }));
+  };
+
   return (
-    <article className="group relative h-[550px] overflow-hidden rounded-3xl border
+    <article
+      className="group relative h-[550px] overflow-hidden rounded-3xl border
     border-primary/10 bg-primary/5 shadow-lg shadow-primary/10
     transition-transform duration-300 cursor-pointer"
+      onClick={handleClick}
     >
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform

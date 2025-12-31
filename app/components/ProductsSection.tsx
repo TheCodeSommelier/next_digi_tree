@@ -1,4 +1,5 @@
-import { products } from '../consts';
+
+import { products } from '../consts/products/products';
 import ProudctCard from './UI/cards/ProductCard';
 import SectionHeading from './UI/SectionHeading';
 
@@ -11,6 +12,7 @@ const ProductsSection = () => {
       {products.map(product =>
         <ProudctCard
           key={product.id}
+          productId={product.id}
           title={product.title}
           description={product.description}
           imageUrl={product.imageUrl}

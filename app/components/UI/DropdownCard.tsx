@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import { FC, useState } from 'react';
+import { FC, ReactNode, useState } from 'react';
 
 type Props = {
   title: string
-  text: string
+  children: ReactNode
 }
 
-const DropdownCard: FC<Props> = ({title, text}) => {
+const DropdownCard: FC<Props> = ({title, children}) => {
   const [isOpen, setIsOpen] = useState<boolean>();
 
   const openClasses = isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0';
@@ -41,9 +41,7 @@ const DropdownCard: FC<Props> = ({title, text}) => {
       className={`grid transform transition-all duration-300 ease-out ${openClasses}`}
     >
       <div className="overflow-hidden">
-        <p className="text-base leading-relaxed p-7 text-primary">
-          {text}
-        </p>
+        {children}
       </div>
     </div>
   </article>;

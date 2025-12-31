@@ -1,4 +1,4 @@
-import { contacts } from '@/app/consts';
+import { contacts } from '@/app/consts/consts';
 import { formatPhoneNum } from '@/app/utils/stringUtils';
 import Image from 'next/image';
 import Link from 'next/link';

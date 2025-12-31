@@ -2,11 +2,11 @@
 
 import { useRouter } from 'next/navigation';
 
-import Button from '../../components/UI/Button';
-import CtaSection from '../../components/CtaSection';
-import DropdownCard from '../../components/UI/DropdownCard';
-import { FaqItem } from '../../types/Faq';
-import { ROUTES } from '../../routes';
+import Button from '../../../components/UI/Button';
+import CtaSection from '../../../components/CtaSection';
+import DropdownCard from '../../../components/UI/DropdownCard';
+import { FaqItem } from '../../../types/Faq';
+import { ROUTES } from '../../../routes';
 
 const faqItems: FaqItem[] = [
   {
@@ -52,7 +52,11 @@ export default function FAQPage() {
 
       <section className="space-y-3 flex flex-col gap-8">
         {faqItems.map((item) => (
-          <DropdownCard key={item.question} title={item.question} text={item.answer} />
+          <DropdownCard key={item.question} title={item.question}>
+            <p className="text-base leading-relaxed p-7 text-primary">
+              {item.answer}
+            </p>
+          </DropdownCard>
         ))}
       </section>
 
