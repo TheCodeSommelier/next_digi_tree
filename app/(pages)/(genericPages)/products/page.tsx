@@ -17,7 +17,7 @@ import {
 import RadarChartDefault from '@/app/components/UI/charts/radar/RadarChart';
 import Table from '@/app/components/UI/Table';
 
-export default function Products() {
+export default function ProductsPage() {
   const chartsProps = [
     { config: chartWithoutDigiConfig, data: chartWithoutDigiData},
     { config: chartWithDigiConfig, data: chartWithDigiData }

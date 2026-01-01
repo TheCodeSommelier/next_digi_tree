@@ -29,8 +29,8 @@ const navigation = [
   {
     label: 'Důležité dokumenty',
     items: [
-      { name: 'Zásady ochrany osobních údajů', href: ROUTES.termsOfService() },
-      { name: 'Terms of Service', href: ROUTES.privacPolicy() },
+      { name: 'Zásady ochrany osobních údajů', href:  ROUTES.privacPolicy() },
+      { name: 'Terms of Service', href: ROUTES.termsOfService() },
       { name: 'Cookies', href: ROUTES.cookies() },
     ],
   },

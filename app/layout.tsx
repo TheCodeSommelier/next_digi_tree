@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
 import { Figtree } from 'next/font/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 import './globals.css';
 
 import Footer from './components/UI/Footer';
 import Navbar from './components/UI/Navbar';
+import CookiesProvider from './providers/cookies/CookieProvider';
+
 
 const figtree = Figtree({
   variable: '--font-figtree',
@@ -26,9 +29,12 @@ export default function RootLayout({
       <body
         className={`${figtree.variable} antialiased`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <GoogleTagManager gtmId='GTM-P6BQ93SK' />
+        <CookiesProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </CookiesProvider>
       </body>
     </html>
   );

@@ -9,7 +9,7 @@ import ThreePillarsSection from '../../../components/ThreePillarsSection';
 import { useRouter } from 'next/navigation';
 import { ROUTES } from '../../../routes';
 
-export default function AboutUs() {
+export default function AboutUsPage() {
   const router = useRouter();
 
   return (
