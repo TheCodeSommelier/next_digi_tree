@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { contacts } from '@/app/consts/consts';
 
-export default function PrivacyPolicy() {
+export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen text-primary py-5">
       <header className="space-y-3 pb-4">

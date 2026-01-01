@@ -19,24 +19,27 @@ export default function Home() {
       <main className="mx-auto flex min-h-screen w-full flex-col gap-14">
         <PagePadding>
           {/* hero section */}
-          <section className="h-[50vh] text-center flex flex-col items-center justify-center gap-6">
-            <h1 className='text-7xl font-bold'>
-              Digitree, měníme strategii
-              v měřitelné výsledky
-            </h1>
-            <p className='w-7/12 text-lg font-semibold'>
-              Spojujeme umělou inteligenci, software a kybernetickou bezpečnost
-              do komplexního řešení s prokazatelným dopadem na zisk.
-            </p>
-            <div className="flex gap-3 mt-4">
-              <Button primary onClick={() => router.push(ROUTES.products())}>Přehled balíčků</Button>
-              <Button primary={false} onClick={() => router.push(ROUTES.contact())}>Kontakt</Button>
+          <section className="h-[600px] text-center flex flex-col items-center justify-between gap-6">
+            <div className="flex flex-col h-full items-center justify-center gap-7">
+              <h1 className='text-7xl font-bold'>
+                Digitree, měníme strategii
+                v měřitelné výsledky
+              </h1>
+              <p className='w-7/12 text-lg font-semibold'>
+                Spojujeme umělou inteligenci, software a kybernetickou bezpečnost
+                do komplexního řešení s prokazatelným dopadem na zisk.
+              </p>
+              <div className="flex gap-3 mt-4">
+                <Button primary onClick={() => router.push(ROUTES.products())}>Přehled balíčků</Button>
+                <Button primary={false} onClick={() => router.push(ROUTES.contact())}>Kontakt</Button>
+              </div>
             </div>
+
             <Image
               src="/images/ellipse.svg"
               alt="Small green ball icon hovering up and down"
               width={16} height={16}
-              className="absolute animate-bounce h-14 bottom-10"
+              className="animate-bounce h-14"
             />
           </section>
 

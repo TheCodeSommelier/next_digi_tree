@@ -3,7 +3,7 @@
 import { FC, FormEvent } from 'react';
 
 import Button from './Button';
-import TextInput from './TextInput';
+import TextInput from './inputs/TextInput';
 import { validateEmailForm } from '@/app/utils/feValidations/validateEmailForm';
 import { setFieldErrorState } from '@/app/utils/setFieldErrorState';
 
