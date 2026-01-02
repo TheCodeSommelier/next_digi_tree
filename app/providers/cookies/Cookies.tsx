@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 import { type CookiePreferences } from './CookiesContext';
 import Button from '../../components/UI/Button';
 import Checkbox from '../../components/UI/inputs/Checkbox';
 import { ROUTES } from '../../routes';
-import Link from 'next/link';
 
 const CookieBanner = ({
   preferences,
@@ -25,7 +25,9 @@ const CookieBanner = ({
 
   return (
     <div
-      className="fixed bottom-11 right-16 z-50 w-[min(100%,500px)] origin-bottom-right scale-90 rounded-lg bg-white px-7 py-5 shadow-lg shadow-primary/20 opacity-0 animate-cookie-pop"
+      className="fixed bottom-11 right-16 z-50 w-[min(100%,500px)] origin-bottom-right
+      scale-90 rounded-lg bg-white px-7 py-5 shadow-lg shadow-primary/20
+      opacity-0 animate-cookie-pop"
       style={{ animationFillMode: 'forwards' }}
     >
 
