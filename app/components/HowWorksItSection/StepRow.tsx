@@ -37,7 +37,7 @@ const StepRow: FC<Props> = ({ index, total, step, stepFloat }) => {
       }
 
       {/* CENTER COLUMN: grid-rows-[top spacer, bubble row, gap, connector] */}
-      <div className={`grid grid-rows-[24px_64px_16px_96px] ${isMobile ? 'justify-items-center' : 'justify-items-end'}`}>
+      <div className={`grid grid-rows-[24px_64px_16px_96px] justify-items-center`}>
         {/* top spacer */}
         <div />
 
