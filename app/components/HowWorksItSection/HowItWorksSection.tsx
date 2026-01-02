@@ -57,10 +57,8 @@ export function HowItWorksSection() {
         subtitle='Měříme jen výsledky. Náš pětikrokový proces garantuje, že se vaše strategie rychle a prokazatelně promění v zisky.'
         className="pb-0 mb-14"
       />
-      <div className="mx-auto w-full max-w-6xl px-6">
-        <div className="mx-auto w-full max-w-6xl">
-          <Timeline steps={steps} stepFloat={stepFloat} lineScale={lineScale} />
-        </div>
+      <div className="mx-auto w-full max-w-6xl">
+        <Timeline steps={steps} stepFloat={stepFloat} lineScale={lineScale} />
       </div>
     </section>
   );
