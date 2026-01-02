@@ -4,7 +4,7 @@ import { ReactNode, useEffect, useMemo, useState } from 'react';
 
 import { CookiePreferences, CookiesContext } from './CookiesContext';
 import { updateGtmConsent } from '@/app/utils/updateGtmPreferences';
-import CookieBanner from './Cookies';
+import CookieBanner from './CookiesBanner';
 
 const STORAGE_KEY = 'cookie-preferences';
 
