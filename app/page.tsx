@@ -9,10 +9,12 @@ import ProductsSection from './components/ProductsSection';
 import CtaSection from './components/CtaSection';
 import PagePadding from './components/UI/PagePadding';
 import { ROUTES } from './routes';
+import HowItWorksSection from './components/HowWorksItSection/HowItWorksSection';
 
 
 export default function Home() {
   const router = useRouter();
+
 
   return (
     <div className="min-h-screen from-primary/5 text-primary">
@@ -72,13 +74,14 @@ export default function Home() {
           </div>
         </section>
 
+        {/* How it works section */}
+
+
         <PagePadding>
           <ProductsSection />
 
-          {/* Balls section */}
+          <HowItWorksSection />
 
-
-          {/* CTA section */}
           <CtaSection title='Domluvte si zdarma audit vašich procesů' subtitle='Integrace AI, robustního softwaru a bezpečnosti už není jen trend, ale kritický faktor pro přežití a dominantní růst ve vašem odvětví. Čekání znamená zaostávání.' >
             <Button onClick={() => router.push(ROUTES.contact())} >Konuzltace zdarma</Button>
             <Button primary={false} onClick={() => router.push(ROUTES.products())} >Přehled balíčků</Button>
