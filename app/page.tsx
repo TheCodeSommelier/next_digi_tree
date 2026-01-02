@@ -4,12 +4,12 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 import Button from './components/UI/Button';
-import ThreePillarsSection from './components/ThreePillarsSection';
-import ProductsSection from './components/ProductsSection';
-import CtaSection from './components/CtaSection';
+import ThreePillarsSection from './components/sections/ThreePillarsSection';
+import ProductsSection from './components/sections/ProductsSection';
+import CtaSection from './components/sections/CtaSection';
 import PagePadding from './components/UI/PagePadding';
 import { ROUTES } from './routes';
-import HowItWorksSection from './components/HowWorksItSection/HowItWorksSection';
+import HowItWorksSection from './components/sections/HowWorksItSection/HowItWorksSection';
 
 
 export default function Home() {

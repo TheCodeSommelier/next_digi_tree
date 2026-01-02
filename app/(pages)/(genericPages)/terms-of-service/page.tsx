@@ -1,8 +1,10 @@
-'use client';
-
 import Link from 'next/link';
 
 import { contacts } from '@/app/consts/consts';
+
+export const metadata = {
+  title: 'Obchodní podmínky'
+};
 
 const sections = [
   {

@@ -1,5 +1,7 @@
-import Card from './UI/cards/Card';
-import SectionHeading from './UI/SectionHeading';
+'use client';
+
+import Card from '../UI/cards/Card';
+import SectionHeading from '../UI/SectionHeading';
 
 const ThreePillarsSection = () => {
   return <section className="space-y-6 py-32">

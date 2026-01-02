@@ -1,9 +1,6 @@
-'use client';
-
 import SectionHeading from '@/app/components/UI/SectionHeading';
-import Button from '@/app/components/UI/Button';
-import ProductsSection from '@/app/components/ProductsSection';
-import CtaSection from '@/app/components/CtaSection';
+import ProductsSection from '@/app/components/sections/ProductsSection';
+import CtaSection from '@/app/components/sections/CtaSection';
 import DualRadarChart from '@/app/components/UI/charts/radar/DualRadarChart';
 import {
   chartDiffConfig,
@@ -16,6 +13,12 @@ import {
 } from './consts';
 import RadarChartDefault from '@/app/components/UI/charts/radar/RadarChart';
 import Table from '@/app/components/UI/Table';
+import { ROUTES } from '@/app/routes';
+import LinkButton from '@/app/components/UI/LinkButton';
+
+export const metadata = {
+  title: 'Produkty'
+};
 
 export default function ProductsPage() {
   const chartsProps = [
@@ -57,10 +60,8 @@ export default function ProductsPage() {
       </section>
 
       <CtaSection title='Nejste si jisti, kde začít?' subtitle='Rádi s vámi projdeme vaše výzvy a najdeme ten nejefektivnější start.'>
-        <Button primary>
-          Konzultace zdarma
-        </Button>
-        <Button primary={false}>Přehled balíčků</Button>
+        <LinkButton href={ROUTES.contact()}>Konzultace zdarma</LinkButton>
+        <LinkButton href={ROUTES.products()} primary={false}>Přehled balíčků</LinkButton>
       </CtaSection>
     </main>
   );
