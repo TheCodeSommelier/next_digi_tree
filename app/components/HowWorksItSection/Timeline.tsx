@@ -12,16 +12,16 @@ type Props = {
 
 const Timeline: FC<Props> = ({ steps, stepFloat }) => {
   return (
-    <div className="grid grid-cols-[1fr_80px_1fr] gap-x-4">
-      {steps.map((step: Step, index: number) => {
-        return <StepRow
+    <div className={`grid gap-x-4 grid-cols-[80px_1fr] md:grid-cols-[1fr_80px_1fr]`}>
+      {steps.map((step: Step, index: number) => (
+        <StepRow
           key={step.id}
           index={index}
           step={step}
           stepFloat={stepFloat}
           total={steps.length}
-               />;
-      })}
+        />
+      ))}
     </div>
   );
 };

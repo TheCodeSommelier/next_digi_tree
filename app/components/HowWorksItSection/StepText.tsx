@@ -9,8 +9,8 @@ type Props = {
 const StepText: FC<Props> = ({ step }) => {
   return (
     <div className="max-w-md">
-      <div className="text-lg font-semibold text-primary">{step.title}</div>
-      <div className="mt-2 text-sm leading-relaxed text-primary">{step.body}</div>
+      <div className={`font-semibold text-primary tex-base md:text-lg`}>{step.title}</div>
+      <div className={`mt-2 leading-relaxed text-primary text-xs md:text-sm`}>{step.body}</div>
     </div>
   );
 };

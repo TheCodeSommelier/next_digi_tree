@@ -5,6 +5,7 @@ import Bubble from './Bubble';
 import StepText from './StepText';
 import HorizontalDivider from './HorizontalDivider';
 import { Step } from '@/app/types/HowWorksIt';
+import { useIsMobile } from '@/app/hooks/useMobile';
 
 type Props = {
   index: number;
@@ -17,22 +18,26 @@ const StepRow: FC<Props> = ({ index, total, step, stepFloat }) => {
   const activeProgress = useTransform(stepFloat, [index - 0.001, index], [0, 1], { clamp: true });
   const fillProgress = useTransform(stepFloat, [index, index + 1], [0, 1], { clamp: true });
 
-  const isLeft = index % 2 === 0;
+  const isMobile = useIsMobile(728);
+  const isLeft = index % 2 === 0 && !isMobile;
+
 
   return (
     <div className="contents">
       {/* LEFT COLUMN: always align toward end */}
-      <div className={`relative top-11 flex items-start gap-7 ${isLeft ? 'justify-end text-right' : 'opacity-0'}`}>
-        {isLeft && (
-          <>
-            <StepText step={step} />
-            <HorizontalDivider />
-          </>
-        )}
-      </div>
+      {!isMobile &&
+        <div className={`relative top-11 flex items-start gap-7 ${isLeft ? 'justify-end text-right' : ''}`}>
+          {isLeft && (
+            <>
+              <StepText step={step} />
+              <HorizontalDivider />
+            </>
+          )}
+        </div>
+      }
 
       {/* CENTER COLUMN: grid-rows-[top spacer, bubble row, gap, connector] */}
-      <div className="grid justify-items-center grid-rows-[24px_64px_16px_96px]">
+      <div className={`grid grid-rows-[24px_64px_16px_96px] ${isMobile ? 'justify-items-center' : 'justify-items-end'}`}>
         {/* top spacer */}
         <div />
 
