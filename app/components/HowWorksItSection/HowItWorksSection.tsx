@@ -51,8 +51,8 @@ export function HowItWorksSection() {
 
   return (
     <section ref={ref} className="relative bg-white">
-      <div style={{ height: `${steps.length * 100}vh` }}>
-        <div className="sticky top-0 h-screen flex items-center">
+      <div className="py-32">
+        <div className="mx-auto w-full max-w-6xl px-6">
           <div className="mx-auto w-full max-w-6xl px-6 py-16">
             <Timeline steps={steps} stepFloat={stepFloat} lineScale={lineScale} />
           </div>

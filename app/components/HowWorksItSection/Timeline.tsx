@@ -16,7 +16,7 @@ const Timeline: FC<Props> = ({ steps, stepFloat }) => {
       {steps.map((step: Step, index: number) => {
         return <StepRow
           key={step.id}
-          index={index + 1}
+          index={index}
           step={step}
           stepFloat={stepFloat}
           total={steps.length}
