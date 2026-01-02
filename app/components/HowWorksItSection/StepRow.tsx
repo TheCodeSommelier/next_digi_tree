@@ -13,7 +13,7 @@ type Props = {
 };
 
 const StepRow: FC<Props> = ({ index, total, step, stepFloat }) => {
-  const isActive = useTransform(stepFloat, (v) => v >= index);
+  const activeProgress = useTransform(stepFloat, [index - 0.001, index], [0, 1], { clamp: true });
 
   const fillProgress = useTransform(stepFloat, [index, index + 1], [0, 1], {
     clamp: true,
@@ -41,7 +41,7 @@ const StepRow: FC<Props> = ({ index, total, step, stepFloat }) => {
 
           {/* bubble row (this row defines the vertical center for the whole row) */}
           <div className="flex justify-center">
-            <Bubble index={index + 1} active={isActive} />
+            <Bubble index={index + 1} activeProgress={activeProgress} />
           </div>
 
           {/* bottom connector */}

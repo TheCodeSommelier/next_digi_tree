@@ -3,12 +3,12 @@ import { FC } from 'react';
 
 type Props = {
   index: number;
-  active: MotionValue<boolean>;
+  activeProgress: MotionValue<number>;
 };
 
-const Bubble: FC<Props> = ({ index, active }) => {
-  const scale = useTransform(active, [false, true], [0.85, 1]);
-  const backgroundColor = useTransform(active, [false, true], ['var(--color-primary)', 'var(--color-accent)']);
+const Bubble: FC<Props> = ({ index, activeProgress }) => {
+  const scale = useTransform(activeProgress, [0, 1], [0.85, 1]);
+  const backgroundColor = useTransform(activeProgress, [0, 1], ['var(--color-primary)', 'var(--color-accent)']);
 
   return (
     <motion.div
