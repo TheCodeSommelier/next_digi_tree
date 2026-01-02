@@ -2,6 +2,7 @@ import { useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 
 import Timeline from './Timeline';
+import CtaSection from '../CtaSection';
 
 const steps = [
     {
@@ -50,12 +51,15 @@ export function HowItWorksSection() {
   const lineScale = reduceMotion ? 1 : scrollYProgress;
 
   return (
-    <section ref={ref} className="relative bg-white">
-      <div className="py-32">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="mx-auto w-full max-w-6xl px-6 py-16">
-            <Timeline steps={steps} stepFloat={stepFloat} lineScale={lineScale} />
-          </div>
+    <section ref={ref} className="relative bg-white py-32">
+      <CtaSection
+        title='Jak to funguje?'
+        subtitle='Měříme jen výsledky. Náš pětikrokový proces garantuje, že se vaše strategie rychle a prokazatelně promění v zisky.'
+        className="pb-0"
+      />
+      <div className="mx-auto w-full max-w-6xl px-6">
+        <div className="mx-auto w-full max-w-6xl">
+          <Timeline steps={steps} stepFloat={stepFloat} lineScale={lineScale} />
         </div>
       </div>
     </section>

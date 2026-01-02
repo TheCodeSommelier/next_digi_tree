@@ -12,7 +12,7 @@ const Bubble: FC<Props> = ({ index, active }) => {
 
   return (
     <motion.div
-      className="h-14 w-14 rounded-full bg-neutral-900 text-white grid place-items-center font-semibold"
+      className="h-16 w-16 rounded-full bg-neutral-900 text-white grid place-items-center font-semibold duration-200"
       style={{ scale, backgroundColor }}
       transition={{ type: 'spring', stiffness: 260, damping: 20 }}
     >

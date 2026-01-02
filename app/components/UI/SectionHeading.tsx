@@ -7,7 +7,9 @@ type Props = {
 
 const SectionHeading: FC<Props> = ({className = 'mb-20', children}) => {
   return <div className="text-center">
-    <h2 className={`text-5xl font-bold text-primary ${className}`}>{children}</h2>
+    <h2 className={`text-5xl font-bold text-primary ${className}`}>
+      {children}
+    </h2>
   </div>;
 };
 
