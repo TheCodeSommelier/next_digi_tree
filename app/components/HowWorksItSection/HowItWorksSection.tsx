@@ -55,7 +55,7 @@ export function HowItWorksSection() {
       <CtaSection
         title='Jak to funguje?'
         subtitle='Měříme jen výsledky. Náš pětikrokový proces garantuje, že se vaše strategie rychle a prokazatelně promění v zisky.'
-        className="pb-0"
+        className="pb-0 mb-14"
       />
       <div className="mx-auto w-full max-w-6xl px-6">
         <div className="mx-auto w-full max-w-6xl">
