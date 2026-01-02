@@ -1,5 +1,5 @@
 const HorizontalDivider = () => {
-  return <div className="h-px w-44 bg-primary" />;
+  return <div className="relative top-3 h-px w-44 bg-primary" />;
 };
 
 export default HorizontalDivider;

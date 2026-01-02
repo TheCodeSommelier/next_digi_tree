@@ -7,13 +7,12 @@ type Props = {
 };
 
 const Bubble: FC<Props> = ({ index, activeProgress }) => {
-  const scale = useTransform(activeProgress, [0, 1], [0.85, 1]);
   const backgroundColor = useTransform(activeProgress, [0, 1], ['var(--color-primary)', 'var(--color-accent)']);
 
   return (
     <motion.div
-      className="h-16 w-16 rounded-full bg-neutral-900 text-white grid place-items-center font-semibold duration-200"
-      style={{ scale, backgroundColor }}
+      className="text-2xl h-16 w-16 rounded-full text-white grid place-items-center font-semibold duration-200"
+      style={{ backgroundColor }}
       transition={{ type: 'spring', stiffness: 260, damping: 20 }}
     >
       {index}
