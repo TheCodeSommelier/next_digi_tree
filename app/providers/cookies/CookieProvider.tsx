@@ -15,61 +15,63 @@ const defaultPreferences: CookiePreferences = {
 };
 
 const CookiesProvider = ({ children }: { children: ReactNode }) => {
-  const [preferences, setPreferences] = useState<CookiePreferences>(() => {
-    if (typeof window === 'undefined') return defaultPreferences;
+  const [preferences, setPreferences] = useState<CookiePreferences>(defaultPreferences);
+  const [hasConsented, setHasConsented] = useState(false);
+
+  // Initial load
+  useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
       try {
         const parsed = JSON.parse(stored) as CookiePreferences;
-        return { ...defaultPreferences, ...parsed };
+        // eslint-disable-next-line
+        setPreferences({ ...defaultPreferences, ...parsed });
+        setHasConsented(true);
+        updateGtmConsent({ ...defaultPreferences, ...parsed });
       } catch {
-        return defaultPreferences;
+        // ignore invalid storage
       }
     }
-    return defaultPreferences;
-  });
-
-  const [showBanner, setShowBanner] = useState(() => {
-    if (typeof window === 'undefined') return true;
-    const stored = localStorage.getItem(STORAGE_KEY);
-    return !stored;
-  });
+  }, []);
 
   useEffect(() => {
-    if (!showBanner) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences));
-      updateGtmConsent(preferences);
-    }
-  }, [preferences, showBanner]);
+    if (!hasConsented) return;
 
-  const value = useMemo(() => ({ preferences, setPreferences }), [preferences]);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences));
+    updateGtmConsent(preferences);
+  }, [preferences, hasConsented]);
 
-  const handleAcceptAll = () => {
+  const value = useMemo(
+    () => ({ preferences, setPreferences }),
+    [preferences]
+  );
+
+  const acceptAll = () => {
     setPreferences({ necessary: true, analytics: true, marketing: true });
-    setShowBanner(false);
+    setHasConsented(true);
   };
 
-  const handleRejectAll = () => {
+  const rejectAll = () => {
     setPreferences({ necessary: true, analytics: false, marketing: false });
-    setShowBanner(false);
+    setHasConsented(true);
   };
 
-  const handleSave = () => {
-    setShowBanner(false);
+  const save = () => {
+    setHasConsented(true);
   };
 
   return (
     <CookiesContext.Provider value={value}>
       {children}
-      {showBanner ? (
+      {!hasConsented && (
         <CookieBanner
           preferences={preferences}
           onChange={setPreferences}
-          onAcceptAll={handleAcceptAll}
-          onRejectAll={handleRejectAll}
-          onSave={handleSave}
+          onAcceptAll={acceptAll}
+          onRejectAll={rejectAll}
+          onSave={save}
         />
-      ) : null}
+      )}
     </CookiesContext.Provider>
   );
 };
