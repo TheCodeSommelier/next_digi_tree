@@ -25,8 +25,8 @@ const CookieBanner = ({
 
   return (
     <div
-      className="fixed bottom-11 right-16 z-50 w-[min(100%,500px)] origin-bottom-right
-      scale-90 rounded-lg bg-white px-7 py-5 shadow-lg shadow-primary/20
+      className="fixed bottom-0 md:bottom-11 md:right-16 z-50 w-full md:w-[min(100%,500px)] origin-bottom-right
+      scale-100 md:scale-90 rounded-t-lg rounded-b-none md:rounded-b-lg bg-white px-7 py-5 shadow-lg shadow-primary/20
       opacity-0 animate-cookie-pop"
       style={{ animationFillMode: 'forwards' }}
     >
