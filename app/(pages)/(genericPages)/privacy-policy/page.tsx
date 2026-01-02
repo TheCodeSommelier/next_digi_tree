@@ -2,6 +2,10 @@ import Link from 'next/link';
 
 import { contacts } from '@/app/consts/consts';
 
+export const metadata = {
+  title: 'Zásady ochrany osobních údajů'
+};
+
 export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen text-primary py-5">

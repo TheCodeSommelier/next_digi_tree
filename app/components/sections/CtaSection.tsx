@@ -1,6 +1,8 @@
+'use client';
+
 import { FC, ReactNode } from 'react';
 
-import SectionHeading from './UI/SectionHeading';
+import SectionHeading from '../UI/SectionHeading';
 
 type Props = {
   title: string

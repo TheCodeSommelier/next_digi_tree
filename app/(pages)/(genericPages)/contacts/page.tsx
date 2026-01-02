@@ -3,6 +3,10 @@ import ImageWithOverlay from '../../../components/UI/ImageWithOverlay';
 import { contacts } from '../../../consts/consts';
 import { formatPhoneNum } from '../../../utils/stringUtils';
 
+export const metadata = {
+  title: 'Kontakt'
+};
+
 const contactSections = [
   {
     id: crypto.randomUUID(),

@@ -1,17 +1,15 @@
-'use client';
-
-import Image from 'next/image';
-
-import Button from '../../../components/UI/Button';
-import CtaSection from '../../../components/CtaSection';
+import CtaSection from '../../../components/sections/CtaSection';
 import ImageWithOverlay from '../../../components/UI/ImageWithOverlay';
-import ThreePillarsSection from '../../../components/ThreePillarsSection';
-import { useRouter } from 'next/navigation';
+import ThreePillarsSection from '../../../components/sections/ThreePillarsSection';
 import { ROUTES } from '../../../routes';
+import CtaBook from '@/app/components/sections/CtaBook';
+import LinkButton from '@/app/components/UI/LinkButton';
+
+export const metadata = {
+  title: 'O nás'
+};
 
 export default function AboutUsPage() {
-  const router = useRouter();
-
   return (
     <main className="min-h-screen text-primary">
       <div className="flex w-full flex-col gap-16">
@@ -43,36 +41,14 @@ export default function AboutUsPage() {
 
         <ThreePillarsSection />
 
-        <section className="grid gap-8 py-32">
-          <div className="relative flex w-full justify-start items-center gap-48">
-            <Image
-              src="/images/book.png"
-              alt="Digitální zlato kniha"
-              width={320}
-              height={400}
-              className='rounded-lg'
-            />
-
-            <div className="space-y-2 flex flex-col gap-4">
-              <h3 className="text-5xl font-semibold text-primary">Naše kniha</h3>
-              <p className="max-w-xl text-primary/70">
-                Získejte praktický průvodce, jak postavit bezpečné a škálovatelné digitální produkty. Žádné bullshity,
-                jen ověřené postupy.
-              </p>
-              <Button onClick={() => router.push(ROUTES.getBook())} className='w-1/5'>
-                Chci knihu
-              </Button>
-            </div>
-
-          </div>
-        </section>
+        <CtaBook />
 
         <CtaSection
           title='Investujte do růstu' subtitle='Naším cílem je posílit vás k soběstačnosti a akcelerovat váš růst. Domluvte si nezávaznou diagnostiku a
               odhalte největší příležitosti.'
         >
-          <Button onClick={() => router.push(ROUTES.contact())}>Konzultace zdarma</Button>
-          <Button primary={false} onClick={() => router.push(ROUTES.products())}>Přehled balíčků</Button>
+          <LinkButton href={ROUTES.contact()}>Konzultace zdarma</LinkButton>
+          <LinkButton href={ROUTES.products()} primary={false}>Přehled balíčků</LinkButton>
         </CtaSection>
       </div>
     </main>

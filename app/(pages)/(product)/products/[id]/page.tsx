@@ -1,17 +1,41 @@
-'use client';
-
 import Image from 'next/image';
-import { useParams } from 'next/navigation';
+import { Metadata } from 'next';
 
 import Button from '@/app/components/UI/Button';
 import SectionHeading from '@/app/components/UI/SectionHeading';
 import { products } from '@/app/consts/products/products';
 import DropdownCard from '@/app/components/UI/DropdownCard';
-import CtaSection from '@/app/components/CtaSection';
+import CtaSection from '@/app/components/sections/CtaSection';
 import PagePadding from '@/app/components/UI/PagePadding';
+import LinkButton from '@/app/components/UI/LinkButton';
+import { ROUTES } from '@/app/routes';
+import { ProductId } from '@/app/types/Product';
 
-export default function ProductPage() {
-  const { id } = useParams();
+type Params = {
+  id: ProductId
+}
+
+export async function generateMetadata(
+  { params }: { params: Promise<Params> }
+): Promise<Metadata> {
+  const resolvedParams = await params;
+  const product = products.find((item) => item.id === resolvedParams.id);
+
+  if (!product) {
+    return {
+      title: 'Produkt nenalezen',
+    };
+  }
+
+  return {
+    title: product.title,
+    description: product.subtitle,
+  };
+}
+
+export default async function ProductPage({ params }: { params: Promise<Params> }) {
+  const { id } = await params;
+
   const product = products.find((item) => item.id === id);
 
   if (!product) {
@@ -19,6 +43,8 @@ export default function ProductPage() {
   }
 
   const { title, subtitle, imageUrl, packageInfo, results } = product;
+
+  if (!id) return null;
 
   return (
     <main className="min-h-screen text-primary flex w-full flex-col gap-16 py-12">
@@ -40,9 +66,7 @@ export default function ProductPage() {
                 {subtitle}
               </p>
               <div className="mt-3 flex justify-center">
-                <Button primary className="bg-accent w-full text-primary hover:bg-white">
-                  Chci balíček
-                </Button>
+                <LinkButton href={ROUTES.product({ productId: id })}>Chci balíček</LinkButton>
               </div>
             </div>
           </div>
@@ -110,9 +134,7 @@ export default function ProductPage() {
         </section>
 
         <CtaSection title="Implementujte AI s Digitree!" subtitle='Nyní je čas proměnit strategii ve funkční AI řešení, které garantuje měřitelné zisky. Udělejte první krok k digitální dominanci.'>
-          <Button primary className="bg-accent text-primary hover:bg-white">
-            Chci balíček
-          </Button>
+          <LinkButton href={ROUTES.product({ productId: id })}>Chci balíček</LinkButton>
         </CtaSection>
       </PagePadding>
     </main>
