@@ -5,11 +5,12 @@ import SectionHeading from './UI/SectionHeading';
 type Props = {
   title: string
   subtitle: string
-  children: ReactNode
+  children?: ReactNode
+  className?: string
 }
 
-const CtaSection: FC<Props> = ({ title, subtitle, children }) => {
-  return <section className="flex flex-col justify-center items-center py-32 gap-4">
+const CtaSection: FC<Props> = ({ title, subtitle, children, className = 'py-32' }) => {
+  return <section className={`flex flex-col justify-center items-center gap-4 ${className}`}>
     <SectionHeading className='mb-4'>
       {title}
     </SectionHeading>
@@ -18,9 +19,11 @@ const CtaSection: FC<Props> = ({ title, subtitle, children }) => {
       {subtitle}
     </p>
 
-    <div className='flex justify-between items-center gap-3 mt-4'>
-      {children}
-    </div>
+    {children &&
+      <div className='flex justify-between items-center gap-3 mt-4'>
+        {children}
+      </div>
+    }
   </section>;
 };
 
