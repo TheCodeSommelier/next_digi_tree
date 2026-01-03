@@ -30,7 +30,6 @@ const Button: FC<Props> = ({
       return;
     }
 
-    e.preventDefault();
     onClick(e);
   };
 
