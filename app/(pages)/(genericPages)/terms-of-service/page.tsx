@@ -1,4 +1,3 @@
-import PageShell from '@/app/components/UI/PageShell';
 import ContactSection from '@/app/components/sections/ContactSection';
 
 export const metadata = {
@@ -66,29 +65,27 @@ const sections = [
 
 export default function TermsOfServicePage() {
   return (
-    <PageShell className="text-primary">
-      <div className="flex w-full flex-col gap-8 py-12">
-        <header className="space-y-2 py-4">
-          <h1 className="text-4xl font-bold text-primary">Obchodní podmínky společnosti DigiTree Education, s.r.o.</h1>
-          <p className="text-primary/80">
-            Níže najdete souhrn pravidel a podmínek pro využívání našich vzdělávacích služeb. Čtěte prosím pozorně.
-          </p>
-        </header>
+    <div className="flex w-full flex-col gap-8 py-12">
+      <header className="space-y-2 py-4">
+        <h1 className="text-4xl font-bold text-primary">Obchodní podmínky společnosti DigiTree Education, s.r.o.</h1>
+        <p className="text-primary/80">
+          Níže najdete souhrn pravidel a podmínek pro využívání našich vzdělávacích služeb. Čtěte prosím pozorně.
+        </p>
+      </header>
 
-        {sections.map((section) => (
-          <section key={section.title} className="space-y-3 py-4">
-            <h2 className="text-xl font-semibold text-primary">{section.title}</h2>
-            {section.body.map((paragraph) => (
-              <p key={paragraph} className="leading-relaxed text-primary/80">
-                {paragraph}
-              </p>
+      {sections.map((section) => (
+        <section key={section.title} className="space-y-3 py-4">
+          <h2 className="text-xl font-semibold text-primary">{section.title}</h2>
+          {section.body.map((paragraph) => (
+            <p key={paragraph} className="leading-relaxed text-primary/80">
+              {paragraph}
+            </p>
             ))}
-          </section>
+        </section>
         ))}
 
-        <ContactSection />
+      <ContactSection />
 
-      </div>
-    </PageShell>
+    </div>
   );
 }

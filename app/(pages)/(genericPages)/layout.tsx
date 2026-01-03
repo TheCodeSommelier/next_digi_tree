@@ -1,5 +1,9 @@
 import { PropsWithChildren } from 'react';
 
-export default function PagesLayout({ children }: PropsWithChildren) {
-  return children;
+import PagePadding from '@/app/components/UI/PagePadding';
+
+export default function PageLayout({children}: PropsWithChildren) {
+  return <PagePadding>
+    {children}
+  </PagePadding>;
 }

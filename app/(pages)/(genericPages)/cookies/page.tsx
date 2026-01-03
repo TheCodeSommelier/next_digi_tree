@@ -1,5 +1,3 @@
-import PageShell from '@/app/components/UI/PageShell';
-import { GradientConfig } from '@/app/types/Gradient';
 import ContactSection from '@/app/components/sections/ContactSection';
 
 export const metadata = {
@@ -60,48 +58,44 @@ const sections = [
 ];
 
 export default function CookiesPage() {
-  const gradients: GradientConfig[] = [{position: 'top'}, {position: 'bottom'}];
-
   return (
-    <PageShell className="text-primary" gradients={gradients}>
-      <div className="flex w-full flex-col gap-8 py-12">
-        <header className="space-y-2 py-4">
-          <h1 className="text-4xl font-bold text-primary">Zásady používání cookies a ochrany osobních údajů</h1>
-          <p className="text-primary/80">
-            Vážení návštěvníci, vážíme si vašeho soukromí a transparentnosti. Níže popisujeme, jak používáme cookies, {' '}
-            jak shromažďujeme a chráníme vaše data, a jaká práva máte.
-          </p>
-        </header>
+    <div className="flex w-full flex-col gap-8 py-12">
+      <header className="space-y-2 py-4">
+        <h1 className="text-4xl font-bold text-primary">Zásady používání cookies a ochrany osobních údajů</h1>
+        <p className="text-primary/80">
+          Vážení návštěvníci, vážíme si vašeho soukromí a transparentnosti. Níže popisujeme, jak používáme cookies, {' '}
+          jak shromažďujeme a chráníme vaše data, a jaká práva máte.
+        </p>
+      </header>
 
-        <section className="space-y-3 py-4">
-          <p className="text-primary/80 leading-relaxed">
-            Tento dokument podrobně popisuje, jak naše webová stránka využívá cookies, jaké informace shromažďujeme, k
-            jakým účelům je používáme a jak chráníme vaše data. Veškeré shromážděné informace jsou využívány výhradně {' '}
-            pro naše interní potřeby a sdíleny pouze s důvěryhodnými třetími stranami (např. Google Analytics) za účelem
-            analýzy návštěvnosti.
-          </p>
-        </section>
+      <section className="space-y-3 py-4">
+        <p className="text-primary/80 leading-relaxed">
+          Tento dokument podrobně popisuje, jak naše webová stránka využívá cookies, jaké informace shromažďujeme, k
+          jakým účelům je používáme a jak chráníme vaše data. Veškeré shromážděné informace jsou využívány výhradně {' '}
+          pro naše interní potřeby a sdíleny pouze s důvěryhodnými třetími stranami (např. Google Analytics) za účelem
+          analýzy návštěvnosti.
+        </p>
+      </section>
 
-        {sections.map((section) => (
-          <section key={section.title} className="space-y-3 py-4">
-            <h2 className="text-xl font-semibold text-primary">{section.title}</h2>
-            {section.body?.map((paragraph) => (
-              <p key={paragraph} className="leading-relaxed text-primary/80">
-                {paragraph}
-              </p>
+      {sections.map((section) => (
+        <section key={section.title} className="space-y-3 py-4">
+          <h2 className="text-xl font-semibold text-primary">{section.title}</h2>
+          {section.body?.map((paragraph) => (
+            <p key={paragraph} className="leading-relaxed text-primary/80">
+              {paragraph}
+            </p>
             ))}
-            {section.list ? (
-              <ul className="list-disc space-y-2 pl-6 text-primary/80">
-                {section.list.map((item) => (
-                  <li key={item}>{item}</li>
+          {section.list ? (
+            <ul className="list-disc space-y-2 pl-6 text-primary/80">
+              {section.list.map((item) => (
+                <li key={item}>{item}</li>
                 ))}
-              </ul>
+            </ul>
             ) : null}
-          </section>
+        </section>
         ))}
 
-        <ContactSection />
-      </div>
-    </PageShell>
+      <ContactSection />
+    </div>
   );
 }

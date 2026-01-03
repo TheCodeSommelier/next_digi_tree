@@ -6,9 +6,13 @@ import CtaSection from './components/sections/CtaSection';
 import PagePadding from './components/UI/PagePadding';
 import { ROUTES } from './routes';
 import HowItWorksSection from './components/sections/HowWorksItSection/HowItWorksSection';
-import BackgroundGradients from './components/UI/BackgroundGradient';
 import LinkButton from './components/UI/LinkButton';
+import GradientAnchor from './components/UI/gradients/GradientAnchor';
 
+export const metadata = {
+  title: 'Domů | Digitree',
+  description: 'Digitree - Strategická AI a digitální transformace pro měřitelný růst vašeho podnikání. Pomáháme firmám automatizovat procesy, implementovat umělou inteligenci, navrhovat moderní software a zabezpečit data bez vendor lock-inu. Získejte strategický audit, akční plán a kontinuální optimalizaci pro výrazné zlepšení výkonu.',
+};
 
 export default function Home() {
   return (
@@ -40,6 +44,8 @@ export default function Home() {
             />
           </section>
 
+          <GradientAnchor name="page-2/4" />
+
           <ThreePillarsSection />
         </PagePadding>
 
@@ -67,11 +73,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* How it works section */}
-
-
         <PagePadding>
           <ProductsSection />
+
+          <GradientAnchor name="page-3/4" />
 
           <HowItWorksSection />
 
@@ -81,9 +86,6 @@ export default function Home() {
           </CtaSection>
         </PagePadding>
       </main>
-      <BackgroundGradients position='hero' />
-      <BackgroundGradients position='middle' />
-      <BackgroundGradients position='bottom' />
     </div>
   );
 }

@@ -8,6 +8,9 @@ import Footer from './components/UI/Footer';
 import Navbar from './components/UI/Navbar';
 import CookiesProvider from './providers/cookies/CookieProvider';
 import { BASE_URL } from './consts/consts';
+import { GradientProvider } from './providers/gradients/GradientProvider';
+import GradientRouteConfig from './components/UI/gradients/GradientRouteConfig';
+import GradientLayer from './components/UI/gradients/GradientsLayer';
 
 
 const figtree = Figtree({
@@ -17,10 +20,9 @@ const figtree = Figtree({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Home | Digitree',
+    default: 'Digitree',
     template: '%s | Digitree',
   },
-  description: 'Digitree - Strategická AI a digitální transformace pro měřitelný růst vašeho podnikání. Pomáháme firmám automatizovat procesy, implementovat umělou inteligenci, navrhovat moderní software a zabezpečit data bez vendor lock-inu. Získejte strategický audit, akční plán a kontinuální optimalizaci pro výrazné zlepšení výkonu.',
   manifest: `${BASE_URL}/manifest.webmanifest`
 };
 
@@ -36,9 +38,13 @@ export default function RootLayout({
       >
         <GoogleTagManager gtmId='GTM-P6BQ93SK' />
         <CookiesProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <GradientProvider>
+            <GradientLayer />
+            <GradientRouteConfig />
+            <Navbar />
+            {children}
+            <Footer />
+          </GradientProvider>
         </CookiesProvider>
       </body>
     </html>
