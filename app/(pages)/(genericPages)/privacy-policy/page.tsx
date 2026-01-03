@@ -1,14 +1,18 @@
 import Link from 'next/link';
 
 import { contacts } from '@/app/consts/consts';
+import PageShell from '@/app/components/UI/PageShell';
+import { GradientConfig } from '@/app/types/Gradient';
 
 export const metadata = {
   title: 'Zásady ochrany osobních údajů'
 };
 
 export default function PrivacyPolicyPage() {
+  const gradients: GradientConfig[] = [{position: 'top'}, {position: 'bottom'}];
+
   return (
-    <main className="min-h-screen text-primary py-5">
+    <PageShell className="text-primary py-5" gradients={gradients}>
       <header className="space-y-3 pb-4">
         <h1 className="text-4xl font-bold text-primary">Zásady ochrany osobních údajů</h1>
         <p className="text-primary/80">
@@ -106,6 +110,6 @@ export default function PrivacyPolicyPage() {
           nebo písemně na adresu sídla. Zásady jsou účinné od 1. ledna 2025.
         </p>
       </section>
-    </main>
+    </PageShell>
   );
 }

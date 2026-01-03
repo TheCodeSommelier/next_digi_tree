@@ -3,6 +3,8 @@ import DropdownCard from '../../../components/UI/DropdownCard';
 import { FaqItem } from '../../../types/Faq';
 import { ROUTES } from '../../../routes';
 import LinkButton from '@/app/components/UI/LinkButton';
+import PageShell from '@/app/components/UI/PageShell';
+import { GradientConfig } from '@/app/types/Gradient';
 
 export const metadata = {
   title: 'FAQ'
@@ -42,8 +44,9 @@ const faqItems: FaqItem[] = [
 ];
 
 export default function FaqPage() {
+  const gradients: GradientConfig[] = [{ position: 'top' }, { position: 'bottom' }];
   return (
-    <main className="min-h-screen from-primary/5 text-primary">
+    <PageShell gradients={gradients} className="from-primary/5 text-primary">
       <header className="space-y-3 w-full flex justify-center items-center mb-7">
         <h1 className="text-4xl font-semibold leading-tight">FAQ</h1>
       </header>
@@ -66,6 +69,6 @@ export default function FaqPage() {
         <LinkButton href={ROUTES.contact()}>Kontaktovat</LinkButton>
         <LinkButton href={ROUTES.products()} primary={false}>Přehled balíčků</LinkButton>
       </CtaSection>
-    </main>
+    </PageShell>
   );
 }

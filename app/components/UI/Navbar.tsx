@@ -21,9 +21,9 @@ const Navbar: FC = () => {
   const router = useRouter();
 
   return (
-    <nav className="w-full my-12">
+    <nav className="w-full py-12">
       <PagePadding>
-        <div className="relative flex items-center justify-between gap-6 overflow-hidden
+        <div className="relative flex items-center justify-between gap-6
       rounded-full border border-primary/10 bg-white/85 px-6 py-2 shadow-sm shadow-primary/10 backdrop-blur-lg"
         >
           <div className="absolute -left-10 -top-12 h-24 w-24 rounded-full blur-3xl" />

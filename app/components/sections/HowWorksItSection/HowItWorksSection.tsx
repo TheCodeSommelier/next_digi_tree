@@ -1,3 +1,5 @@
+'use client';
+
 import { useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -51,7 +53,7 @@ export function HowItWorksSection() {
   const lineScale = reduceMotion ? 1 : scrollYProgress;
 
   return (
-    <section ref={ref} className="relative bg-white py-32">
+    <section ref={ref} className="relative py-32">
       <CtaSection
         title='Jak to funguje?'
         subtitle='Měříme jen výsledky. Náš pětikrokový proces garantuje, že se vaše strategie rychle a prokazatelně promění v zisky.'

@@ -2,6 +2,7 @@ import EmailForm from '../../../components/UI/EmailForm';
 import ImageWithOverlay from '../../../components/UI/ImageWithOverlay';
 import { contacts } from '../../../consts/consts';
 import { formatPhoneNum } from '../../../utils/stringUtils';
+import PageShell from '@/app/components/UI/PageShell';
 
 export const metadata = {
   title: 'Kontakt'
@@ -22,7 +23,7 @@ const contactSections = [
 
 export default function ContactsPage() {
   return (
-    <main className="min-h-screen text-primary pb-32">
+    <PageShell className="text-primary pb-32" gradients={[{ position: 'bottom', height: 800 }]}>
       <div className="flex items-center justify-between gap-16">
         <ImageWithOverlay imageUrl='/images/david_classroom.png' className='w-1/2 h-[650px] p-10'>
           <div className="flex flex-col justify-between h-full">
@@ -53,6 +54,6 @@ export default function ContactsPage() {
           <EmailForm />
         </section>
       </div>
-    </main>
+    </PageShell>
   );
 }

@@ -4,6 +4,7 @@ import ThreePillarsSection from '../../../components/sections/ThreePillarsSectio
 import { ROUTES } from '../../../routes';
 import CtaBook from '@/app/components/sections/CtaBook';
 import LinkButton from '@/app/components/UI/LinkButton';
+import PageShell from '@/app/components/UI/PageShell';
 
 export const metadata = {
   title: 'O nás'
@@ -11,7 +12,10 @@ export const metadata = {
 
 export default function AboutUsPage() {
   return (
-    <main className="min-h-screen text-primary">
+    <PageShell
+      className="text-primary"
+      gradients={[{ position: 'hero' }, { position: 'bottom' }]}
+    >
       <div className="flex w-full flex-col gap-16">
         <ImageWithOverlay imageUrl="/images/david_presenting.jpg">
           <div className="space-y-4 flex flex-col justify-between h-[550px] px-8 py-10">
@@ -51,6 +55,6 @@ export default function AboutUsPage() {
           <LinkButton href={ROUTES.products()} primary={false}>Přehled balíčků</LinkButton>
         </CtaSection>
       </div>
-    </main>
+    </PageShell>
   );
 }

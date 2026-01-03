@@ -1,23 +1,18 @@
-'use client';
-
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
-import Button from './components/UI/Button';
 import ThreePillarsSection from './components/sections/ThreePillarsSection';
 import ProductsSection from './components/sections/ProductsSection';
 import CtaSection from './components/sections/CtaSection';
 import PagePadding from './components/UI/PagePadding';
 import { ROUTES } from './routes';
 import HowItWorksSection from './components/sections/HowWorksItSection/HowItWorksSection';
+import BackgroundGradients from './components/UI/BackgroundGradient';
+import LinkButton from './components/UI/LinkButton';
 
 
 export default function Home() {
-  const router = useRouter();
-
-
   return (
-    <div className="min-h-screen from-primary/5 text-primary">
+    <div className="relative min-h-screen from-primary/5 text-primary">
       <main className="mx-auto flex min-h-screen w-full flex-col gap-14">
         <PagePadding>
           {/* hero section */}
@@ -32,8 +27,8 @@ export default function Home() {
                 do komplexního řešení s prokazatelným dopadem na zisk.
               </p>
               <div className="flex gap-3 mt-4">
-                <Button primary onClick={() => router.push(ROUTES.products())}>Přehled balíčků</Button>
-                <Button primary={false} onClick={() => router.push(ROUTES.contact())}>Kontakt</Button>
+                <LinkButton href={ROUTES.products()}>Přehled balíčků</LinkButton>
+                <LinkButton primary={false} href={ROUTES.contact()}>Kontakt</LinkButton>
               </div>
             </div>
 
@@ -67,9 +62,7 @@ export default function Home() {
                 inteligenci, moderní software a kybernetickou bezpečnost do jednoho systému. Implementujeme řešení bez
                 vendor lock-inu, s prokazatelným dopadem už v prvních měsících spolupráce.
               </p>
-              <Button primary onClick={() => router.push(ROUTES.aboutUs())} className="bg-accent text-primary hover:bg-white">
-                Více o nás
-              </Button>
+              <LinkButton href={ROUTES.aboutUs()}>Více o nás</LinkButton>
             </div>
           </div>
         </section>
@@ -83,13 +76,14 @@ export default function Home() {
           <HowItWorksSection />
 
           <CtaSection title='Domluvte si zdarma audit vašich procesů' subtitle='Integrace AI, robustního softwaru a bezpečnosti už není jen trend, ale kritický faktor pro přežití a dominantní růst ve vašem odvětví. Čekání znamená zaostávání.' >
-            <Button onClick={() => router.push(ROUTES.contact())} >Konuzltace zdarma</Button>
-            <Button primary={false} onClick={() => router.push(ROUTES.products())} >Přehled balíčků</Button>
-
+            <LinkButton href={ROUTES.contact()}>Konuzltace zdarma</LinkButton>
+            <LinkButton primary={false} href={ROUTES.products()}>Přehled balíčků</LinkButton>
           </CtaSection>
         </PagePadding>
-
       </main>
+      <BackgroundGradients position='hero' />
+      <BackgroundGradients position='middle' />
+      <BackgroundGradients position='bottom' />
     </div>
   );
 }

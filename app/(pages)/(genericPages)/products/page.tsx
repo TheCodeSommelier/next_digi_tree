@@ -15,6 +15,8 @@ import RadarChartDefault from '@/app/components/UI/charts/radar/RadarChart';
 import Table from '@/app/components/UI/Table';
 import { ROUTES } from '@/app/routes';
 import LinkButton from '@/app/components/UI/LinkButton';
+import PageShell from '@/app/components/UI/PageShell';
+import { GradientConfig } from '@/app/types/Gradient';
 
 export const metadata = {
   title: 'Produkty'
@@ -26,8 +28,10 @@ export default function ProductsPage() {
     { config: chartWithDigiConfig, data: chartWithDigiData }
   ];
 
+  const gradients: GradientConfig[] = [{ position: 'hero' }, { position: 'bottom', height: 1500 }];
+
   return (
-    <main className="min-h-screen">
+    <PageShell gradients={gradients}>
       <ProductsSection />
 
       <section className="space-y-4 text-center py-32">
@@ -63,6 +67,6 @@ export default function ProductsPage() {
         <LinkButton href={ROUTES.contact()}>Konzultace zdarma</LinkButton>
         <LinkButton href={ROUTES.products()} primary={false}>Přehled balíčků</LinkButton>
       </CtaSection>
-    </main>
+    </PageShell>
   );
 }

@@ -10,6 +10,7 @@ import PagePadding from '@/app/components/UI/PagePadding';
 import LinkButton from '@/app/components/UI/LinkButton';
 import { ROUTES } from '@/app/routes';
 import { ProductId } from '@/app/types/Product';
+import BackgroundGradient from '@/app/components/UI/BackgroundGradient';
 
 type Params = {
   id: ProductId
@@ -47,7 +48,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
   if (!id) return null;
 
   return (
-    <main className="min-h-screen text-primary flex w-full flex-col gap-16 py-12">
+    <main className="relative min-h-screen text-primary flex w-full flex-col gap-16 py-12">
       <PagePadding>
         {/* Hero */}
         <section
@@ -137,6 +138,8 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
           <LinkButton href={ROUTES.product({ productId: id })}>Chci balíček</LinkButton>
         </CtaSection>
       </PagePadding>
+      <BackgroundGradient position='hero' />
+      <BackgroundGradient position='bottom' />
     </main>
   );
 }

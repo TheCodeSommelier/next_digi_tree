@@ -39,7 +39,6 @@ const navigation = [
 const Footer: FC = () => {
   return (
     <footer className="relative overflow-hidden rounded-tl-3xl rounded-tr-3xl bg-primary text-white">
-
       <div className="relative flex flex-col gap-10 pt-10 pb-20">
         <PagePadding>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">

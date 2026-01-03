@@ -1,6 +1,6 @@
-import Link from 'next/link';
-
-import { contacts } from '@/app/consts/consts';
+import PageShell from '@/app/components/UI/PageShell';
+import { GradientConfig } from '@/app/types/Gradient';
+import ContactSection from '@/app/components/sections/ContactSection';
 
 export const metadata = {
   title: 'Cookies'
@@ -60,8 +60,10 @@ const sections = [
 ];
 
 export default function CookiesPage() {
+  const gradients: GradientConfig[] = [{position: 'top'}, {position: 'bottom'}];
+
   return (
-    <main className="min-h-screen text-primary">
+    <PageShell className="text-primary" gradients={gradients}>
       <div className="flex w-full flex-col gap-8 py-12">
         <header className="space-y-2 py-4">
           <h1 className="text-4xl font-bold text-primary">Zásady používání cookies a ochrany osobních údajů</h1>
@@ -98,26 +100,8 @@ export default function CookiesPage() {
           </section>
         ))}
 
-        <section className="space-y-3 py-4">
-          <h2 className="text-xl font-semibold text-primary">8. Kontaktujte nás</h2>
-          <p className="text-primary/80 leading-relaxed">
-            Pokud máte jakékoli dotazy nebo obavy týkající se našich zásad používání cookies a ochrany osobních údajů,
-            neváhejte nás kontaktovat.
-          </p>
-          <p className="text-primary/80">
-            E-mail:{' '}
-            <Link href={`mailto:${contacts.email}`} className="text-accent hover:text-primary duration-200">
-              {contacts.email}
-            </Link>
-          </p>
-          <p className="text-primary/80">
-            Telefon:{' '}
-            <Link href={`tel:${contacts.tel}`} className="text-accent hover:text-primary duration-200">
-              {contacts.tel}
-            </Link>
-          </p>
-        </section>
+        <ContactSection />
       </div>
-    </main>
+    </PageShell>
   );
 }
