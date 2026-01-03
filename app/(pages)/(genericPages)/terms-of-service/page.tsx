@@ -1,6 +1,4 @@
-import Link from 'next/link';
-
-import { contacts } from '@/app/consts/consts';
+import ContactSection from '@/app/components/sections/ContactSection';
 
 export const metadata = {
   title: 'Obchodní podmínky'
@@ -67,47 +65,27 @@ const sections = [
 
 export default function TermsOfServicePage() {
   return (
-    <main className="min-h-screen text-primary">
-      <div className="flex w-full flex-col gap-8 py-12">
-        <header className="space-y-2 py-4">
-          <h1 className="text-4xl font-bold text-primary">Obchodní podmínky společnosti DigiTree Education, s.r.o.</h1>
-          <p className="text-primary/80">
-            Níže najdete souhrn pravidel a podmínek pro využívání našich vzdělávacích služeb. Čtěte prosím pozorně.
-          </p>
-        </header>
+    <main className="flex w-full flex-col gap-8 py-20">
+      <header className="space-y-2 py-4">
+        <h1 className="text-4xl font-bold text-primary">Obchodní podmínky společnosti DigiTree Education, s.r.o.</h1>
+        <p className="text-primary/80">
+          Níže najdete souhrn pravidel a podmínek pro využívání našich vzdělávacích služeb. Čtěte prosím pozorně.
+        </p>
+      </header>
 
-        {sections.map((section) => (
-          <section key={section.title} className="space-y-3 py-4">
-            <h2 className="text-xl font-semibold text-primary">{section.title}</h2>
-            {section.body.map((paragraph) => (
-              <p key={paragraph} className="leading-relaxed text-primary/80">
-                {paragraph}
-              </p>
+      {sections.map((section) => (
+        <section key={section.title} className="space-y-3 py-4">
+          <h2 className="text-xl font-semibold text-primary">{section.title}</h2>
+          {section.body.map((paragraph) => (
+            <p key={paragraph} className="leading-relaxed text-primary/80">
+              {paragraph}
+            </p>
             ))}
-          </section>
+        </section>
         ))}
 
-        <section className="space-y-3 py-4">
-          <h2 className="text-xl font-semibold text-primary">9. Kontaktní údaje</h2>
-          <div className="text-primary/80">
-            <p>DigiTree Education, s.r.o.</p>
-            <p>Ulice 123</p>
-            <p>110 00 Praha</p>
-            <p>
-              E-mail:{' '}
-              <Link href={`mailto:${contacts.email}`} className="text-accent hover:text-primary duration-200">
-                {contacts.email}
-              </Link>
-            </p>
-            <p>
-              Telefon:{' '}
-              <Link href={`tel:${contacts.tel}`} className="text-accent hover:text-primary duration-200">
-                {contacts.tel}
-              </Link>
-            </p>
-          </div>
-        </section>
-      </div>
+      <ContactSection />
+
     </main>
   );
 }

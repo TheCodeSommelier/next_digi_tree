@@ -1,6 +1,4 @@
-import Link from 'next/link';
-
-import { contacts } from '@/app/consts/consts';
+import ContactSection from '@/app/components/sections/ContactSection';
 
 export const metadata = {
   title: 'Cookies'
@@ -61,63 +59,43 @@ const sections = [
 
 export default function CookiesPage() {
   return (
-    <main className="min-h-screen text-primary">
-      <div className="flex w-full flex-col gap-8 py-12">
-        <header className="space-y-2 py-4">
-          <h1 className="text-4xl font-bold text-primary">Zásady používání cookies a ochrany osobních údajů</h1>
-          <p className="text-primary/80">
-            Vážení návštěvníci, vážíme si vašeho soukromí a transparentnosti. Níže popisujeme, jak používáme cookies, {' '}
-            jak shromažďujeme a chráníme vaše data, a jaká práva máte.
-          </p>
-        </header>
+    <main className="flex w-full flex-col gap-8 py-20">
+      <header className="space-y-2 py-4">
+        <h1 className="text-4xl font-bold text-primary">Zásady používání cookies a ochrany osobních údajů</h1>
+        <p className="text-primary/80">
+          Vážení návštěvníci, vážíme si vašeho soukromí a transparentnosti. Níže popisujeme, jak používáme cookies, {' '}
+          jak shromažďujeme a chráníme vaše data, a jaká práva máte.
+        </p>
+      </header>
 
-        <section className="space-y-3 py-4">
-          <p className="text-primary/80 leading-relaxed">
-            Tento dokument podrobně popisuje, jak naše webová stránka využívá cookies, jaké informace shromažďujeme, k
-            jakým účelům je používáme a jak chráníme vaše data. Veškeré shromážděné informace jsou využívány výhradně {' '}
-            pro naše interní potřeby a sdíleny pouze s důvěryhodnými třetími stranami (např. Google Analytics) za účelem
-            analýzy návštěvnosti.
-          </p>
-        </section>
+      <section className="space-y-3 py-4">
+        <p className="text-primary/80 leading-relaxed">
+          Tento dokument podrobně popisuje, jak naše webová stránka využívá cookies, jaké informace shromažďujeme, k
+          jakým účelům je používáme a jak chráníme vaše data. Veškeré shromážděné informace jsou využívány výhradně {' '}
+          pro naše interní potřeby a sdíleny pouze s důvěryhodnými třetími stranami (např. Google Analytics) za účelem
+          analýzy návštěvnosti.
+        </p>
+      </section>
 
-        {sections.map((section) => (
-          <section key={section.title} className="space-y-3 py-4">
-            <h2 className="text-xl font-semibold text-primary">{section.title}</h2>
-            {section.body?.map((paragraph) => (
-              <p key={paragraph} className="leading-relaxed text-primary/80">
-                {paragraph}
-              </p>
+      {sections.map((section) => (
+        <section key={section.title} className="space-y-3 py-4">
+          <h2 className="text-xl font-semibold text-primary">{section.title}</h2>
+          {section.body?.map((paragraph) => (
+            <p key={paragraph} className="leading-relaxed text-primary/80">
+              {paragraph}
+            </p>
             ))}
-            {section.list ? (
-              <ul className="list-disc space-y-2 pl-6 text-primary/80">
-                {section.list.map((item) => (
-                  <li key={item}>{item}</li>
+          {section.list ? (
+            <ul className="list-disc space-y-2 pl-6 text-primary/80">
+              {section.list.map((item) => (
+                <li key={item}>{item}</li>
                 ))}
-              </ul>
+            </ul>
             ) : null}
-          </section>
+        </section>
         ))}
 
-        <section className="space-y-3 py-4">
-          <h2 className="text-xl font-semibold text-primary">8. Kontaktujte nás</h2>
-          <p className="text-primary/80 leading-relaxed">
-            Pokud máte jakékoli dotazy nebo obavy týkající se našich zásad používání cookies a ochrany osobních údajů,
-            neváhejte nás kontaktovat.
-          </p>
-          <p className="text-primary/80">
-            E-mail:{' '}
-            <Link href={`mailto:${contacts.email}`} className="text-accent hover:text-primary duration-200">
-              {contacts.email}
-            </Link>
-          </p>
-          <p className="text-primary/80">
-            Telefon:{' '}
-            <Link href={`tel:${contacts.tel}`} className="text-accent hover:text-primary duration-200">
-              {contacts.tel}
-            </Link>
-          </p>
-        </section>
-      </div>
+      <ContactSection />
     </main>
   );
 }

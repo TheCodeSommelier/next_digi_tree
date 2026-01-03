@@ -9,6 +9,7 @@ import NavbarItem from './NavbarItem';
 import Button from './Button';
 import PagePadding from './PagePadding';
 import { ROUTES } from '@/app/routes';
+import GradientAnchor from './gradients/GradientAnchor';
 
 const Navbar: FC = () => {
   const navigation = [
@@ -21,10 +22,11 @@ const Navbar: FC = () => {
   const router = useRouter();
 
   return (
-    <nav className="w-full my-12">
+    <nav className="w-full pt-12">
+      <GradientAnchor name="navbarTop" />
       <PagePadding>
-        <div className="relative flex items-center justify-between gap-6 overflow-hidden
-      rounded-full border border-primary/10 bg-white/85 px-6 py-2 shadow-sm shadow-primary/10 backdrop-blur-lg"
+        <div className="relative flex items-center justify-between gap-6 bg-white
+      rounded-full border border-primary/10 px-6 py-2 shadow-sm shadow-primary/10 backdrop-blur-lg"
         >
           <div className="absolute -left-10 -top-12 h-24 w-24 rounded-full blur-3xl" />
           <div className="absolute -right-8 -bottom-16 h-28 w-28 rounded-full blur-3xl" />

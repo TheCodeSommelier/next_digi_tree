@@ -1,23 +1,22 @@
-'use client';
-
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
-import Button from './components/UI/Button';
 import ThreePillarsSection from './components/sections/ThreePillarsSection';
 import ProductsSection from './components/sections/ProductsSection';
 import CtaSection from './components/sections/CtaSection';
 import PagePadding from './components/UI/PagePadding';
 import { ROUTES } from './routes';
 import HowItWorksSection from './components/sections/HowWorksItSection/HowItWorksSection';
+import LinkButton from './components/UI/LinkButton';
+import GradientAnchor from './components/UI/gradients/GradientAnchor';
 
+export const metadata = {
+  title: 'Domů | Digitree',
+  description: 'Digitree - Strategická AI a digitální transformace pro měřitelný růst vašeho podnikání. Pomáháme firmám automatizovat procesy, implementovat umělou inteligenci, navrhovat moderní software a zabezpečit data bez vendor lock-inu. Získejte strategický audit, akční plán a kontinuální optimalizaci pro výrazné zlepšení výkonu.',
+};
 
 export default function Home() {
-  const router = useRouter();
-
-
   return (
-    <div className="min-h-screen from-primary/5 text-primary">
+    <div className="relative min-h-screen from-primary/5 text-primary py-20">
       <main className="mx-auto flex min-h-screen w-full flex-col gap-14">
         <PagePadding>
           {/* hero section */}
@@ -32,8 +31,8 @@ export default function Home() {
                 do komplexního řešení s prokazatelným dopadem na zisk.
               </p>
               <div className="flex gap-3 mt-4">
-                <Button primary onClick={() => router.push(ROUTES.products())}>Přehled balíčků</Button>
-                <Button primary={false} onClick={() => router.push(ROUTES.contact())}>Kontakt</Button>
+                <LinkButton href={ROUTES.products()}>Přehled balíčků</LinkButton>
+                <LinkButton primary={false} href={ROUTES.contact()}>Kontakt</LinkButton>
               </div>
             </div>
 
@@ -44,6 +43,8 @@ export default function Home() {
               className="animate-bounce h-14"
             />
           </section>
+
+          <GradientAnchor name="page-2/4" />
 
           <ThreePillarsSection />
         </PagePadding>
@@ -67,28 +68,23 @@ export default function Home() {
                 inteligenci, moderní software a kybernetickou bezpečnost do jednoho systému. Implementujeme řešení bez
                 vendor lock-inu, s prokazatelným dopadem už v prvních měsících spolupráce.
               </p>
-              <Button primary onClick={() => router.push(ROUTES.aboutUs())} className="bg-accent text-primary hover:bg-white">
-                Více o nás
-              </Button>
+              <LinkButton href={ROUTES.aboutUs()}>Více o nás</LinkButton>
             </div>
           </div>
         </section>
 
-        {/* How it works section */}
-
-
         <PagePadding>
           <ProductsSection />
+
+          <GradientAnchor name="page-3/4" />
 
           <HowItWorksSection />
 
           <CtaSection title='Domluvte si zdarma audit vašich procesů' subtitle='Integrace AI, robustního softwaru a bezpečnosti už není jen trend, ale kritický faktor pro přežití a dominantní růst ve vašem odvětví. Čekání znamená zaostávání.' >
-            <Button onClick={() => router.push(ROUTES.contact())} >Konuzltace zdarma</Button>
-            <Button primary={false} onClick={() => router.push(ROUTES.products())} >Přehled balíčků</Button>
-
+            <LinkButton href={ROUTES.contact()}>Konuzltace zdarma</LinkButton>
+            <LinkButton primary={false} href={ROUTES.products()}>Přehled balíčků</LinkButton>
           </CtaSection>
         </PagePadding>
-
       </main>
     </div>
   );

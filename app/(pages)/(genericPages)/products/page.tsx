@@ -15,6 +15,7 @@ import RadarChartDefault from '@/app/components/UI/charts/radar/RadarChart';
 import Table from '@/app/components/UI/Table';
 import { ROUTES } from '@/app/routes';
 import LinkButton from '@/app/components/UI/LinkButton';
+import GradientAnchor from '@/app/components/UI/gradients/GradientAnchor';
 
 export const metadata = {
   title: 'Produkty'
@@ -27,13 +28,16 @@ export default function ProductsPage() {
   ];
 
   return (
-    <main className="min-h-screen">
+    <main className='text-primary py-20'>
       <ProductsSection />
 
       <section className="space-y-4 text-center py-32">
+        <GradientAnchor name="page-2/4" />
+
         <SectionHeading>
           Nadpis
         </SectionHeading>
+
         <div className="grid gap-6 md:grid-cols-2">
           {chartsProps.map(({ config, data }) => (
             <RadarChartDefault
@@ -58,6 +62,8 @@ export default function ProductsPage() {
           <Table tableRows={tableRows} />
         </div>
       </section>
+
+      <GradientAnchor name="page-3/4" />
 
       <CtaSection title='Nejste si jisti, kde začít?' subtitle='Rádi s vámi projdeme vaše výzvy a najdeme ten nejefektivnější start.'>
         <LinkButton href={ROUTES.contact()}>Konzultace zdarma</LinkButton>
