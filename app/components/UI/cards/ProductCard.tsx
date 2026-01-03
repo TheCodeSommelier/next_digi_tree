@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, MouseEvent, ReactNode, useMemo } from 'react';
+import { FC, ReactNode, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
