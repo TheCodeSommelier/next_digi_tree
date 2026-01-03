@@ -15,5 +15,5 @@ export default function GradientAnchor({ name }: { name: AnchorName }) {
     return () => registerAnchorEl(name, null);
   }, [name, registerAnchorEl]);
 
-  return <div ref={ref} aria-hidden className="h-px w-px opacity-0" />;
+  return <div ref={ref} aria-hidden className="h-px w-px opacity-0 pointer-events-none" />;
 }

@@ -33,8 +33,7 @@ const ProudctCard: FC<Props> = ({
 
   const router = useRouter();
 
-  const handleClick = (e: MouseEvent) => {
-    e.preventDefault();
+  const handleClick = () => {
     router.push(ROUTES.product({ productId }));
   };
 
