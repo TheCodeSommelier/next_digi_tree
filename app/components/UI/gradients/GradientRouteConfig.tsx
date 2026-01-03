@@ -17,7 +17,7 @@ export default function GradientRouteConfig() {
       return [
         { id: 'page-2/4', anchor: 'page-2/4', height: 900 },
         { id: 'page-3/4', anchor: 'page-3/4', height: 1100 },
-        { id: 'footer', anchor: 'footerTop', height: 900 },
+        { id: 'footer', anchor: 'footerTop', height: 1500 },
       ];
     }
 
@@ -37,6 +37,13 @@ export default function GradientRouteConfig() {
         { id: 'footer', anchor: 'footerTop', height: 1500 },
       ];
     }
+
+    if (pathKey === '(pages)/(genericPages)/contacts') {
+      return [
+        { id: 'footer', anchor: 'footerTop', height: 2400 },
+      ];
+    }
+
 
     return [
       { id: 'top', anchor: 'navbarTop', height: 800 },

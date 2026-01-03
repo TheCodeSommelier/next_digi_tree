@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function AboutUsPage() {
   return (
-    <div className="flex w-full flex-col gap-16">
+    <div className="flex w-full flex-col gap-16 py-20">
       <ImageWithOverlay imageUrl="/images/david_presenting.jpg">
         <div className="space-y-4 flex flex-col justify-between h-[550px] px-8 py-10">
           <h1 className="text-7xl font-semibold leading-tight">Digitree</h1>

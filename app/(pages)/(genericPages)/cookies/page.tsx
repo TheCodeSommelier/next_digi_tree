@@ -59,7 +59,7 @@ const sections = [
 
 export default function CookiesPage() {
   return (
-    <div className="flex w-full flex-col gap-8 py-12">
+    <main className="flex w-full flex-col gap-8 py-20">
       <header className="space-y-2 py-4">
         <h1 className="text-4xl font-bold text-primary">Zásady používání cookies a ochrany osobních údajů</h1>
         <p className="text-primary/80">
@@ -96,6 +96,6 @@ export default function CookiesPage() {
         ))}
 
       <ContactSection />
-    </div>
+    </main>
   );
 }

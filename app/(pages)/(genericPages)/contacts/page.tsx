@@ -22,7 +22,7 @@ const contactSections = [
 
 export default function ContactsPage() {
   return (
-    <main className="flex items-center justify-between gap-16 py-20">
+    <main className="flex items-center justify-between gap-16 py-32">
       <ImageWithOverlay imageUrl='/images/david_classroom.png' className='w-1/2 h-[650px] p-10'>
         <div className="flex flex-col justify-between h-full">
           <div className='space-y-3 flex flex-col gap-6'>

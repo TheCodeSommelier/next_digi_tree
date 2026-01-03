@@ -28,7 +28,7 @@ export default function ProductsPage() {
   ];
 
   return (
-    <main>
+    <main className='text-primary py-20'>
       <ProductsSection />
 
       <section className="space-y-4 text-center py-32">

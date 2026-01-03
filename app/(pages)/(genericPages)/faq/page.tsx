@@ -44,7 +44,7 @@ const faqItems: FaqItem[] = [
 
 export default function FaqPage() {
   return (
-    <main className='text-primary'>
+    <main className='text-primary py-20'>
       <GradientAnchor name="navbarTop" />
       <header className="space-y-3 w-full flex justify-center items-center mb-7">
         <h1 className="text-4xl font-semibold leading-tight">FAQ</h1>

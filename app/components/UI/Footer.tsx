@@ -39,8 +39,7 @@ const navigation = [
 
 const Footer: FC = () => {
   return (
-    <footer className="relative overflow-hidden rounded-tl-3xl rounded-tr-3xl bg-primary text-white">
-      <GradientAnchor name="footerTop" />
+    <footer className="relative rounded-tl-3xl rounded-tr-3xl bg-primary text-white">
 
       <div className="relative flex flex-col gap-10 pt-10 pb-20">
         <PagePadding>
@@ -67,13 +66,13 @@ const Footer: FC = () => {
                         <Link
                           href={item.href}
                           className="transition-colors duration-200 hover:text-accent
-                      focus-visible:outline  focus-visible:outline-offset-2 focus-visible:outline-accent"
+                        focus-visible:outline  focus-visible:outline-offset-2 focus-visible:outline-accent"
                         >
                           {item.name}
                         </Link>
                       :
                         <p>{item.text}</p>
-                      }
+                    }
                     </li>
                   ))}
                 </ul>
@@ -91,6 +90,7 @@ const Footer: FC = () => {
           <p>Designed by KeySpace</p>
         </div>
       </PagePadding>
+      <GradientAnchor name="footerTop" />
     </footer>
   );
 };

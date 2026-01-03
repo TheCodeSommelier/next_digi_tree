@@ -16,7 +16,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen from-primary/5 text-primary">
+    <div className="relative min-h-screen from-primary/5 text-primary py-20">
       <main className="mx-auto flex min-h-screen w-full flex-col gap-14">
         <PagePadding>
           {/* hero section */}

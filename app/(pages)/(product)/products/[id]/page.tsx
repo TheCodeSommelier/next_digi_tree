@@ -48,7 +48,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
   if (!id) return null;
 
   return (
-    <main className="relative min-h-screen text-primary flex w-full flex-col gap-16 py-12">
+    <main className="relative min-h-screen text-primary flex w-full flex-col gap-16 py-20">
       <PagePadding>
         {/* Hero */}
         <section

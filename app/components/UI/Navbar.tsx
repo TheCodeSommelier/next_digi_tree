@@ -22,7 +22,7 @@ const Navbar: FC = () => {
   const router = useRouter();
 
   return (
-    <nav className="w-full py-12">
+    <nav className="w-full pt-12">
       <GradientAnchor name="navbarTop" />
       <PagePadding>
         <div className="relative flex items-center justify-between gap-6 bg-white
