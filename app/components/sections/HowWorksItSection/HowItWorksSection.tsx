@@ -8,31 +8,31 @@ import CtaSection from '../CtaSection';
 
 const steps = [
     {
-      id: crypto.randomUUID(),
+      id: 'audit-kpi',
       title: 'Strategický audit a definice KPI',
       body:
         'Důkladně analyzujeme stávající stav, odhalíme kritické slabiny a nadefinujeme konkrétní měřitelné cíle (ROI).',
     },
     {
-      id: crypto.randomUUID(),
+      id: 'roadmap',
       title: 'Akční plán a custom roadmapa',
       body:
         'Sestavíme precizní, hands-on implementační plán s jasnými milníky a prioritami, přesně na míru vašim potřebám.',
     },
     {
-      id: crypto.randomUUID(),
+      id: 'pilot-projects',
       title: 'Rychlá implementace pilotních projektů',
       body:
         'Spustíme rychlé, cílené pilotní projekty (PoC), abychom okamžitě demonstrovali funkčnost a hodnotu řešení.',
     },
     {
-      id: crypto.randomUUID(),
+      id: 'knowledge-transfer',
       title: 'Intenzivní přenos Know-How',
       body:
         'Váš tým nejen proškolíme, ale aktivně jej zapojíme. Předáme veškerou dokumentaci a znalosti pro vaši plnou soběstačnost.',
     },
     {
-      id: crypto.randomUUID(),
+      id: 'continuous-optimization',
       title: 'Kontinuální optimalizace a růst',
       body:
         'Po implementaci nekončíme. Dále sledujeme KPI a aktivně optimalizujeme systém pro neustálé zlepšování a maximální výkon.',
