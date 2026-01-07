@@ -37,6 +37,10 @@ export function GradientProvider({ children }: { children: ReactNode }) {
 
 export function useGradients() {
   const ctx = useContext(GradientContext);
-  if (!ctx) throw new Error('useGradients must be used within GradientProvider');
+
+  if (!ctx) {
+    throw new Error('useGradients must be used within GradientProvider');
+  }
+
   return ctx;
 }

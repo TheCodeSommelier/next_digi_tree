@@ -49,8 +49,7 @@ export default function GradientLayer() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
-      style={{ pointerEvents: 'none', zIndex: -10 }}
+      style={{ pointerEvents: 'none', zIndex: -10, position: 'fixed', overflow: 'hidden', inset: 0 }}
     >
       <div className="absolute left-1/2 top-0 h-full w-screen -translate-x-1/2">
         {resolved.map((g) => {
