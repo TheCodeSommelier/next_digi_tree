@@ -4,10 +4,9 @@ import ThreePillarsSection from '../../../components/sections/ThreePillarsSectio
 import { ROUTES } from '../../../routes';
 import CtaBook from '@/app/components/sections/CtaBook';
 import LinkButton from '@/app/components/UI/LinkButton';
-import GradientAnchor from '@/app/components/UI/gradients/GradientAnchor';
 
 export const metadata = {
-  title: 'O nás'
+  title: 'O nás',
 };
 
 export default function AboutUsPage() {
@@ -28,8 +27,6 @@ export default function AboutUsPage() {
           </div>
         </div>
       </ImageWithOverlay>
-
-      <GradientAnchor name="page-2/4" />
 
       <section className="flex gap-16 space-y-3 py-32">
         <h2 className="text-5xl w-9/10 font-semibold text-primary">Svoboda růstu</h2>
@@ -52,7 +49,6 @@ export default function AboutUsPage() {
         <LinkButton href={ROUTES.contact()}>Konzultace zdarma</LinkButton>
         <LinkButton href={ROUTES.products()} primary={false}>Přehled balíčků</LinkButton>
       </CtaSection>
-      <GradientAnchor name="footerTop" />
     </div>
   );
 }

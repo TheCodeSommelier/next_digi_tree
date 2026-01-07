@@ -30,4 +30,5 @@ const LinkButton: FC<Props> = ({
       </Link>
     );
 };
+
 export default LinkButton;

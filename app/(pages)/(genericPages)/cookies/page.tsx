@@ -1,7 +1,7 @@
 import ContactSection from '@/app/components/sections/ContactSection';
 
 export const metadata = {
-  title: 'Cookies'
+  title: 'Cookies',
 };
 
 const sections = [

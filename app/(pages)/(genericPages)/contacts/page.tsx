@@ -4,7 +4,7 @@ import { contacts } from '../../../consts/consts';
 import { formatPhoneNum } from '../../../utils/stringUtils';
 
 export const metadata = {
-  title: 'Kontakt'
+  title: 'Kontakt',
 };
 
 const contactSections = [

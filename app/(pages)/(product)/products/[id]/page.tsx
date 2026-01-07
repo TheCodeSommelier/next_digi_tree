@@ -10,7 +10,6 @@ import PagePadding from '@/app/components/UI/PagePadding';
 import LinkButton from '@/app/components/UI/LinkButton';
 import { ROUTES } from '@/app/routes';
 import { ProductId } from '@/app/types/Product';
-import GradientAnchor from '@/app/components/UI/gradients/GradientAnchor';
 
 type Params = {
   id: ProductId
@@ -73,8 +72,6 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
           </div>
         </section>
 
-        <GradientAnchor name="page-2/4" />
-
         {/* Results */}
         <section className="space-y-8 text-center py-32">
           <SectionHeading>Transparentní výsledky</SectionHeading>
@@ -134,7 +131,6 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
               </DropdownCard>
             ))}
           </div>
-          <GradientAnchor name="page-3/4" />
         </section>
 
         <CtaSection title="Implementujte AI s Digitree!" subtitle='Nyní je čas proměnit strategii ve funkční AI řešení, které garantuje měřitelné zisky. Udělejte první krok k digitální dominanci.'>
