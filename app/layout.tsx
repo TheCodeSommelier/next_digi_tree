@@ -8,9 +8,6 @@ import Footer from './components/UI/Footer';
 import Navbar from './components/UI/Navbar';
 import CookiesProvider from './providers/cookies/CookieProvider';
 import { BASE_URL } from './consts/consts';
-import { GradientProvider } from './providers/gradients/GradientProvider';
-import GradientRouteConfig from './components/UI/gradients/GradientRouteConfig';
-import GradientLayer from './components/UI/gradients/GradientsLayer';
 
 
 const figtree = Figtree({
@@ -38,13 +35,9 @@ export default function RootLayout({
       >
         <GoogleTagManager gtmId='GTM-P6BQ93SK' />
         <CookiesProvider>
-          <GradientProvider>
-            <GradientLayer />
-            <GradientRouteConfig />
-            <Navbar />
-            {children}
-            <Footer />
-          </GradientProvider>
+          <Navbar />
+          {children}
+          <Footer />
         </CookiesProvider>
       </body>
     </html>

@@ -7,7 +7,6 @@ import PagePadding from './components/UI/PagePadding';
 import { ROUTES } from './routes';
 import HowItWorksSection from './components/sections/HowWorksItSection/HowItWorksSection';
 import LinkButton from './components/UI/LinkButton';
-import GradientAnchor from './components/UI/gradients/GradientAnchor';
 
 export const metadata = {
   title: 'Domů | Digitree',
@@ -44,8 +43,6 @@ export default function Home() {
             />
           </section>
 
-          <GradientAnchor name="page-2/4" />
-
           <ThreePillarsSection />
         </PagePadding>
 
@@ -75,8 +72,6 @@ export default function Home() {
 
         <PagePadding>
           <ProductsSection />
-
-          <GradientAnchor name="page-3/4" />
 
           <HowItWorksSection />
 

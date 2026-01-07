@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { contacts } from '@/app/consts/consts';
 
 export const metadata = {
-  title: 'Zásady ochrany osobních údajů'
+  title: 'Zásady ochrany osobních údajů',
 };
 
 export default function PrivacyPolicyPage() {

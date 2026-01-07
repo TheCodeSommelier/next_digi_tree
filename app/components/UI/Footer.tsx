@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { FC } from 'react';
 import PagePadding from './PagePadding';
 import { ROUTES } from '@/app/routes';
-import GradientAnchor from './gradients/GradientAnchor';
 
 const navigation = [
   {
@@ -90,7 +89,6 @@ const Footer: FC = () => {
           <p>Designed by KeySpace</p>
         </div>
       </PagePadding>
-      <GradientAnchor name="footerTop" />
     </footer>
   );
 };

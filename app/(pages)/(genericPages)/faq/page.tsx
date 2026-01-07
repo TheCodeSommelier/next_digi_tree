@@ -3,10 +3,9 @@ import DropdownCard from '../../../components/UI/DropdownCard';
 import { FaqItem } from '../../../types/Faq';
 import { ROUTES } from '../../../routes';
 import LinkButton from '@/app/components/UI/LinkButton';
-import GradientAnchor from '@/app/components/UI/gradients/GradientAnchor';
 
 export const metadata = {
-  title: 'FAQ'
+  title: 'FAQ',
 };
 
 const faqItems: FaqItem[] = [
@@ -45,7 +44,6 @@ const faqItems: FaqItem[] = [
 export default function FaqPage() {
   return (
     <main className='text-primary py-20'>
-      <GradientAnchor name="navbarTop" />
       <header className="space-y-3 w-full flex justify-center items-center mb-7">
         <h1 className="text-4xl font-semibold leading-tight">FAQ</h1>
       </header>
@@ -69,7 +67,6 @@ export default function FaqPage() {
         <LinkButton href={ROUTES.products()} primary={false}>Přehled balíčků</LinkButton>
       </CtaSection>
 
-      <GradientAnchor name="footerTop" />
     </main>
   );
 }

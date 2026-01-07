@@ -50,11 +50,6 @@ body {
   font-family: var(--font-sans);
 }
 
-[data-gradient-layer],
-[data-gradient-layer] * {
-  pointer-events: none !important;
-}
-
 @keyframes cookie-pop {
   0% {
     opacity: 0;
