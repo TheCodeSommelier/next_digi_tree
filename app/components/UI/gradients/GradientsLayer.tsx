@@ -11,21 +11,33 @@ function clamp(n: number, min: number, max: number) {
 
 export default function GradientLayer() {
   const { gradients, getAnchorY } = useGradients();
+  const [isMounted, setIsMounted] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [viewportHeight, setViewportHeight] = useState(0);
 
   useEffect(() => {
     let raf = 0;
+
     const onScroll = () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => setScrollY(window.scrollY));
     };
+
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const updateViewport = () => setViewportHeight(window.innerHeight);
+    updateViewport();
+    window.addEventListener('resize', updateViewport);
+    return () => {
+      window.removeEventListener('resize', updateViewport);
     };
   }, []);
 
@@ -46,6 +58,10 @@ export default function GradientLayer() {
     }).filter(Boolean) as Array<GradientSpec & { yViewport: number }>;
   }, [gradients, getAnchorY, scrollY]);
 
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <div
       aria-hidden
@@ -61,7 +77,7 @@ export default function GradientLayer() {
             g.radial ??
             'radial-gradient(200% 80% at 50% 50%, var(--color-accent), transparent 65%)';
 
-          const top = clamp(g.yViewport - height / 2, -height, window.innerHeight);
+          const top = clamp(g.yViewport - height / 2, -height, viewportHeight);
 
           return (
             <div
