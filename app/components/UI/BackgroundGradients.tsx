@@ -27,6 +27,15 @@ const gradientsByRoute: Record<string, GradientConfig[]> = {
   ],
   '/contacts': [
     getGradientConfig({ key: GradientKey.BOTTOM, height: '110%', top: '10%' }),
+  ],
+  '/terms-of-service': [
+    getGradientConfig({ key: GradientKey.BOTTOM, height: '110%', top: '10%' }),
+  ],
+  '/privacy-policy': [
+    getGradientConfig({ key: GradientKey.BOTTOM, height: '110%', top: '10%' }),
+  ],
+  '/cookies': [
+    getGradientConfig({ key: GradientKey.BOTTOM, height: '110%', top: '10%' }),
   ]
 };
 
