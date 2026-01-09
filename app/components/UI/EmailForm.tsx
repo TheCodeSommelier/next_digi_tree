@@ -45,9 +45,9 @@ const EmailForm: FC<Props> = ({ buttonLabel = 'Poslat zprávu' }) => {
   };
 
   return (
-    <div className="relative overflow-hidden rounded-3xl px-6 py-7 text-white">
+    <div className="relative overflow-hidden rounded-3xl p-0 md:p-6 text-white">
 
-      <form onSubmit={handleSubmit} className="relative mt-6 space-y-3">
+      <form onSubmit={handleSubmit} className="relative mt-6 space-y-4">
         <TextInput
           id="nameInput"
           name="fullName"
@@ -69,11 +69,10 @@ const EmailForm: FC<Props> = ({ buttonLabel = 'Poslat zprávu' }) => {
           label="Zpráva"
           placeholder="Řekněte nám, co vás zajímá..."
         />
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <Button primary={false} type="submit" className="w-full sm:w-auto">
-            {buttonLabel}
-          </Button>
-        </div>
+
+        <Button primary={false} type="submit" className="w-1/2 mt-3">
+          {buttonLabel}
+        </Button>
       </form>
     </div>
   );

@@ -51,7 +51,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
       <PagePadding>
         {/* Hero */}
         <section
-          className="relative overflow-hidden flex flex-col justify-center items-center rounded-2xl h-[700px] w-full text-white shadow-xl shadow-primary/20"
+          className="relative overflow-hidden flex flex-col justify-center items-center rounded-2xl h-[500px] md:h-[700px] w-full text-white shadow-xl shadow-primary/20"
           style={{
             backgroundImage: `linear-gradient(180deg, rgba(26,26,65,0.4), rgba(26,26,65,0.85)), url('${imageUrl}')`,
             backgroundSize: 'cover',
@@ -59,13 +59,13 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
           }}
         >
           <div className="absolute inset-0" aria-hidden />
-          <div className="relative w-full flex flex-col items-center gap-14 px-8 py-16 text-center">
-            <h1 className="text-4xl font-semibold leading-tight md:text-7xl">{title}</h1>
-            <div className="w-3/7 rounded-lg text-2xl bg-white/10 px-10 py-8 backdrop-blur-lg shadow-lg shadow-black/20">
+          <div className="relative w-full flex flex-col items-center gap-14 px-4 py-8 md:px-8 md:py-16 text-center">
+            <h1 className="text-3xl font-semibold leading-tight md:text-7xl">{title}</h1>
+            <div className="w-full md:w-3/7 rounded-lg text-lg md:text-2xl bg-white/10 px-5 md:px-10 py-6 md:py-8 backdrop-blur-lg shadow-lg shadow-black/20">
               <p className="font-medium text-white mb-4">
                 {subtitle}
               </p>
-              <div className="mt-3 flex justify-center">
+              <div className="w-full md:w-auto mt-3 flex justify-center">
                 <LinkButton href={ROUTES.product({ productId: id })}>Chci balíček</LinkButton>
               </div>
             </div>
@@ -91,7 +91,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
 
       {/* Mid hero */}
       <section
-        className=" flex items-center justify-end relative overflow-hidden w-full text-white h-[600px]"
+        className="flex items-end py-8 md:items-center justify-end relative overflow-hidden w-full text-white h-[600px]"
         style={{
             backgroundImage:
               "linear-gradient(120deg, rgba(26,26,65,0.40), rgba(26,26,65,0.7)), url('/images/david_presenting_2.jpg')",
@@ -115,7 +115,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
 
       <PagePadding>
         {/* Package content */}
-        <section className="space-y-6 text-center py-16">
+        <section className="space-y-6 text-center pt-2 pb-16">
           <SectionHeading>Obsah balíčku</SectionHeading>
           <div className="space-y-3">
             {packageInfo.map((info, index) => (

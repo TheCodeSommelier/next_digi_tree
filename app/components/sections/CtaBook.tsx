@@ -10,7 +10,7 @@ const CtaBook = () => {
   const router = useRouter();
 
   return <section className="grid gap-8 py-32">
-    <div className="relative flex w-full justify-start items-center gap-48">
+    <div className="relative flex flex-col md:flex-row w-full justify-start items-center gap-24 md:gap-48">
       <Image
         src="/images/book.png"
         alt="Digitální zlato kniha"
@@ -25,7 +25,7 @@ const CtaBook = () => {
           Získejte praktický průvodce, jak postavit bezpečné a škálovatelné digitální produkty. Žádné bullshity,
           jen ověřené postupy.
         </p>
-        <Button onClick={() => router.push(ROUTES.getBook())} className='w-1/5'>
+        <Button onClick={() => router.push(ROUTES.getBook())} className='w-1/3 md:w-1/5'>
           Chci knihu
         </Button>
       </div>

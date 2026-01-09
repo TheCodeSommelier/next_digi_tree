@@ -7,6 +7,7 @@ import PagePadding from './components/UI/PagePadding';
 import { ROUTES } from './routes';
 import HowItWorksSection from './components/sections/HowWorksItSection/HowItWorksSection';
 import LinkButton from './components/UI/LinkButton';
+import ImageWithOverlay from './components/UI/ImageWithOverlay';
 
 export const metadata = {
   title: 'Domů | Digitree',
@@ -19,13 +20,13 @@ export default function Home() {
       <main className="mx-auto flex min-h-screen w-full flex-col gap-14">
         <PagePadding>
           {/* hero section */}
-          <section className="h-[600px] text-center flex flex-col items-center justify-between gap-6">
+          <section className="h-[85vh] text-center flex flex-col items-center justify-between gap-6">
             <div className="flex flex-col h-full items-center justify-center gap-7">
-              <h1 className='text-7xl font-bold'>
+              <h1 className='text-4xl md:text-7xl font-bold'>
                 Digitree, měníme strategii
                 v měřitelné výsledky
               </h1>
-              <p className='w-7/12 text-lg font-semibold'>
+              <p className='w-full md:w-7/12 text-lg font-semibold'>
                 Spojujeme umělou inteligenci, software a kybernetickou bezpečnost
                 do komplexního řešení s prokazatelným dopadem na zisk.
               </p>
@@ -47,20 +48,14 @@ export default function Home() {
         </PagePadding>
 
         {/* About us section */}
-        <section
-          className="relative isolate min-h-[600px] overflow-hidden px-32"
-          style={{
-            backgroundImage:
-              "linear-gradient(120deg, rgba(26,26,65,0), rgba(26,26,65,0.90)) , url('/images/david_classroom.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
+        <ImageWithOverlay
+          imageUrl="/images/david_classroom.png"
+          className="relative flex flex-col justify-end md:justify-center isolate min-h-[600px] w-full rounded-none py-14 px-6 md:px-32"
         >
-          <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/40 to-transparent" aria-hidden />
-          <div className="relative right-0 top-1/2 translate-y-2/3 mx-auto flex h-full w-full max-w-6xl flex-col justify-center items-end px-6">
-            <div className="max-w-xl space-y-4">
-              <h2 className="text-5xl font-semibold text-white sm:text-6xl">Poznejte DigiTree</h2>
-              <p className="text-base leading-relaxed text-white/85">
+          <div className="relative md:right-0 mx-auto flex h-full w-full max-w-6xl flex-col items-end px-2 md:px-6">
+            <div className="relative md:max-w-xl space-y-4">
+              <h2 className="text-4xl font-semibold text-white md:text-6xl">Poznejte DigiTree</h2>
+              <p className="w-full text-base leading-relaxed text-white/85">
                 Transformujeme strategii v měřitelné zisky. Dodáváme konkrétní, akční řešení, která spojují umělou
                 inteligenci, moderní software a kybernetickou bezpečnost do jednoho systému. Implementujeme řešení bez
                 vendor lock-inu, s prokazatelným dopadem už v prvních měsících spolupráce.
@@ -68,7 +63,7 @@ export default function Home() {
               <LinkButton href={ROUTES.aboutUs()}>Více o nás</LinkButton>
             </div>
           </div>
-        </section>
+        </ImageWithOverlay>
 
         <PagePadding>
           <ProductsSection />
