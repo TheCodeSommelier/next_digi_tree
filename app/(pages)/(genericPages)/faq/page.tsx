@@ -12,12 +12,12 @@ const faqItems: FaqItem[] = [
   {
     question: 'Kdy uvidíme reálné výsledky?',
     answer:
-      'Žádné čekání. Naše řešení doručují viditelné výsledky již v měsících, ne rocích. S balíčkem AI & Digital Kickstart máte první, hmatatelné výstupy (audit, konkrétní use-cases) do 2 týdnů. Začínáme pracovat HNED, ne za měsíce.',
+      'Žádné čekání. Naše řešení doručují viditelné výsledky již v měsících, ne rocích. S balíčkem šitým na míru máte první hmatatelné výstupy do dvou měsíců. Začínáme pracovat HNED, ne za měsíce.',
   },
   {
     question: 'Jak chráníte naše data a zajišťujete compliance?',
     answer:
-      'Vaše data jsou nedotknutelná. Implementujeme nejpřísnější standardy bezpečnosti a compliance, včetně GDPR, NIS2 a připravovaného AI Act. Žádné trénování AI modelů s vašimi daty, data zpracováváme striktně podle GDPR a jsme připraveni podepsat NDA před prvním kontaktem.',
+      'Implementujeme standardy bezpečnosti a compliance, včetně GDPR, NIS2 a připravovaného AI Act. Data zpracováváme striktně podle GDPR a jsme připraveni podepsat NDA před spoluprací.',
   },
   {
     question: 'Potřebujeme AI bez cloudu. Jste schopni to řešit?',
@@ -61,7 +61,7 @@ export default function FaqPage() {
       <CtaSection
         title='Máte jiné dotazy?' subtitle='Naším cílem je transparentnost a rychlá akcelerace vašeho růstu.
           Pokud potřebujete probrat specifický problém nebo se ujistit o
-          detailech balíčku, neváhejte nás kontaktovat.'
+          detailech služeb, neváhejte nás kontaktovat.'
       >
         <LinkButton href={ROUTES.contact()}>Kontaktovat</LinkButton>
         <LinkButton href={ROUTES.products()} primary={false}>Přehled balíčků</LinkButton>

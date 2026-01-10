@@ -1,6 +1,8 @@
 import { ProductInfo, Result } from '@/app/types/Product';
+import { basicProductInfo } from './basic';
 
-export const effectivityProductInfo: ProductInfo[] = [
+export const growthProductInfo: ProductInfo[] = [
+  ...basicProductInfo,
   {
     title: 'AI & Digitalizace firem',
     text: 'Tato služba pomáhá firmám najít konkrétní AI use-case a vytvořit interní pravidla pro její používání (AI policy).',
@@ -19,31 +21,22 @@ export const effectivityProductInfo: ProductInfo[] = [
       'Navrhujeme přehledné dashboardy s KPI, které vám dávají okamžitý přehled o výkonnosti.'
     ]
   },
-  {
-    title: 'IoT & Telematika pro Byznys',
-    text: 'Tato služba rozšiřuje vaši digitální převahu do fyzického světa a pomáhá získat plnou kontrolu nad vašimi aktivy.',
-    list: [
-      'Navrhujeme a implementujeme komplexní IoT řešení.',
-      'Řešíme celý proces od HW integrace přes vývoj SW (Teltonika/Ruptela/Sherlog) až po certifikace.',
-      'Cílem je přinést efektivitu a nové datové toky tam, kde je to nejvíce potřeba.'
-    ]
-  }
 ];
 
-export const effectivityResults: Result[] = [
+export const growthResults: Result[] = [
   {
     iconUrl: '/images/merge_icon.svg',
     iconAlt: 'merge icon',
-    description: 'Jasnou, akční AI roadmapu na 12 měsíců a interní Al Policy.'
+    description: 'Dodáme funkční řešení pro jeden konkrétní proces a měření dopadu.'
   },
   {
     iconUrl: '/images/lock_icon.svg',
     iconAlt: 'lock icon',
-    description: '100% kontrola nad daty díky návrhu a implementaci on-premise LLM řešení.'
+    description: 'Hotový balíček „AI Governance“: AI Policy + pravidla pro práci s daty a dodavateli + checklist pro schvalování dalších use-casů (interně auditovatelné).'
   },
   {
     iconUrl: '/images/graph_icon.svg',
     iconAlt: 'graph icon',
-    description: 'Funkční PoC demo s ověřeným a měřitelným obchodním dopadem.'
+    description: 'Každý měsíc: 1 report se stavem roadmapy, riziky a doporučeními + min. 3 konkrétní akční kroky (co zlepšit, co automatizovat, co nasadit dál).'
   }
 ];

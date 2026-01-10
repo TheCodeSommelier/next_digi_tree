@@ -34,7 +34,7 @@ const DualRadarChart: FC<Props> = ({ chartConfig, chartData, className = 'h-[500
       >
         <ChartTooltip
           cursor={false}
-          content={<ChartTooltipContent indicator="line" />}
+          content={<ChartTooltipContent className='w-36' />}
         />
         <PolarAngleAxis
           dataKey="month"
@@ -46,8 +46,8 @@ const DualRadarChart: FC<Props> = ({ chartConfig, chartData, className = 'h-[500
                 x={x}
                 y={y + 4}
                 textAnchor={textAnchor}
-                fontSize={12}
-                fontWeight={400}
+                fontSize={16}
+                fontWeight={700}
                 className="fill-primary"
                 {...props}
               >
@@ -62,7 +62,7 @@ const DualRadarChart: FC<Props> = ({ chartConfig, chartData, className = 'h-[500
           dataKey="desktop"
           stroke="var(--color-desktop)"
           fill="var(--color-desktop)"
-          fillOpacity={0.6}
+          fillOpacity={0.3}
           dot={{
             r: 4,
             fillOpacity: 1,
@@ -74,7 +74,7 @@ const DualRadarChart: FC<Props> = ({ chartConfig, chartData, className = 'h-[500
           dataKey="mobile"
           stroke="var(--color-mobile)"
           fill="var(--color-mobile)"
-          fillOpacity={0.3}
+          fillOpacity={0.5}
           dot={{
             r: 3,
             fillOpacity: 1,

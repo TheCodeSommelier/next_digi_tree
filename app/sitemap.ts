@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.85,
-    images: product.imageUrl ? [`${BASE_URL}${product.imageUrl}`] : undefined,
+    images: product.heroImageUrl ? [`${BASE_URL}${product.heroImageUrl}`] : undefined,
   }));
 
   return [

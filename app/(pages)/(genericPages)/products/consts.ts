@@ -31,7 +31,7 @@ export const tableRows = [
   },
   {
     service: 'SW architektura a code review',
-    without: 'Prorůstá neudržitelným kódem a stoupající technický dluh.',
+    without: 'Prorůstá neudržitelným kódem a stoupá technický dluh.',
     with: 'Detailní issue list, roadmapa refaktoringu, zvýšení výkonu.',
   },
   {
@@ -41,7 +41,7 @@ export const tableRows = [
   },
   {
     service: 'Cloud a TCO strategie',
-    without: 'Nekontrolovaný cloudové náklady dusí rozpočet.',
+    without: 'Nekontrolované cloudové náklady dusí rozpočet.',
     with: 'Snížení TCO až o 40%, Cost Optimization Plan, migrace bez downtime.',
   },
   {
@@ -51,61 +51,61 @@ export const tableRows = [
   },
   {
     service: 'IoT & Telematika',
-    without: 'Ztráta přehledu o klíčových aktivech a plýtvání zdroji.',
-    with: 'Funkční architektonické schéma, test plán, spolehlivý deployment runbook.',
+    without: 'Ztráta přehledu o vozovém parku a plýtvání zdroji.',
+    with: 'Funkční přehled vozového parku a efektivní správa.',
   },
 ] as TableRow[];
 
 export const chartWithoutDigiData = [
-  { month: 'January', desktop: 186 },
-  { month: 'February', desktop: 305 },
-  { month: 'March', desktop: 237 },
-  { month: 'April', desktop: 273 },
-  { month: 'May', desktop: 209 },
-  { month: 'June', desktop: 214 },
+  { month: 'AI', desktop: 150 },
+  { month: 'Software', desktop: 182 },
+  { month: 'Compliance', desktop: 191 },
+  { month: 'Cloud', desktop: 110 },
+  { month: 'Procesy', desktop: 65 },
+  { month: 'Telematika', desktop: 75 },
 ] as ChartData[];
 
 export const chartWithoutDigiConfig = {
   desktop: {
-    label: 'Desktop',
+    label: 'bez Digitree',
     color: 'var(--color-primary)',
   },
 } satisfies ChartConfig;
 
 
 export const chartWithDigiData = [
-  { month: 'January', desktop: 186 },
-  { month: 'February', desktop: 305 },
-  { month: 'March', desktop: 237 },
-  { month: 'April', desktop: 273 },
-  { month: 'May', desktop: 209 },
-  { month: 'June', desktop: 214 },
+  { month: 'AI', desktop: 200 },
+  { month: 'Software', desktop: 210 },
+  { month: 'Compliance', desktop: 200 },
+  { month: 'Cloud', desktop: 210 },
+  { month: 'Procesy', desktop: 200 },
+  { month: 'Telematika', desktop: 210 },
 ];
 
 export const chartWithDigiConfig = {
   desktop: {
-    label: 'Desktop',
+    label: 's Digitree',
     color: 'var(--color-accent)',
   },
 } satisfies ChartConfig;
 
 
 export const chartDiffData = [
-  { month: 'January', desktop: 186, mobile: 80 },
-  { month: 'February', desktop: 305, mobile: 200 },
-  { month: 'March', desktop: 237, mobile: 120 },
-  { month: 'April', desktop: 73, mobile: 190 },
-  { month: 'May', desktop: 209, mobile: 130 },
-  { month: 'June', desktop: 214, mobile: 140 },
+  { month: 'AI', desktop: chartWithoutDigiData[0].desktop, mobile: chartWithDigiData[0].desktop },
+  { month: 'Software', desktop: chartWithoutDigiData[1].desktop, mobile: chartWithDigiData[1].desktop },
+  { month: 'Compliance', desktop: chartWithoutDigiData[2].desktop, mobile: chartWithDigiData[2].desktop },
+  { month: 'Cloud', desktop: chartWithoutDigiData[3].desktop, mobile: chartWithDigiData[3].desktop },
+  { month: 'Procesy', desktop: chartWithoutDigiData[4].desktop, mobile: chartWithDigiData[4].desktop },
+  { month: 'Telematika', desktop: chartWithoutDigiData[5].desktop, mobile: chartWithDigiData[5].desktop },
 ];
 
 export const chartDiffConfig = {
   desktop: {
-    label: 'Desktop',
+    label: 'bez Digitree',
     color: 'var(--color-primary)',
   },
   mobile: {
-    label: 'Mobile',
+    label: 's Digitree',
     color: 'var(--color-accent)',
   },
 } satisfies ChartConfig;

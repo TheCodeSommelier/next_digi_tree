@@ -6,6 +6,7 @@ type Props = {
   className?: string;
   isTextArea?: boolean
   rows?: number
+  defaultValue?: string | null
 } & InputHTMLAttributes<HTMLInputElement> & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 const TextInput: FC<Props> = ({
@@ -16,6 +17,7 @@ const TextInput: FC<Props> = ({
   isTextArea = false,
   rows,
   required,
+  defaultValue,
   ...rest
 }) => {
   const inputId = id || rest.name || 'text-input';
@@ -39,6 +41,7 @@ const TextInput: FC<Props> = ({
             text-primary placeholder:text-gray-50 focus:border-accent
             focus:outline-none data-[error=true]:border-error
             data-[error=true]:placeholder:text-error ${className}`}
+          defaultValue={defaultValue ?? undefined}
           {...rest}
         />
       ) : (
@@ -49,6 +52,7 @@ const TextInput: FC<Props> = ({
             font-medium text-primary placeholder:text-gray-50 duration-200
             focus:border-accent focus:outline-none data-[error=true]:border-error
             data-[error=true]:placeholder:text-error ${className}`}
+          defaultValue={defaultValue ?? undefined}
           {...rest}
         />
       )}

@@ -1,6 +1,8 @@
 import { ProductInfo, Result } from '@/app/types/Product';
+import { growthProductInfo } from './growth';
 
-export const cyberProductInfo: ProductInfo[] = [
+export const individualProductInfo: ProductInfo[] = [
+  ...growthProductInfo,
   {
     title: 'AI & Digitalizace firem',
     text: 'Tato služba pomáhá firmám najít konkrétní AI use-case a vytvořit interní pravidla pro její používání (AI policy).',
@@ -30,7 +32,7 @@ export const cyberProductInfo: ProductInfo[] = [
   }
 ];
 
-export const cyberResults: Result[] = [
+export const individualResults: Result[] = [
   {
     iconUrl: '/images/merge_icon.svg',
     iconAlt: 'merge icon',
