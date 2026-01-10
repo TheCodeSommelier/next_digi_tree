@@ -1,11 +1,14 @@
-export type ProductId = 'effectivity' | 'cyber-security' | 'sustainable-tech-stack'
+export type ProductId = 'basic' | 'growth' | 'individual'
 
 export interface Product {
   id: ProductId
   title: string
   subtitle: string
   description: string
-  imageUrl: string
+  heroImageUrl: string
+  midHeroImageUrl: string
+  midHeroDescription: string
+  midHeroTitle: string
   packageInfo: ProductInfo[]
   results: Result[]
 }

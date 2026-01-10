@@ -15,7 +15,7 @@ const ProductsSection = () => {
           productId={product.id}
           title={product.title}
           description={product.description}
-          imageUrl={product.imageUrl}
+          imageUrl={product.heroImageUrl}
         />
       )}
     </div>

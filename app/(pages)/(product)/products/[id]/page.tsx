@@ -42,7 +42,16 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
     throw new Error('No product to be found');
   }
 
-  const { title, subtitle, imageUrl, packageInfo, results } = product;
+  const {
+    title,
+    subtitle,
+    heroImageUrl,
+    packageInfo,
+    results,
+    midHeroImageUrl,
+    midHeroDescription,
+    midHeroTitle
+  } = product;
 
   if (!id) return null;
 
@@ -53,7 +62,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
         <section
           className="relative overflow-hidden flex flex-col justify-center items-center rounded-2xl h-[500px] md:h-[700px] w-full text-white shadow-xl shadow-primary/20"
           style={{
-            backgroundImage: `linear-gradient(180deg, rgba(26,26,65,0.4), rgba(26,26,65,0.85)), url('${imageUrl}')`,
+            backgroundImage: `linear-gradient(180deg, rgba(26,26,65,0.4), rgba(26,26,65,0.85)), url('${heroImageUrl || '/images/ai_hand.png'}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -94,18 +103,15 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
         className="flex items-end py-26 md:items-center justify-end relative overflow-hidden w-full text-white h-[600px]"
         style={{
             backgroundImage:
-              "linear-gradient(120deg, rgba(26,26,65,0.40), rgba(26,26,65,0.7)), url('/images/david_presenting_2.jpg')",
+              `linear-gradient(120deg, rgba(26,26,65,0.40), rgba(26,26,65,0.7)), url('${midHeroImageUrl || '/images/david_presenting_2.jpg'}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'top',
           }}
       >
         <PagePadding>
           <div className="max-w-md space-y-3 rounded-2xl bg-white/10 backdrop-blur-lg p-6 shadow-lg shadow-black/20">
-            <h2 className="text-3xl font-semibold">Neplánujte AI. Implementujte ji hned.</h2>
-            <p className="text-sm text-white/80">
-              Vaše týmy tráví až 60 % času rutinou, zatímco konkurence zrychluje s umělou inteligencí. Chybí vám jasná
-              strategie a bezpečný rámec, jak AI nasadit, aniž byste ohrozili citlivá data.
-            </p>
+            <h2 className="text-3xl font-semibold">{midHeroTitle}</h2>
+            <p className="text-sm text-white/80">{midHeroDescription}</p>
             <Button primary className="bg-accent text-primary hover:bg-white">
               Chci balíček
             </Button>
