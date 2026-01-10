@@ -1,33 +1,60 @@
 import { ProductInfo, Result } from '@/app/types/Product';
-import { growthProductInfo } from './growth';
+import { basicProductInfo } from './basic';
 
 export const individualProductInfo: ProductInfo[] = [
-  ...growthProductInfo,
+  ...basicProductInfo,
   {
-    title: 'AI & Digitalizace firem',
-    text: 'Tato služba pomáhá firmám najít konkrétní AI use-case a vytvořit interní pravidla pro její používání (AI policy).',
+    title: 'Analýza firemních procesů a opakované audity',
+    text: 'Tento korporátní balíček zahrnuje prefernční přístup k novým inovacím z digitálního světa umělé inteligence.',
     list: [
-      'Vždy začínáme Proof-of-Concept (PoC) projekty, které rychle prokážou hodnotu a dají vám kvantifikovatelné výsledky.',
-      'Pro maximální bezpečnost dat implementujeme řešení od cloudových API až po vlastní on-premise nebo edge LLM modely.',
-      'V rámci PoC nasazujeme nástroje jako Copilot a ChatGPT, abychom okamžitě demonstrovali funkčnost.'
+      'Detailní analýza současného stavu a identifikace klíčových oblastí ke zlepšení.',
+      'Nalezení funkčích míst s potenciálem pro implementaci AI technologií.',
+      'Pravidelné individualní bezpečnostní a procesní audity oo odděleních.'
     ]
   },
   {
-    title: 'Procesy & Automatizace',
-    text: 'V rámci této služby provedeme detailní audit a navrhneme optimalizované workflow, abychom eliminovali opakující se úkoly a uvolnili čas vašich týmů pro strategickou práci.',
+    title: 'Návrh a audit firemních směrnic',
+    text: 'Detailně zanalyzujeme vaše stávající firemní směrnice a nařízení, v rámci nichž identifikujeme jejich slabiny.',
     list: [
-      'Cílem je snížit rutinu až o 60%.',
-      'Optimalizujeme vaše procesy pomocí nástrojů jako JIRA, CRM systémy a Power Automate.',
-      'Navrhujeme přehledné dashboardy s KPI, které vám dávají okamžitý přehled o výkonnosti.'
+      'Implementace strategie využití umělé inteligence do firemních směrnic, pro klíčová oddělení.',
+      'Tvorba pozměňovacích návrhů interních směrnic, která reflektuje nejmoderněší technolgie.',
+      'Audit etických a bezpečnostních směrnic v rámci CSR compliance.'
+    ]
+  },
+  {
+    title: 'Compliance workshop a školení vedení',
+    text: 'Praktické školení akcionářů a top managmentu v rámci nejdůležitějsí legislativy.',
+    list: [
+      'Praktické školení GDPR, NIS2, DSA, Ai Act a českých zákonů.',
+      'Specifikace typů dat, která firma smí a nesmí sbírat.',
+      'Specifické školení pro střední a nižší management.'
+    ]
+  },
+  {
+    title: 'Bezpečnostní testy',
+    text: 'Kvartální audit interních informačních systémů.',
+    list: [
+      'Komplexní kontrola interních sítí a komunikačních nástrojů.',
+      'Doporučení pro správu prohlížečů a hesel.',
+      'Identifikace slabých míst v rámci přístupových práv s detailními doporučeními.'
+    ]
+  },
+  {
+    title: 'Trvalá podpora a konzultace',
+    text: 'Online podpora a konzultace šitá na míru vašim potřebám.',
+    list: [
+      'Průběžná podpora a expertní poradenství pro optimalizaci nově implementovaných procesů.',
+      'IT newsletter aktualních novinek podpurujícich fungování AI systémů.',
+      'Funkční adaptační plány na nové technolgie s měsíčním předplatným na dotaz.'
     ]
   },
   {
     title: 'IoT & Telematika pro Byznys',
-    text: 'Tato služba rozšiřuje vaši digitální převahu do fyzického světa a pomáhá získat plnou kontrolu nad vašimi aktivy.',
+    text: 'Tato služba rozšiřuje vaši digitální převahu do fyzického světa a pomáhá získat plnou kontrolu nad vaším vozovým parkem.',
     list: [
-      'Navrhujeme a implementujeme komplexní IoT řešení.',
-      'Řešíme celý proces od HW integrace přes vývoj SW (Teltonika/Ruptela/Sherlog) až po certifikace.',
-      'Cílem je přinést efektivitu a nové datové toky tam, kde je to nejvíce potřeba.'
+      'Navrhujeme a implementujeme komplexní řešení pro váš vozový park.',
+      'Řešíme celý proces od hardwaru integrace přes aplikaci eloktronické knihy jízd.',
+      'Cílem je přinést efektivitu toku financí v rámci managmentu vaší flotily.'
     ]
   }
 ];
@@ -36,16 +63,16 @@ export const individualResults: Result[] = [
   {
     iconUrl: '/images/merge_icon.svg',
     iconAlt: 'merge icon',
-    description: 'Jasnou, akční AI roadmapu na 12 měsíců a interní Al Policy.'
+    description: 'Měřený pokles počtu zjištění a procenta uzavřených nápravných opatření v dohodnutém termínu.'
   },
   {
     iconUrl: '/images/lock_icon.svg',
     iconAlt: 'lock icon',
-    description: '100% kontrola nad daty díky návrhu a implementaci on-premise LLM řešení.'
+    description: 'Návrh funkční privátní AI architektury s 0 úniky dat do veřejných databází. A proškolení zaměstanců.'
   },
   {
     iconUrl: '/images/graph_icon.svg',
     iconAlt: 'graph icon',
-    description: 'Funkční PoC demo s ověřeným a měřitelným obchodním dopadem.'
+    description: 'Dodáme auditovatelný balíček, compliance-ready rámec (GDPR/NIS2/AI Act) pro data AI.'
   }
 ];

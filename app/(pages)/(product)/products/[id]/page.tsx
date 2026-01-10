@@ -48,7 +48,6 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
     heroImageUrl,
     packageInfo,
     results,
-    midHeroImageUrl,
     midHeroDescription,
     midHeroTitle
   } = product;
@@ -103,7 +102,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
         className="flex items-end py-26 md:items-center justify-end relative overflow-hidden w-full text-white h-[600px]"
         style={{
             backgroundImage:
-              `linear-gradient(120deg, rgba(26,26,65,0.40), rgba(26,26,65,0.7)), url('${midHeroImageUrl || '/images/david_presenting_2.jpg'}')`,
+              `linear-gradient(120deg, rgba(26,26,65,0.40), rgba(26,26,65,0.7)), url('/images/david_presenting_2.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'top',
           }}

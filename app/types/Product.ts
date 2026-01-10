@@ -6,9 +6,8 @@ export interface Product {
   subtitle: string
   description: string
   heroImageUrl: string
-  midHeroImageUrl: string
-  midHeroDescription: string
   midHeroTitle: string
+  midHeroDescription: string
   packageInfo: ProductInfo[]
   results: Result[]
 }
