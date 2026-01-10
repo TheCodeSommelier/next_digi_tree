@@ -16,13 +16,13 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen from-primary/5 text-primary py-20">
+    <div className="relative min-h-screen from-primary/5 text-primary">
       <main className="mx-auto flex min-h-screen w-full flex-col gap-14">
         <PagePadding>
           {/* hero section */}
-          <section className="h-[85vh] text-center flex flex-col items-center justify-between gap-6">
+          <section className="h-screen text-center flex flex-col items-center justify-between gap-6 py-26">
             <div className="flex flex-col h-full items-center justify-center gap-7">
-              <h1 className='text-4xl md:text-7xl font-bold'>
+              <h1 className='text-4xl md:text-7xl w-full md:w-3/4 font-bold'>
                 Digitree, měníme strategii
                 v měřitelné výsledky
               </h1>
@@ -30,7 +30,7 @@ export default function Home() {
                 Spojujeme umělou inteligenci, software a kybernetickou bezpečnost
                 do komplexního řešení s prokazatelným dopadem na zisk.
               </p>
-              <div className="flex gap-3 mt-4">
+              <div className="flex gap-3 mt-9">
                 <LinkButton href={ROUTES.products()}>Přehled balíčků</LinkButton>
                 <LinkButton primary={false} href={ROUTES.contact()}>Kontakt</LinkButton>
               </div>
@@ -50,7 +50,7 @@ export default function Home() {
         {/* About us section */}
         <ImageWithOverlay
           imageUrl="/images/david_classroom.png"
-          className="relative flex flex-col justify-end md:justify-center isolate min-h-[600px] w-full rounded-none py-14 px-6 md:px-32"
+          className="relative my-26 flex flex-col justify-end md:justify-center isolate min-h-[750px] w-full rounded-none py-14 px-6 md:px-32"
         >
           <div className="relative md:right-0 mx-auto flex h-full w-full max-w-6xl flex-col items-end px-2 md:px-6">
             <div className="relative md:max-w-xl space-y-4">

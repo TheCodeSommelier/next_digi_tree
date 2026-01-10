@@ -47,7 +47,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
   if (!id) return null;
 
   return (
-    <main className="relative min-h-screen text-primary flex w-full flex-col gap-16 py-20">
+    <main className="relative min-h-screen text-primary flex w-full flex-col gap-16 py-26">
       <PagePadding>
         {/* Hero */}
         <section
@@ -73,7 +73,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
         </section>
 
         {/* Results */}
-        <section className="space-y-8 text-center py-32">
+        <section className="space-y-8 text-center py-26">
           <SectionHeading>Transparentní výsledky</SectionHeading>
           <div className="grid gap-8 md:grid-cols-3">
             {results.map((item) => (
@@ -91,7 +91,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
 
       {/* Mid hero */}
       <section
-        className="flex items-end py-8 md:items-center justify-end relative overflow-hidden w-full text-white h-[600px]"
+        className="flex items-end py-26 md:items-center justify-end relative overflow-hidden w-full text-white h-[600px]"
         style={{
             backgroundImage:
               "linear-gradient(120deg, rgba(26,26,65,0.40), rgba(26,26,65,0.7)), url('/images/david_presenting_2.jpg')",
@@ -115,7 +115,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
 
       <PagePadding>
         {/* Package content */}
-        <section className="space-y-6 text-center pt-2 pb-16">
+        <section className="space-y-6 text-center py-26">
           <SectionHeading>Obsah balíčku</SectionHeading>
           <div className="space-y-3">
             {packageInfo.map((info, index) => (

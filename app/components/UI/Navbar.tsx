@@ -65,7 +65,7 @@ const Navbar: FC = () => {
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-50 w-full pt-12 transition-transform duration-300 ease-out ${
+      className={`fixed left-0 right-0 top-0 z-50 w-full pt-6 transition-transform duration-300 ease-out ${
         isHidden ? '-translate-y-full' : 'translate-y-0'
       }`}
     >

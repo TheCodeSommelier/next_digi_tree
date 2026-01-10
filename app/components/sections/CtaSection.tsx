@@ -11,7 +11,7 @@ type Props = {
   className?: string
 }
 
-const CtaSection: FC<Props> = ({ title, subtitle, children, className = 'py-32' }) => {
+const CtaSection: FC<Props> = ({ title, subtitle, children, className = 'py-26' }) => {
   return <section className={`flex flex-col justify-center items-center gap-4 ${className}`}>
     <SectionHeading className='mb-4'>
       {title}

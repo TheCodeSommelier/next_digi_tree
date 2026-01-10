@@ -53,11 +53,10 @@ export function HowItWorksSection() {
   const lineScale = reduceMotion ? 1 : scrollYProgress;
 
   return (
-    <section ref={ref} className="relative py-32">
+    <section ref={ref} className="relative py-26">
       <CtaSection
         title='Jak to funguje?'
         subtitle='Měříme jen výsledky. Náš pětikrokový proces garantuje, že se vaše strategie rychle a prokazatelně promění v zisky.'
-        className="pb-0 mb-14"
       />
       <div className="mx-auto w-full max-w-6xl">
         <Timeline steps={steps} stepFloat={stepFloat} lineScale={lineScale} />

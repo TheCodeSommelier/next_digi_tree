@@ -11,9 +11,9 @@ export const metadata = {
 
 export default function AboutUsPage() {
   return (
-    <div className="flex w-full flex-col gap-16 py-20">
-      <ImageWithOverlay imageUrl="/images/david_presenting.jpg">
-        <div className="space-y-4 flex flex-col justify-between h-[550px] px-8 py-10">
+    <div className="flex w-full flex-col gap-16 ">
+      <ImageWithOverlay imageUrl="/images/david_presenting.jpg" className='my-26'>
+        <div className="space-y-4 flex flex-col justify-between h-[550px] px-8 py-20">
           <h1 className="text-5xl md:text-7xl font-semibold leading-tight">Digitree</h1>
           <div className='flex flex-col gap-4 w-full md:w-2/3'>
             <p className="text-base leading-relaxed text-white/90">
@@ -28,7 +28,7 @@ export default function AboutUsPage() {
         </div>
       </ImageWithOverlay>
 
-      <section className="flex flex-col md:flex-row gap-16 space-y-3 py-32">
+      <section className="flex flex-col md:flex-row gap-16 space-y-3 py-26">
         <h2 className="text-4xl md:text-5xl w-9/10 font-semibold text-primary">Svoboda růstu</h2>
         <p className="text-primary/70">
           Naše filozofie je jednoduchá: technologie musí sloužit byznysu, ne naopak. Nezatěžujeme vás zbytečnou

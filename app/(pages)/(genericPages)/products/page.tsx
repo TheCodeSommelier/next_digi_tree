@@ -27,10 +27,10 @@ export default function ProductsPage() {
   ];
 
   return (
-    <main className='text-primary py-20'>
+    <main className='text-primary'>
       <ProductsSection />
 
-      <section className="space-y-4 text-center py-32">
+      <section className="space-y-4 text-center py-26">
         <SectionHeading>
           Nadpis
         </SectionHeading>
@@ -51,7 +51,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section className="space-y-6">
+      <section className="space-y-6 py-26">
         <SectionHeading>
           Hlavní technologické výzvy a jejich řešení
         </SectionHeading>

@@ -9,7 +9,7 @@ import { ROUTES } from '@/app/routes';
 const CtaBook = () => {
   const router = useRouter();
 
-  return <section className="grid gap-8 py-32">
+  return <section className="grid gap-8 py-26">
     <div className="relative flex flex-col md:flex-row w-full justify-start items-center gap-24 md:gap-48">
       <Image
         src="/images/book.png"
