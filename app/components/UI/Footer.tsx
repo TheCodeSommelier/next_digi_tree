@@ -24,7 +24,7 @@ const navigation = [
     items: [
       { name: 'digitree label', text: contacts.companyName },
       { name: 'digitree address', text: contacts.address },
-      { name: 'digitree ico', text: contacts.ico },
+      { name: 'digitree ico', text: `IČO ${contacts.ico}` },
       { name: contacts.email, href: `mailto:${contacts.email}` },
       { name: formatPhoneNum(contacts.tel), href: `tel:${contacts.tel}` },
     ],

@@ -6,7 +6,7 @@ import SectionHeading from '../UI/SectionHeading';
 const ProductsSection = () => {
   return <section className="space-y-6 py-26">
     <SectionHeading>
-      Naše balíčky pro růst Vašeho podniku
+      Naše balíčky pro růst vašeho podniku
     </SectionHeading>
     <div className="grid gap-6 md:grid-cols-3">
       {products.map(product =>
