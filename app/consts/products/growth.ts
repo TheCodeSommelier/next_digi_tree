@@ -4,21 +4,21 @@ import { basicProductInfo } from './basic';
 export const growthProductInfo: ProductInfo[] = [
   ...basicProductInfo,
   {
-    title: 'AI & Digitalizace firem',
-    text: 'Tato služba pomáhá firmám najít konkrétní AI use-case a vytvořit interní pravidla pro její používání (AI policy).',
+    title: 'Personalizovaný Follow-up a digitální vedení',
+    text: 'Unikátní služba s individuálním přístupem vůčí vaší společnosti.',
     list: [
-      'Vždy začínáme Proof-of-Concept (PoC) projekty, které rychle prokážou hodnotu a dají vám kvantifikovatelné výsledky.',
-      'Pro maximální bezpečnost dat implementujeme řešení od cloudových API až po vlastní on-premise nebo edge LLM modely.',
-      'V rámci PoC nasazujeme nástroje jako Copilot a ChatGPT, abychom okamžitě demonstrovali funkčnost.'
+      'Kontinuální podpora po implemenataci.',
+      'Personalizované vedení v digitáním prostředí pro zajištění dlouho dobého úspěchu.',
+      'Měsíční předplatné s garantovanou hodinovou podporou.'
     ]
   },
   {
-    title: 'Procesy & Automatizace',
-    text: 'V rámci této služby provedeme detailní audit a navrhneme optimalizované workflow, abychom eliminovali opakující se úkoly a uvolnili čas vašich týmů pro strategickou práci.',
+    title: 'Pravidelné AI novinky a analýzy',
+    text: 'Tento premiový modul vám zajistí náskok před vaší konkurencí.',
     list: [
-      'Cílem je snížit rutinu až o 60%.',
-      'Optimalizujeme vaše procesy pomocí nástrojů jako JIRA, CRM systémy a Power Automate.',
-      'Navrhujeme přehledné dashboardy s KPI, které vám dávají okamžitý přehled o výkonnosti.'
+      'Pravidelný newsletter s nejnovějšími trendy.',
+      'Upozornění na implementaci aktuálních technologií vašeho tech stacku.',
+      'A pravidelná implementace legislativních změn v oblasti digitálních technologií.'
     ]
   },
 ];
@@ -27,16 +27,16 @@ export const growthResults: Result[] = [
   {
     iconUrl: '/images/merge_icon.svg',
     iconAlt: 'merge icon',
-    description: 'Dodáme funkční řešení pro jeden konkrétní proces a měření dopadu.'
+    description: 'Dodáme funkční řešení pro jeden konkrétní proces a měření dopadu na efektivitu.'
   },
   {
     iconUrl: '/images/lock_icon.svg',
     iconAlt: 'lock icon',
-    description: 'Hotový balíček „AI Governance“: AI Policy + pravidla pro práci s daty a dodavateli + checklist pro schvalování dalších use-casů (interně auditovatelné).'
+    description: 'Pravidla pro práci s daty a dodavateli. Checklist pro schvalování dalších use-casů.'
   },
   {
     iconUrl: '/images/graph_icon.svg',
     iconAlt: 'graph icon',
-    description: 'Každý měsíc: 1 report se stavem roadmapy, riziky a doporučeními + min. 3 konkrétní akční kroky (co zlepšit, co automatizovat, co nasadit dál).'
+    description: 'Měsíční report se stavem roadmapy, riziky a doporučeními a 3 konkrétní akční kroky.'
   }
 ];
