@@ -73,7 +73,7 @@ const Navbar: FC = () => {
         <SlidingMenu isOpen={isOpen} navigation={navigation} onClick={setIsOpen} />
       )}
       <PagePadding>
-        <div className="relative flex items-center justify-between gap-6 bg-white/70
+        <div className="relative flex items-center justify-between gap-6 bg-white
       rounded-full border border-primary/10 px-6 py-2 shadow-sm shadow-primary/10 backdrop-blur-lg"
         >
           <div className="absolute -left-10 -top-12 h-24 w-24 rounded-full blur-3xl" />

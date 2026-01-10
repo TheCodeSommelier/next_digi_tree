@@ -32,13 +32,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${figtree.variable} pt-20 antialiased`}
+        className={`${figtree.variable} antialiased`}
       >
         <GoogleTagManager gtmId='GTM-P6BQ93SK' />
         <CookiesProvider>
           <div className="relative min-h-screen">
             <BackgroundGradients />
-            <div className="relative z-10">
+            <div className="relative z-10 pt-20">
               <Navbar />
               {children}
               <Footer />
