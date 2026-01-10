@@ -138,7 +138,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
           </div>
         </section>
 
-        <CtaSection title="Implementujte AI s Digitree!" subtitle='Nyní je čas proměnit strategii ve funkční AI řešení, které garantuje měřitelné zisky. Udělejte první krok k digitální dominanci.'>
+        <CtaSection title="Podpořte svůj růst s Digitree!" subtitle='Nyní je čas proměnit strategii ve funční procesní řešení, které garantuje měřitelné zisky. Udělejte první krok k dominanci na trhu.'>
           <LinkButton href={ROUTES.product({ productId: id })}>Chci balíček</LinkButton>
         </CtaSection>
       </PagePadding>
