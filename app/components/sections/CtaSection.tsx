@@ -11,18 +11,18 @@ type Props = {
   className?: string
 }
 
-const CtaSection: FC<Props> = ({ title, subtitle, children, className = 'py-32' }) => {
+const CtaSection: FC<Props> = ({ title, subtitle, children, className = 'py-26' }) => {
   return <section className={`flex flex-col justify-center items-center gap-4 ${className}`}>
     <SectionHeading className='mb-4'>
       {title}
     </SectionHeading>
 
-    <p className='w-5/12 text-center text-primary'>
+    <p className='w-full md:w-5/12 text-center text-primary'>
       {subtitle}
     </p>
 
     {children &&
-      <div className='flex justify-between items-center gap-3 mt-4'>
+      <div className='flex flex-col md:flex-row justify-between items-center gap-3 mt-4'>
         {children}
       </div>
     }

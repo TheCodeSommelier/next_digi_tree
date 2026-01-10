@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${figtree.variable} antialiased`}
+        className={`${figtree.variable} pt-20 antialiased`}
       >
         <GoogleTagManager gtmId='GTM-P6BQ93SK' />
         <CookiesProvider>

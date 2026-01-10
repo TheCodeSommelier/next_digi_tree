@@ -4,7 +4,7 @@ import Card from '../UI/cards/Card';
 import SectionHeading from '../UI/SectionHeading';
 
 const ThreePillarsSection = () => {
-  return <section className="space-y-6 py-32">
+  return <section className="space-y-6 py-26">
     <SectionHeading>
       3 pilíře, které změní vaše podnikání
     </SectionHeading>

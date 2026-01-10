@@ -65,7 +65,7 @@ const sections = [
 
 export default function TermsOfServicePage() {
   return (
-    <main className="flex w-full flex-col gap-8 py-20">
+    <main className="flex w-full flex-col gap-8 py-26">
       <header className="space-y-2 py-4">
         <h1 className="text-4xl font-bold text-primary">Obchodní podmínky společnosti DigiTree Education, s.r.o.</h1>
         <p className="text-primary/80">

@@ -22,12 +22,12 @@ const DropdownCard: FC<Props> = ({title, children}) => {
          >
     <button
       type="button"
-      className="flex w-full items-center justify-between cursor-pointer p-7 gap-4 text-left"
+      className="flex w-full items-center justify-between cursor-pointer p-4 md:p-7 gap-4 text-left"
       aria-expanded={isOpen}
       onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex items-center gap-3">
-        <p className={`text-2xl font-semibold ${isOpen ? 'text-accent' : 'text-primary'}`}>
+        <p className={`text-lg md:text-2xl font-semibold ${isOpen ? 'text-accent' : 'text-primary'}`}>
           {title}
         </p>
       </div>

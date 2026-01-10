@@ -14,20 +14,14 @@ import { DualChartData } from '@/app/types/Chart';
 type Props = {
   chartConfig: ChartConfig
   chartData: DualChartData[]
-  height?: number
+  className?: string
 }
 
-const DualRadarChart: FC<Props> = ({ chartConfig, chartData, height = 500 }) => {
+const DualRadarChart: FC<Props> = ({ chartConfig, chartData, className = 'h-[500px] max-h-[500px] md:h-[750px] md:max-h-[750px]' }) => {
   return (
     <ChartContainer
       config={chartConfig}
-      className="mx-auto aspect-square"
-      style={
-        {
-          height: height,
-          maxHeight: height
-        }
-      }
+      className={`mx-auto aspect-square ${className}`}
     >
       <RadarChart
         data={chartData}

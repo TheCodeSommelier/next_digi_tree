@@ -1,3 +1,5 @@
+'use client';
+
 import { contacts } from '@/app/consts/consts';
 import { formatPhoneNum } from '@/app/utils/stringUtils';
 import Image from 'next/image';
@@ -5,6 +7,7 @@ import Link from 'next/link';
 import { FC } from 'react';
 import PagePadding from './PagePadding';
 import { ROUTES } from '@/app/routes';
+import { useIsMobile } from '@/app/hooks/useMobile';
 
 const navigation = [
   {
@@ -37,6 +40,9 @@ const navigation = [
 ];
 
 const Footer: FC = () => {
+  const isMobile = useIsMobile(720);
+  const width = isMobile ? 100 : 150;
+
   return (
     <footer className="relative rounded-tl-3xl rounded-tr-3xl bg-primary text-white">
 
@@ -44,9 +50,9 @@ const Footer: FC = () => {
         <PagePadding>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
             <div className="flex flex-col gap-4 space-y-2">
-              <Image src="/images/logo_light.svg" alt="DigiTree company logo" width={150} height={100} />
+              <Image src="/images/logo_light.svg" alt="DigiTree company logo" width={width} height={100} />
 
-              <p className="max-w-xl w-4/5 text-white">
+              <p className="max-w-xl w-4/5 text-white text-sm md:text-base">
                 Digitree je váš partner, který implementuje AI, moderní software
                 a neprůstřelnou bezpečnost pro akceleraci měřitelného růstu vaší firmy.
               </p>
@@ -84,7 +90,7 @@ const Footer: FC = () => {
       <div className="w-full border-t-[0.5px] border-accent" />
 
       <PagePadding>
-        <div className='flex justify-between items-center text-gray-20 py-4 text-sm'>
+        <div className='flex flex-col md:flex-row justify-between items-start md:items-center text-gray-20 py-6 md:py-4 text-sm gap-4 md:gap-0'>
           <p>© {new Date().getFullYear()} DigiTree. Všechna práva vyhrazena.</p>
           <p>Designed by KeySpace</p>
         </div>

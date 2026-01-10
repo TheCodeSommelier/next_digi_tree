@@ -27,34 +27,39 @@ export default function ProductsPage() {
   ];
 
   return (
-    <main className='text-primary py-20'>
+    <main className='text-primary'>
       <ProductsSection />
 
-      <section className="space-y-4 text-center py-32">
+      <section className="space-y-4 text-center py-26">
         <SectionHeading>
           Nadpis
         </SectionHeading>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {chartsProps.map(({ config, data }) => (
-            <RadarChartDefault
-              key={crypto.randomUUID()}
-              chartConfig={config}
-              chartData={data}
-              height={300}
-            />
+        <div className="flex flex-col gap-0 md:gap-12">
+          <div className="flex flex-col md:flex-row gap-6">
+            {chartsProps.map(({ config, data }, index) => (
+              <div key={crypto.randomUUID()} className='w-full flex-col items-center justify-center'>
+                <p className='text-2xl font-semibold'>{index === 1 ? 's Digitree' : 'bez Digitree'}</p>
+                <RadarChartDefault
+                  chartConfig={config}
+                  chartData={data}
+                />
+              </div>
             )
           )}
-        </div>
-        <div className='w-full h-60 flex justify-center items-center mt-24'>
-          <DualRadarChart chartConfig={chartDiffConfig} chartData={chartDiffData} />
+          </div>
+          <DualRadarChart
+            chartConfig={chartDiffConfig}
+            chartData={chartDiffData}
+          />
         </div>
       </section>
 
-      <section className="space-y-6">
+      <section className="space-y-6 py-26">
         <SectionHeading>
           Hlavní technologické výzvy a jejich řešení
         </SectionHeading>
+
         <div className="overflow-hidden rounded-2xl bg-white shadow-lg shadow-gray-50/50">
           <Table tableRows={tableRows} />
         </div>

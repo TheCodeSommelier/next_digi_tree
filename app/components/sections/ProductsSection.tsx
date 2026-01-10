@@ -4,7 +4,7 @@ import ProudctCard from '../UI/cards/ProductCard';
 import SectionHeading from '../UI/SectionHeading';
 
 const ProductsSection = () => {
-  return <section className="space-y-6">
+  return <section className="space-y-6 py-26">
     <SectionHeading>
       Naše balíčky pro růst Vašeho podniku
     </SectionHeading>
