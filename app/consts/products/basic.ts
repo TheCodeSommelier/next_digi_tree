@@ -11,7 +11,7 @@ export const basicProductInfo: ProductInfo[] = [
     ]
   },
   {
-    title: 'Masterclass: Pokročilý přístup k AI',
+    title: 'Masterclass: Pokročilý přístup k AI a firemním procesům',
     text: 'V rámci této služby provedeme detailní audit a navrhneme optimalizované workflow, abychom eliminovali opakující se úkoly a uvolnili čas vašich týmů pro strategickou práci.',
     list: [
       'Hloubkové seznámení s pokročilými AI technologiemi.',

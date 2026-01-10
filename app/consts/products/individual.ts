@@ -5,11 +5,11 @@ export const individualProductInfo: ProductInfo[] = [
   ...basicProductInfo,
   {
     title: 'Analýza firemních procesů a opakované audity',
-    text: 'Tento korporátní balíček zahrnuje prefernční přístup k novým inovacím z digitálního světa umělé inteligence.',
+    text: 'Tento korporátní balíček zahrnuje prefernční přístup k novým inovacím z digitálního světa a umělé inteligence.',
     list: [
       'Detailní analýza současného stavu a identifikace klíčových oblastí ke zlepšení.',
       'Nalezení funkčích míst s potenciálem pro implementaci AI technologií.',
-      'Pravidelné individualní bezpečnostní a procesní audity oo odděleních.'
+      'Pravidelné individualní bezpečnostní a procesní audity po odděleních.'
     ]
   },
   {
@@ -53,7 +53,7 @@ export const individualProductInfo: ProductInfo[] = [
     text: 'Tato služba rozšiřuje vaši digitální převahu do fyzického světa a pomáhá získat plnou kontrolu nad vaším vozovým parkem.',
     list: [
       'Navrhujeme a implementujeme komplexní řešení pro váš vozový park.',
-      'Řešíme celý proces od hardwaru integrace přes aplikaci eloktronické knihy jízd.',
+      'Řešíme celý proces od hardwaru integrace přes aplikaci elektronické knihy jízd.',
       'Cílem je přinést efektivitu toku financí v rámci managmentu vaší flotily.'
     ]
   }
@@ -68,7 +68,7 @@ export const individualResults: Result[] = [
   {
     iconUrl: '/images/lock_icon.svg',
     iconAlt: 'lock icon',
-    description: 'Návrh funkční privátní AI architektury s 0 úniky dat do veřejných databází. A proškolení zaměstanců.'
+    description: 'Návrh funkční privátní AI architektury s 0 úniky dat do veřejných databází. Proškolení zaměstanců.'
   },
   {
     iconUrl: '/images/graph_icon.svg',
