@@ -66,14 +66,14 @@ const Navbar: FC = () => {
   return (
     <nav
       className={`fixed left-0 right-0 top-0 z-50 w-full pt-6 transition-transform duration-300 ease-out ${
-        isHidden ? '-translate-y-full' : 'translate-y-0'
+        isHidden ? '-translate-y-[100px]' : 'translate-y-0'
       }`}
     >
       {isMobile && (
         <SlidingMenu isOpen={isOpen} navigation={navigation} onClick={setIsOpen} />
       )}
       <PagePadding>
-        <div className="relative flex items-center justify-between gap-6 bg-white
+        <div className="relative flex items-center justify-between gap-6 bg-white/70
       rounded-full border border-primary/10 px-6 py-2 shadow-sm shadow-primary/10 backdrop-blur-lg"
         >
           <div className="absolute -left-10 -top-12 h-24 w-24 rounded-full blur-3xl" />

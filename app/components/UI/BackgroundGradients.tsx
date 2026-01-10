@@ -22,7 +22,7 @@ const gradientsByRoute: Record<string, GradientConfig[]> = {
     getGradientConfig({ key: GradientKey.BOTTOM }),
   ],
   '/faq': [
-    getGradientConfig({ key: GradientKey.TOP, height: '50%' }),
+    getGradientConfig({ key: GradientKey.PAGE_QUARTER_TOP, height: '50%' }),
     getGradientConfig({ key: GradientKey.BOTTOM, height: '100%', top: '50%' }),
   ],
   '/contacts': [

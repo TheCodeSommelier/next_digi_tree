@@ -8,7 +8,7 @@ export const growthProductInfo: ProductInfo[] = [
     text: 'Unikátní služba s individuálním přístupem vůčí vaší společnosti.',
     list: [
       'Kontinuální podpora po implemenataci.',
-      'Personalizované vedení v digitáním prostředí pro zajištění dlouho dobého úspěchu.',
+      'Personalizované vedení v digitáním prostředí pro zajištění dlouhodobého úspěchu.',
       'Měsíční předplatné s garantovanou hodinovou podporou.'
     ]
   },
