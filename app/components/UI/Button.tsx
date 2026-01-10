@@ -8,6 +8,7 @@ type Props = {
   className?: string;
   onClick?: (e: MouseEvent) => void
   type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean
 };
 
 const Button: FC<Props> = ({
@@ -16,6 +17,7 @@ const Button: FC<Props> = ({
   className = '',
   onClick,
   type = 'button',
+  disabled = false
 }) => {
   const variantClasses = primary
     ? 'bg-accent text-white border border-transparent hover:border-primary hover:bg-transparent hover:text-primary'
@@ -41,6 +43,7 @@ const Button: FC<Props> = ({
         duration-200 focus-visible:outline focus-visible:outline-offset-2
         focus-visible:outline-accent cursor-pointer ${variantClasses} ${className}`}
       onClick={(e) => handleClick(e)}
+      disabled={disabled}
     >
       {children}
     </button>

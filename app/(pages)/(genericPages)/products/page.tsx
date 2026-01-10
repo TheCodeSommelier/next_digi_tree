@@ -32,7 +32,7 @@ export default function ProductsPage() {
 
       <section className="space-y-4 text-center py-26">
         <SectionHeading>
-          Nadpis
+          Váš růst
         </SectionHeading>
 
         <div className="flex flex-col gap-0 md:gap-12">
@@ -67,7 +67,6 @@ export default function ProductsPage() {
 
       <CtaSection title='Nejste si jisti, kde začít?' subtitle='Rádi s vámi projdeme vaše výzvy a najdeme ten nejefektivnější start.'>
         <LinkButton href={ROUTES.contact()}>Konzultace zdarma</LinkButton>
-        <LinkButton href={ROUTES.products()} primary={false}>Přehled balíčků</LinkButton>
       </CtaSection>
     </main>
   );

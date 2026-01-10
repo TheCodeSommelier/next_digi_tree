@@ -16,19 +16,21 @@ export default function AboutUsPage() {
         <div className="space-y-4 flex flex-col justify-between h-[550px] px-8 py-20">
           <h1 className="text-5xl md:text-7xl font-semibold leading-tight">Digitree</h1>
           <div className='flex flex-col gap-4 w-full md:w-2/3'>
-            <p className="text-base leading-relaxed text-white/90">
+            <p className="text-lg leading-relaxed text-white">
               Naše společnost se specializuje na rychlou a efektivní implementaci technologií, které skutečně mění
               způsob, jakým firmy fungují.
             </p>
 
-            <p className="text-base leading-relaxed text-white/90">Spojujeme umělou inteligenci, moderní softwarová řešení a kybernetickou
-              bezpečnost do komplexního přístupu, který přináší hmatatelné výsledky již v prvních měsících spolupráce.
+            <p className="text-lg leading-relaxed text-white">
+              Spojujeme umělou inteligenci, moderní softwarová řešení a kybernetickou
+              bezpečnost do komplexního přístupu, který přináší hmatatelné výsledky, ve vašich procesech, {' '}
+              již v prvních měsících spolupráce.
             </p>
           </div>
         </div>
       </ImageWithOverlay>
 
-      <section className="flex flex-col md:flex-row gap-16 space-y-3 py-26">
+      <section className="flex flex-col md:flex-row items-center justify-center gap-16 space-y-3 py-26">
         <h2 className="text-4xl md:text-5xl w-9/10 font-semibold text-primary">Svoboda růstu</h2>
         <p className="text-primary/70">
           Naše filozofie je jednoduchá: technologie musí sloužit byznysu, ne naopak. Nezatěžujeme vás zbytečnou
@@ -43,7 +45,7 @@ export default function AboutUsPage() {
       <CtaBook />
 
       <CtaSection
-        title='Investujte do růstu' subtitle='Naším cílem je posílit vás k soběstačnosti a akcelerovat váš růst. Domluvte si nezávaznou diagnostiku a
+        title='Investujte do růstu' subtitle='Naším cílem je posílit vás k soběstačnosti a akcelerovat váš růst. Domluvte si nezávaznou konzultaci a
               odhalte největší příležitosti.'
       >
         <LinkButton href={ROUTES.contact()}>Konzultace zdarma</LinkButton>

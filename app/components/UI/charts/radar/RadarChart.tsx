@@ -24,7 +24,7 @@ const ChartRadarDots: FC<Props> = ({ chartConfig, chartData, className = 'h-[500
       className={`mx-auto aspect-square ${className}`}
     >
       <RadarChart data={chartData}>
-        <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+        <ChartTooltip cursor={false} content={<ChartTooltipContent className='w-36' />} />
         <PolarAngleAxis
           dataKey="month"
           tick={({ x, y, textAnchor, index, ...props }) => {
@@ -36,7 +36,7 @@ const ChartRadarDots: FC<Props> = ({ chartConfig, chartData, className = 'h-[500
                 y={y + 4}
                 textAnchor={textAnchor}
                 fontSize={12}
-                fontWeight={400}
+                fontWeight={600}
                 className="fill-primary"
                 {...props}
               >
