@@ -102,10 +102,10 @@ export const chartDiffData = [
 export const chartDiffConfig = {
   desktop: {
     label: 'Desktop',
-    color: 'var(--color-accent)',
+    color: 'var(--color-primary)',
   },
   mobile: {
     label: 'Mobile',
-    color: 'var(--color-primary)',
+    color: 'var(--color-accent)',
   },
 } satisfies ChartConfig;

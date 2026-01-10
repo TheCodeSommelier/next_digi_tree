@@ -14,20 +14,14 @@ import { ChartData } from '@/app/types/Chart';
 type Props = {
   chartConfig: ChartConfig
   chartData: ChartData[]
-  height?: number
+  className?: string
 }
 
-const ChartRadarDots: FC<Props> = ({ chartConfig, chartData, height = 250 }) => {
+const ChartRadarDots: FC<Props> = ({ chartConfig, chartData, className = 'h-[500] max-h-[500px]' }) => {
   return (
     <ChartContainer
       config={chartConfig}
-      className="mx-auto aspect-square"
-      style={
-        {
-          height: height,
-          maxHeight: height
-        }
-      }
+      className={`mx-auto aspect-square ${className}`}
     >
       <RadarChart data={chartData}>
         <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
