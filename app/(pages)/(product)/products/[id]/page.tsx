@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
 
-import Button from '@/app/components/UI/Button';
 import SectionHeading from '@/app/components/UI/SectionHeading';
 import { products } from '@/app/consts/products/products';
 import DropdownCard from '@/app/components/UI/DropdownCard';
@@ -74,7 +73,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
                 {subtitle}
               </p>
               <div className="w-full md:w-auto mt-3 flex justify-center">
-                <LinkButton href={ROUTES.product({ productId: id })}>Chci balíček</LinkButton>
+                <LinkButton href={ROUTES.contact()}>Chci balíček</LinkButton>
               </div>
             </div>
           </div>
@@ -111,9 +110,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
           <div className="max-w-md space-y-3 rounded-2xl bg-white/10 backdrop-blur-lg p-6 shadow-lg shadow-black/20">
             <h2 className="text-3xl font-semibold">{midHeroTitle}</h2>
             <p className="text-sm text-white/80">{midHeroDescription}</p>
-            <Button primary className="bg-accent text-primary hover:bg-white">
-              Chci balíček
-            </Button>
+            <LinkButton href={ROUTES.contact()}>Chci balíček</LinkButton>
           </div>
         </PagePadding>
       </section>
@@ -139,7 +136,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
         </section>
 
         <CtaSection title="Podpořte svůj růst s Digitree!" subtitle='Nyní je čas proměnit strategii ve funční procesní řešení, které garantuje měřitelné zisky. Udělejte první krok k dominanci na trhu.'>
-          <LinkButton href={ROUTES.product({ productId: id })}>Chci balíček</LinkButton>
+          <LinkButton href={ROUTES.contact()}>Chci balíček</LinkButton>
         </CtaSection>
       </PagePadding>
     </main>

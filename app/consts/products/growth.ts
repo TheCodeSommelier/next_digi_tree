@@ -18,7 +18,7 @@ export const growthProductInfo: ProductInfo[] = [
     list: [
       'Pravidelný newsletter s nejnovějšími trendy.',
       'Upozornění na implementaci aktuálních technologií vašeho tech stacku.',
-      'A pravidelná implementace legislativních změn v oblasti digitálních technologií.'
+      'Pravidelná implementace legislativních změn v oblasti digitálních technologií.'
     ]
   },
 ];
