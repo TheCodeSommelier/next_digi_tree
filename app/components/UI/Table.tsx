@@ -18,18 +18,16 @@ const Table: FC<Props> = ({ tableRows }) => {
           <div
             key={crypto.randomUUID()} className="w-full px-3"
           >
-            <div className="w-full">
-              <div className="flex flex-col gap-4 px-3 py-4 text-left text-primary">
+            <div className="w-full px-3">
+              <div className={`flex flex-col gap-4 py-6 text-left text-primary
+                ${index !== tableRows.length - 1 ? 'border-b border-b-primary' : ''}`}
+              >
                 <p className='text-2xl font-semibold'>{row.service}</p>
-
                 <p className='font-semibold'>bez Digitree</p>
                 <p>{row.without}</p>
                 <p className='text-accent font-semibold'>s Digitree</p>
                 <p>{row.with}</p>
               </div>
-              {index !== tableRows.length - 1 && (
-                <div className="mx-auto h-px w-9/12 bg-primary" />
-              )}
             </div>
           </div>
         ))

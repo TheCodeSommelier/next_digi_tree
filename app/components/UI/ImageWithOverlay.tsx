@@ -12,13 +12,21 @@ type Props = {
 const ImageWithOverlay: FC<Props> = ({ imageUrl, className = 'h-[550px] w-full', children }) => {
   const isMobile = useIsMobile(720);
 
-  const direction = isMobile ? '0deg' : '120deg';
+  let direction = isMobile ? '0deg' : '120deg';
+
+  if (isMobile) {
+    direction = '0deg';
+  }
+
+  if (!isMobile) {
+    direction = '240deg';
+  }
 
   return <section
     className={`overflow-hidden rounded-3xl bg-primary text-white shadow-xl shadow-primary/20 ${className}`}
     style={{
             backgroundImage:
-              `linear-gradient(${direction}, rgba(26,26,65,0.85), rgba(26,26,65,0.4)), url('${imageUrl}')`,
+              `linear-gradient(${direction}, rgba(26,26,65,0.85), rgba(26,26,65,0.2)), url('${imageUrl}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}

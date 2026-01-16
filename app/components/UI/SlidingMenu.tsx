@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { Dispatch, FC, SetStateAction } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 import NavbarItem from './NavbarItem';
 import Button from './Button';
@@ -31,13 +32,15 @@ const SlidingMenu: FC<Props> = ({ isOpen, navigation, onClick }) => {
       aria-hidden={!isOpen}
     >
       <div className="flex items-center justify-between py-2.5">
-        <Image
-          src="/images/logo_dark.svg"
-          alt="DigiTree logo"
-          width={120}
-          height={25}
-          priority
-        />
+        <Link href="/">
+          <Image
+            src="/images/logo_dark.svg"
+            alt="DigiTree logo"
+            width={120}
+            height={25}
+            priority
+          />
+        </Link>
 
         <Image
           src="/images/cross_icon.svg"

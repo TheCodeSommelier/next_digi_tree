@@ -38,20 +38,17 @@ export default function ContactsPage() {
             <div className="space-y-6">
               {contactSections.map(section => (
                 <div key={section.id} className="space-y-2">
-                  <p className="text-base md:text-2xl mb-4 font-semibold">{section.label}</p>
-                  <div className="space-y-1 text-lg text-white/90">
-                    {
-                      section.items.map((item, index) => <p key={index}>{item}</p>)
-                    }
+                  <p className="text-lg md:text-2xl mb-4 font-semibold">{section.label}</p>
+                  <div className="space-y-1 text-sm md:text-base text-white/90">
+                    {section.items.map((item, index) => <p key={index}>{item}</p>)}
                   </div>
                 </div>
-
               ))}
             </div>
           </div>
         </ImageWithOverlay>
 
-        <section className="rounded-2xl text-white">
+        <section className="rounded-2xl text-white" id='contact-form'>
           <EmailForm />
         </section>
       </Suspense>

@@ -2,7 +2,7 @@ import CtaSection from '../../../components/sections/CtaSection';
 import DropdownCard from '../../../components/UI/DropdownCard';
 import { FaqItem } from '../../../types/Faq';
 import { ROUTES } from '../../../routes';
-import LinkButton from '@/app/components/UI/LinkButton';
+import NavigationButton from '@/app/components/UI/NavigationButton';
 
 export const metadata = {
   title: 'FAQ',
@@ -63,8 +63,8 @@ export default function FaqPage() {
           Pokud potřebujete probrat specifický problém nebo se ujistit o
           detailech služeb, neváhejte nás kontaktovat.'
       >
-        <LinkButton href={ROUTES.contact()}>Kontaktovat</LinkButton>
-        <LinkButton href={ROUTES.products()} primary={false}>Přehled balíčků</LinkButton>
+        <NavigationButton href={ROUTES.contact()}>Kontaktovat</NavigationButton>
+        <NavigationButton href={ROUTES.products()} primary={false}>Přehled balíčků</NavigationButton>
       </CtaSection>
     </main>
   );

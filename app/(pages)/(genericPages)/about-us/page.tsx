@@ -3,7 +3,8 @@ import ImageWithOverlay from '../../../components/UI/ImageWithOverlay';
 import ThreePillarsSection from '../../../components/sections/ThreePillarsSection';
 import { ROUTES } from '../../../routes';
 import CtaBook from '@/app/components/sections/CtaBook';
-import LinkButton from '@/app/components/UI/LinkButton';
+import NavigationButton from '@/app/components/UI/NavigationButton';
+import GrowthSection from '@/app/components/sections/GrowthSection';
 
 export const metadata = {
   title: 'O nás',
@@ -12,10 +13,10 @@ export const metadata = {
 export default function AboutUsPage() {
   return (
     <div className="flex w-full flex-col gap-16 ">
-      <ImageWithOverlay imageUrl="/images/david_podcast.jpg" className='my-26'>
-        <div className="space-y-4 flex flex-col justify-between h-[550px] px-8 py-20">
+      <ImageWithOverlay imageUrl="/images/david_podcast.jpg" className='my-26 h-[750px] w-full'>
+        <div className="space-y-4 flex flex-col justify-between h-[750px] px-8 py-20">
           <h1 className="text-5xl md:text-7xl font-semibold leading-tight">Digitree</h1>
-          <div className='flex flex-col gap-4 w-full md:w-2/3'>
+          <div className='flex flex-col gap-4 w-full md:w-1/2'>
             <p className="text-lg leading-relaxed text-white">
               Naše společnost se specializuje na rychlou a efektivní implementaci technologií, které skutečně mění
               způsob, jakým firmy fungují.
@@ -30,15 +31,7 @@ export default function AboutUsPage() {
         </div>
       </ImageWithOverlay>
 
-      <section className="flex flex-col md:flex-row items-center justify-center gap-16 space-y-3 py-26">
-        <h2 className="text-4xl md:text-5xl w-9/10 font-semibold text-primary">Svoboda růstu</h2>
-        <p className="text-primary/70">
-          Naše filozofie je jednoduchá: technologie musí sloužit byznysu, ne naopak. Nezatěžujeme vás zbytečnou
-          komplexitou – automatizujeme rutinní úkoly, optimalizujeme pracovní toky a zajišťujeme, aby každá
-          investice měla jasný a měřitelný dopad. Věříme v partnerský přístup a navrhujeme škálovatelná
-          řešení bez vendor lock-inu, která vám dávají plnou svobodu a flexibilitu.
-        </p>
-      </section>
+      <GrowthSection />
 
       <ThreePillarsSection />
 
@@ -48,7 +41,7 @@ export default function AboutUsPage() {
         title='Investujte do růstu' subtitle='Naším cílem je posílit vás k soběstačnosti a akcelerovat váš růst. Domluvte si nezávaznou konzultaci a
               odhalte největší příležitosti.'
       >
-        <LinkButton href={ROUTES.contact()}>Konzultace zdarma</LinkButton>
+        <NavigationButton href={ROUTES.contact()}>Konzultace zdarma</NavigationButton>
       </CtaSection>
     </div>
   );

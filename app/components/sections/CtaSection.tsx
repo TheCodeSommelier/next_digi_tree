@@ -3,6 +3,7 @@
 import { FC, ReactNode } from 'react';
 
 import SectionHeading from '../UI/SectionHeading';
+import SectionSubheading from '../UI/SectionSubheading';
 
 type Props = {
   title: string
@@ -17,9 +18,9 @@ const CtaSection: FC<Props> = ({ title, subtitle, children, className = 'py-26' 
       {title}
     </SectionHeading>
 
-    <p className='w-full md:w-5/12 text-center text-primary'>
+    <SectionSubheading>
       {subtitle}
-    </p>
+    </SectionSubheading>
 
     {children &&
       <div className='flex flex-col md:flex-row justify-between items-center gap-3 mt-4'>

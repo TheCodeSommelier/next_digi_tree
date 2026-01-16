@@ -14,19 +14,20 @@ export const ROUTES = {
   termsOfService: () => '/terms-of-service',
   privacPolicy: () => '/privacy-policy',
   cookies: () => '/cookies',
-  getBook: () => {
+  getBook: ({ isMobile }: { isMobile: boolean }) => {
     const message = `Dobrý den,
 
-rád bych se informoval ohledně možnosti zakoupení vaší knihy Digitální zlato.
+rád/a bych se informoval/a ohledně možnosti zakoupení vaší knihy Digitální zlato.
 
-Měl bych o knihu vážný zájem a chtěl bych se zeptat na dostupnost, cenu a případně způsob objednání a doručení. Pokud je možné knihu zakoupit i v elektronické podobě, budu rád i za tuto informaci.
+Měl/a bych o knihu vážný zájem a chtěl/a bych se zeptat na dostupnost, cenu a případně způsob objednání a doručení.
 
 Děkuji vám předem za odpověď a budu se těšit na vaše instrukce k objednávce.
 
 S pozdravem,
-Jméno`;
+Jméno Zde`;
 
     const params = new URLSearchParams({ message });
 
-    return `/contacts?${params.toString()}`;;}
+    return `/contacts?${params.toString()}${isMobile ? '#contact-form' : ''}`;
+  }
 };

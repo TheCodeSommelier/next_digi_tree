@@ -20,7 +20,7 @@ const Button: FC<Props> = ({
   disabled = false
 }) => {
   const variantClasses = primary
-    ? 'bg-accent text-white border border-transparent hover:border-primary hover:bg-transparent hover:text-primary'
+    ? 'bg-accent text-white hover:bg-primary'
     : 'border border-primary text-primary hover:border-primary hover:bg-primary hover:text-white';
 
   const handleClick = (e: MouseEvent) => {
