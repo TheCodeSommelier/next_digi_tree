@@ -2,7 +2,7 @@ import CtaSection from '../../../components/sections/CtaSection';
 import DropdownCard from '../../../components/UI/DropdownCard';
 import { FaqItem } from '../../../types/Faq';
 import { ROUTES } from '../../../routes';
-import LinkButton from '@/app/components/UI/LinkButton';
+import LinkButton from '@/app/components/UI/NavigationButton';
 
 export const metadata = {
   title: 'FAQ',

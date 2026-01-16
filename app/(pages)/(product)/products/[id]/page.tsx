@@ -6,7 +6,7 @@ import { products } from '@/app/consts/products/products';
 import DropdownCard from '@/app/components/UI/DropdownCard';
 import CtaSection from '@/app/components/sections/CtaSection';
 import PagePadding from '@/app/components/UI/PagePadding';
-import LinkButton from '@/app/components/UI/LinkButton';
+import LinkButton from '@/app/components/UI/NavigationButton';
 import { ROUTES } from '@/app/routes';
 import { ProductId } from '@/app/types/Product';
 

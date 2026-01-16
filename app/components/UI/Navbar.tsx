@@ -73,12 +73,9 @@ const Navbar: FC = () => {
         <SlidingMenu isOpen={isOpen} navigation={navigation} onClick={setIsOpen} />
       )}
       <PagePadding>
-        <div className="relative flex items-center justify-between gap-6 bg-white/70
-      rounded-full border border-primary/10 px-6 py-2 shadow-sm shadow-primary/10 backdrop-blur-lg"
+        <div className="relative flex items-center justify-between gap-6 bg-white
+      rounded-full border px-6 py-2 shadow-sm shadow-primary/10"
         >
-          <div className="absolute -left-10 -top-12 h-24 w-24 rounded-full blur-3xl" />
-          <div className="absolute -right-8 -bottom-16 h-28 w-28 rounded-full blur-3xl" />
-
           <div className="relative flex items-center gap-3">
             <Link href={ROUTES.home()} className="flex items-center gap-2">
               <Image

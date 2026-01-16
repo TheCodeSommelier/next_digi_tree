@@ -6,7 +6,7 @@ import CtaSection from './components/sections/CtaSection';
 import PagePadding from './components/UI/PagePadding';
 import { ROUTES } from './routes';
 import HowItWorksSection from './components/sections/HowWorksItSection/HowItWorksSection';
-import LinkButton from './components/UI/LinkButton';
+import LinkButton from './components/UI/NavigationButton';
 import ImageWithOverlay from './components/UI/ImageWithOverlay';
 
 export const metadata = {

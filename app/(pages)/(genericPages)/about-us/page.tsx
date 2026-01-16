@@ -3,7 +3,7 @@ import ImageWithOverlay from '../../../components/UI/ImageWithOverlay';
 import ThreePillarsSection from '../../../components/sections/ThreePillarsSection';
 import { ROUTES } from '../../../routes';
 import CtaBook from '@/app/components/sections/CtaBook';
-import LinkButton from '@/app/components/UI/LinkButton';
+import LinkButton from '@/app/components/UI/NavigationButton';
 
 export const metadata = {
   title: 'O nás',
