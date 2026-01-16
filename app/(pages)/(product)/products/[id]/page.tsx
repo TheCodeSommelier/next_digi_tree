@@ -6,7 +6,7 @@ import { products } from '@/app/consts/products/products';
 import DropdownCard from '@/app/components/UI/DropdownCard';
 import CtaSection from '@/app/components/sections/CtaSection';
 import PagePadding from '@/app/components/UI/PagePadding';
-import LinkButton from '@/app/components/UI/NavigationButton';
+import NavigationButton from '@/app/components/UI/NavigationButton';
 import { ROUTES } from '@/app/routes';
 import { ProductId } from '@/app/types/Product';
 
@@ -73,7 +73,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
                 {subtitle}
               </p>
               <div className="w-full md:w-auto mt-3 flex justify-center">
-                <LinkButton href={ROUTES.contact()}>Chci balíček</LinkButton>
+                <NavigationButton href={ROUTES.contact()}>Chci balíček</NavigationButton>
               </div>
             </div>
           </div>
@@ -98,7 +98,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
 
       {/* Mid hero */}
       <section
-        className="flex items-end py-26 md:items-center justify-end relative overflow-hidden w-full text-white h-[600px]"
+        className="flex items-end py-26 relative overflow-hidden w-full text-white h-[600px]"
         style={{
             backgroundImage:
               `linear-gradient(120deg, rgba(26,26,65,0.40), rgba(26,26,65,0.7)), url('/images/david_presenting_2.jpg')`,
@@ -107,10 +107,12 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
           }}
       >
         <PagePadding>
-          <div className="max-w-md space-y-3 rounded-2xl bg-white/10 backdrop-blur-lg p-6 shadow-lg shadow-black/20">
-            <h2 className="text-3xl font-semibold">{midHeroTitle}</h2>
-            <p className="text-sm text-white/80">{midHeroDescription}</p>
-            <LinkButton href={ROUTES.contact()}>Chci balíček</LinkButton>
+          <div className="flex flex-col gap-10 max-w-full md:max-w-3/7 justify-self-center md:justify-self-end rounded-2xl bg-white/10 backdrop-blur-lg p-6">
+            <div className="space-y-6">
+              <h2 className="text-2xl md:text-5xl font-semibold">{midHeroTitle}</h2>
+              <p className="text-sm text-white/80">{midHeroDescription}</p>
+            </div>
+            <NavigationButton className="w-1/2 md:w-1/3" href={ROUTES.contact()}>Chci balíček</NavigationButton>
           </div>
         </PagePadding>
       </section>
@@ -136,7 +138,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
         </section>
 
         <CtaSection title="Podpořte svůj růst s Digitree!" subtitle='Nyní je čas proměnit strategii ve funční procesní řešení, které garantuje měřitelné zisky. Udělejte první krok k dominanci na trhu.'>
-          <LinkButton href={ROUTES.contact()}>Chci balíček</LinkButton>
+          <NavigationButton href={ROUTES.contact()}>Chci balíček</NavigationButton>
         </CtaSection>
       </PagePadding>
     </main>

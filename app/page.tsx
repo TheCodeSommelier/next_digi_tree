@@ -6,7 +6,7 @@ import CtaSection from './components/sections/CtaSection';
 import PagePadding from './components/UI/PagePadding';
 import { ROUTES } from './routes';
 import HowItWorksSection from './components/sections/HowWorksItSection/HowItWorksSection';
-import LinkButton from './components/UI/NavigationButton';
+import NavigationButton from './components/UI/NavigationButton';
 import ImageWithOverlay from './components/UI/ImageWithOverlay';
 
 export const metadata = {
@@ -22,17 +22,17 @@ export default function Home() {
           {/* hero section */}
           <section className="h-screen text-center flex flex-col items-center justify-between gap-6 py-26">
             <div className="flex flex-col h-full items-center justify-center gap-7">
-              <h1 className='text-4xl md:text-7xl w-full md:w-3/4 font-bold'>
+              <h1 className='text-4xl md:text-7xl w-full md:w-3/4 font-bold animate-fade-in-7'>
                 Digitree, měníme strategii
                 v měřitelné výsledky
               </h1>
-              <p className='w-full md:w-7/12 text-lg font-semibold'>
+              <p className='w-full md:w-7/12 text-lg font-semibold animate-fade-in-8'>
                 Spojujeme umělou inteligenci, software a kybernetickou bezpečnost
                 do komplexního řešení s prokazatelným dopadem na zisk.
               </p>
               <div className="flex gap-3 mt-9">
-                <LinkButton href={ROUTES.products()}>Přehled balíčků</LinkButton>
-                <LinkButton primary={false} href={ROUTES.contact()}>Kontakt</LinkButton>
+                <NavigationButton href={ROUTES.products()}>Přehled balíčků</NavigationButton>
+                <NavigationButton primary={false} href={ROUTES.contact()}>Kontakt</NavigationButton>
               </div>
             </div>
 
@@ -60,7 +60,7 @@ export default function Home() {
                 inteligenci, moderní software a kybernetickou bezpečnost do jednoho systému. Implementujeme řešení bez
                 vendor lock-inu, s prokazatelným dopadem už v prvních měsících spolupráce.
               </p>
-              <LinkButton href={ROUTES.aboutUs()}>Více o nás</LinkButton>
+              <NavigationButton href={ROUTES.aboutUs()}>Více o nás</NavigationButton>
             </div>
           </div>
         </ImageWithOverlay>
@@ -71,8 +71,8 @@ export default function Home() {
           <HowItWorksSection />
 
           <CtaSection title='Domluvte si zdarma audit vašich procesů' subtitle='Integrace AI, robustního softwaru a bezpečnosti už není jen trend, ale kritický faktor pro přežití a dominantní růst ve vašem odvětví. Čekání znamená zaostávání.' >
-            <LinkButton href={ROUTES.contact()}>Konuzltace zdarma</LinkButton>
-            <LinkButton primary={false} href={ROUTES.products()}>Přehled balíčků</LinkButton>
+            <NavigationButton href={ROUTES.contact()}>Konuzltace zdarma</NavigationButton>
+            <NavigationButton primary={false} href={ROUTES.products()}>Přehled balíčků</NavigationButton>
           </CtaSection>
         </PagePadding>
       </main>

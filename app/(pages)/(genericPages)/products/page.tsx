@@ -14,7 +14,7 @@ import {
 import RadarChartDefault from '@/app/components/UI/charts/radar/RadarChart';
 import Table from '@/app/components/UI/Table';
 import { ROUTES } from '@/app/routes';
-import LinkButton from '@/app/components/UI/NavigationButton';
+import NavigationButton from '@/app/components/UI/NavigationButton';
 
 export const metadata = {
   title: 'Produkty',
@@ -66,7 +66,7 @@ export default function ProductsPage() {
       </section>
 
       <CtaSection title='Nejste si jisti, kde začít?' subtitle='Rádi s vámi projdeme vaše výzvy a najdeme ten nejefektivnější start.'>
-        <LinkButton href={ROUTES.contact()}>Konzultace zdarma</LinkButton>
+        <NavigationButton href={ROUTES.contact()}>Konzultace zdarma</NavigationButton>
       </CtaSection>
     </main>
   );

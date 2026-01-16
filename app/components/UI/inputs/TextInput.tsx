@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
+import { FC, FormEvent, InputHTMLAttributes, TextareaHTMLAttributes, useEffect, useRef } from 'react';
 
 type Props = {
   label?: string;
@@ -7,6 +7,7 @@ type Props = {
   isTextArea?: boolean
   rows?: number
   defaultValue?: string | null
+  autoResize?: boolean
 } & InputHTMLAttributes<HTMLInputElement> & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 const TextInput: FC<Props> = ({
@@ -18,9 +19,31 @@ const TextInput: FC<Props> = ({
   rows,
   required,
   defaultValue,
+  autoResize = false,
+  onInput,
   ...rest
 }) => {
   const inputId = id || rest.name || 'text-input';
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const resizeTextarea = () => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+    textarea.style.height = 'auto';
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  };
+
+  useEffect(() => {
+    if (!isTextArea || !autoResize) return;
+    resizeTextarea();
+  }, [isTextArea, autoResize, defaultValue]);
+
+  const handleTextareaInput = (event: FormEvent<HTMLTextAreaElement>) => {
+    if (autoResize) {
+      resizeTextarea();
+    }
+    (onInput as TextareaHTMLAttributes<HTMLTextAreaElement>['onInput'])?.(event);
+  };
 
   return (
     <div className="space-y-1.5" data-error-indicator>
@@ -42,6 +65,8 @@ const TextInput: FC<Props> = ({
             focus:outline-none data-[error=true]:border-error
             data-[error=true]:placeholder:text-error ${className}`}
           defaultValue={defaultValue ?? undefined}
+          ref={textareaRef}
+          onInput={handleTextareaInput}
           {...rest}
         />
       ) : (

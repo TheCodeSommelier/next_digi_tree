@@ -18,7 +18,7 @@ const DropdownCard: FC<Props> = ({title, children}) => {
 
   return <article
     key={title}
-    className="overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-md shadow-primary/10 transition-transform duration-200 hover:-translate-y-0.5"
+    className="overflow-hidden rounded-2xl bg-white shadow-md shadow-primary/10 transition-transform duration-200 hover:-translate-y-0.5"
          >
     <button
       type="button"

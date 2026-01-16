@@ -9,12 +9,14 @@ type Props = {
   primary?: boolean;
   href: string
   children: ReactNode;
+  className?: string
 };
 
-const LinkButton: FC<Props> = ({
+const NavigationButton: FC<Props> = ({
   primary = true,
   href,
   children,
+  className
 }) => {
   const router = useRouter();
 
@@ -26,10 +28,11 @@ const LinkButton: FC<Props> = ({
       <Button
         primary={primary}
         onClick={handleNavigation}
+        className={className}
       >
         {children}
       </Button>
     );
 };
 
-export default LinkButton;
+export default NavigationButton;

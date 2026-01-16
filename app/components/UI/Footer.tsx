@@ -92,7 +92,11 @@ const Footer: FC = () => {
       <PagePadding>
         <div className='flex flex-col md:flex-row justify-between items-start md:items-center text-gray-20 py-6 md:py-4 text-sm gap-4 md:gap-0'>
           <p>© {new Date().getFullYear()} DigiTree. Všechna práva vyhrazena.</p>
-          <p>Designed by KeySpace</p>
+
+          <p>
+            Designed by {' '}
+            <Link href="www.keyspace.cz" className='text-accent hover:text-white duration-200'>KeySpace</Link>
+          </p>
         </div>
       </PagePadding>
     </footer>

@@ -58,7 +58,7 @@ const EmailForm: FC<Props> = ({ buttonLabel = 'Poslat zprávu' }) => {
     <div className="relative overflow-hidden">
       {
         isSent ? (
-          <div className='text-primary flex flex-col items-center justify-center gap-6 animate-in fade-in slide-in-from-bottom-25 duration-300'>
+          <div className='text-primary flex flex-col items-center justify-center gap-6 animate-fade-in-8'>
             <Image src="/images/checkmark_icon.svg" width={75} height={75} alt="Checked icon" />
             <p className='text-2xl font-semibold w-auto'>Odesláno</p>
             <p className='text-center'>
@@ -68,7 +68,7 @@ const EmailForm: FC<Props> = ({ buttonLabel = 'Poslat zprávu' }) => {
             <Button className='mt-8' primary={false} onClick={() => setIsSent(false)}>Chci poslat další email</Button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="relative mt-6 space-y-4 animate-in fade-in slide-in-from-bottom-25 duration-300">
+          <form onSubmit={handleSubmit} className="relative mt-6 space-y-4 animate-fade-in-8">
             <TextInput
               id="nameInput"
               name="fullName"
@@ -87,6 +87,7 @@ const EmailForm: FC<Props> = ({ buttonLabel = 'Poslat zprávu' }) => {
               id="messageInput"
               name="message"
               isTextArea
+              autoResize
               label="Zpráva"
               placeholder="Řekněte nám, co vás zajímá..."
               defaultValue={defaultMessage}
