@@ -14,7 +14,7 @@ const CtaBook = () => {
   const isMobile = useIsMobile(720);
 
   return <section className="grid gap-8 py-26">
-    <div className="relative flex flex-col md:flex-row w-full justify-start items-center gap-24 md:gap-48">
+    <div className="relative flex flex-col md:flex-row w-full justify-start items-center gap-24 xl:gap-48">
       <Image
         src="/images/book.png"
         alt="Digitální zlato kniha"
@@ -31,7 +31,7 @@ const CtaBook = () => {
           Bude přínosem, pro vaše zaměstnance a zároveň bezpečnost vaší společnosti.
         </SectionSubheading>
 
-        <Button onClick={() => router.push(ROUTES.getBook({ isMobile }))} className='w-1/3 md:w-1/5'>
+        <Button onClick={() => router.push(ROUTES.getBook({ isMobile }))} className='w-1/3 md:w-1/2 xl:w-1/5'>
           Chci knihu
         </Button>
       </div>

@@ -36,7 +36,7 @@ export default function ProductsPage() {
         </SectionHeading>
 
         <div className="flex flex-col gap-0 md:gap-12">
-          <div className="flex flex-col md:flex-row gap-6">
+          <div className="flex flex-col xl:flex-row gap-6">
             {chartsProps.map(({ config, data }, index) => (
               <div key={crypto.randomUUID()} className='w-full flex-col items-center justify-center'>
                 <p className='text-2xl font-semibold'>{index === 1 ? 's Digitree' : 'bez Digitree'}</p>

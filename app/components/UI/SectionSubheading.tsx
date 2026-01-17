@@ -13,7 +13,7 @@ type Props = {
 
 const SectionSubheading: FC<Props> = ({
   children,
-  className = 'w-2/4',
+  className = 'w-3/4 lg:w-2/4',
   animationClassName = 'animate-fade-in-7',
   rootMargin = '0px 0px -10% 0px',
   threshold = 0.2,

@@ -68,7 +68,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
           <div className="absolute inset-0" aria-hidden />
           <div className="relative w-full flex flex-col items-center gap-14 px-4 py-8 md:px-8 md:py-16 text-center">
             <h1 className="text-3xl font-semibold leading-tight md:text-7xl">{title}</h1>
-            <div className="w-full md:w-3/7 rounded-lg text-lg md:text-2xl bg-white/10 px-5 md:px-10 py-6 md:py-8 backdrop-blur-lg shadow-lg shadow-black/20">
+            <div className="w-full md:w-4/7 lg:w-5/7 xl:w-3/7 rounded-lg text-lg md:text-2xl bg-white/10 px-5 md:px-10 py-6 md:py-8 backdrop-blur-lg shadow-lg shadow-black/20">
               <p className="font-medium text-white mb-4">
                 {subtitle}
               </p>
@@ -107,7 +107,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
           }}
       >
         <PagePadding>
-          <div className="flex flex-col gap-10 max-w-full md:max-w-3/7 justify-self-center md:justify-self-end rounded-2xl bg-white/10 backdrop-blur-lg p-6">
+          <div className="flex flex-col gap-10 max-w-full md:max-w-4/7 xl:max-w-3/7 justify-self-center md:justify-self-end rounded-2xl bg-white/10 backdrop-blur-lg p-6">
             <div className="space-y-6">
               <h2 className="text-2xl md:text-5xl font-semibold">{midHeroTitle}</h2>
               <p className="text-sm text-white/80">{midHeroDescription}</p>
