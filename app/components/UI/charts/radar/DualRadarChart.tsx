@@ -17,7 +17,7 @@ type Props = {
   className?: string
 }
 
-const DualRadarChart: FC<Props> = ({ chartConfig, chartData, className = 'h-[500px] max-h-[500px] md:h-[750px] md:max-h-[750px]' }) => {
+const DualRadarChart: FC<Props> = ({ chartConfig, chartData, className = 'h-[500px] max-h-[500px] xl:h-[750px] xl:max-h-[750px]' }) => {
   return (
     <ChartContainer
       config={chartConfig}

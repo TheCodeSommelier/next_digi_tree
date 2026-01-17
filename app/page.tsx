@@ -22,11 +22,11 @@ export default function Home() {
           {/* hero section */}
           <section className="h-screen text-center flex flex-col items-center justify-between gap-6 py-26">
             <div className="flex flex-col h-full items-center justify-center gap-7">
-              <h1 className='text-4xl md:text-7xl w-full md:w-3/4 font-bold animate-fade-in-7'>
+              <h1 className='text-4xl md:text-7xl w-full lg:w-3/4 font-bold animate-fade-in-7'>
                 Digitree, měníme strategii
                 v měřitelné výsledky
               </h1>
-              <p className='w-full md:w-7/12 text-lg font-semibold animate-fade-in-8'>
+              <p className='w-full md:w-9/12 lg:w-7/12 text-lg font-semibold animate-fade-in-8'>
                 Spojujeme umělou inteligenci, software a kybernetickou bezpečnost
                 do komplexního řešení s prokazatelným dopadem na zisk.
               </p>
