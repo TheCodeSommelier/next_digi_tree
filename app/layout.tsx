@@ -8,19 +8,44 @@ import Footer from './components/UI/Footer';
 import Navbar from './components/UI/Navbar';
 import BackgroundGradients from './components/UI/BackgroundGradients';
 import CookiesProvider from './providers/cookies/CookieProvider';
+import { headers } from 'next/headers';
+import { getBaseUrlFromHeaders, SITE_DESC } from './consts/consts';
 
 const figtree = Figtree({
   variable: '--font-figtree',
   subsets: ['latin']
 });
 
-export const metadata: Metadata = {
-  title: {
+export async function generateMetadata(): Promise<Metadata> {
+  const baseUrl = getBaseUrlFromHeaders(await headers());
+  const title = {
     default: 'Digitree',
     template: '%s | Digitree',
-  },
-  manifest: '/manifest.webmanifest'
-};
+  };
+
+  return {
+    metadataBase: new URL(baseUrl),
+    title,
+    description: SITE_DESC,
+    themeColor: 'black',
+    openGraph: {
+      title,
+      description: SITE_DESC,
+      url: baseUrl,
+      images: [
+        {
+          url: '/opengraph-image.png',
+          width: 1200,
+          height: 630,
+          alt: 'Digitree Education classroom photo with the text: "Digitree, měníme strategii v měřitelné výsledky."',
+        },
+      ],
+      type: 'website',
+      siteName: 'Digitree',
+    },
+    manifest: '/manifest.webmanifest',
+  };
+}
 
 export default function RootLayout({
   children,

@@ -1,10 +1,11 @@
 import type { MetadataRoute } from 'next';
+import { SITE_DESC } from './consts/consts';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Digitree – AI & Digital Transformation',
     short_name: 'Digitree',
-    description: 'Digitree pomáhá firmám růst pomocí AI, automatizace a moderních digitálních řešení.',
+    description: SITE_DESC,
     start_url: '/',
     scope: '/',
     display: 'standalone',
