@@ -6,6 +6,8 @@ export const contacts = {
   address: 'U Hodin 122, 110 00 Praha'
 } as const;
 
+export const SITE_DESC = 'Digitree pomáhá firmám růst pomocí AI, automatizace a moderních digitálních řešení.' as const;
+
 export const isProduction = process.env.NODE_ENV === 'production';
 
 export const getBaseUrlFromHeaders = (
