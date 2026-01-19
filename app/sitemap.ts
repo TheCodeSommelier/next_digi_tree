@@ -1,85 +1,87 @@
 import type { MetadataRoute } from 'next';
-import { BASE_URL } from './consts/consts';
+import { headers } from 'next/headers';
+import { getBaseUrlFromHeaders } from './consts/consts';
 import { products } from './consts/products/products';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = getBaseUrlFromHeaders(await headers());
   const threePillarsPics = [
-    `${BASE_URL}/images/cyber_sec.png`,
-    `${BASE_URL}/images/metrics.png`,
-    `${BASE_URL}/images/server_room.png`,
+    `${baseUrl}/images/cyber_sec.png`,
+    `${baseUrl}/images/metrics.png`,
+    `${baseUrl}/images/server_room.png`,
   ];
 
   const productsPics = [
-    `${BASE_URL}/images/ai_hand.png`,
-    `${BASE_URL}/images/hacking.png`,
-    `${BASE_URL}/images/planner.png`,
+    `${baseUrl}/images/ai_hand.png`,
+    `${baseUrl}/images/hacking.png`,
+    `${baseUrl}/images/planner.png`,
   ];
 
   const productUrls = products.map((product) => ({
-    url: `${BASE_URL}/products/${product.id}`,
+    url: `${baseUrl}/products/${product.id}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.85,
-    images: product.heroImageUrl ? [`${BASE_URL}${product.heroImageUrl}`] : undefined,
+    images: product.heroImageUrl ? [`${baseUrl}${product.heroImageUrl}`] : undefined,
   }));
 
   return [
     {
-      url: BASE_URL,
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1.0,
       images: [
-        `${BASE_URL}/images/david_classroom.png`,
+        `${baseUrl}/images/david_classroom.png`,
         ...threePillarsPics,
         ...productsPics,
       ],
     },
     {
-      url: `${BASE_URL}/products`,
+      url: `${baseUrl}/products`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
       images: productsPics,
     },
     {
-      url: `${BASE_URL}/about-us`,
+      url: `${baseUrl}/about-us`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
       images: [
-        `${BASE_URL}/images/david_presenting.jpg`,
-        `${BASE_URL}/images/book.png`,
+        `${baseUrl}/images/david_presenting.jpg`,
+        `${baseUrl}/images/book.png`,
         ...threePillarsPics,
       ],
     },
     {
-      url: `${BASE_URL}/contact`,
+      url: `${baseUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.85,
-      images: [`${BASE_URL}/images/david_classroom.png`],
+      images: [`${baseUrl}/images/david_classroom.png`],
     },
     {
-      url: `${BASE_URL}/faq`,
+      url: `${baseUrl}/faq`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/cookies`,
+      url: `${baseUrl}/cookies`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
-      url: `${BASE_URL}/privacy-policy`,
+      url: `${baseUrl}/privacy-policy`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
-      url: `${BASE_URL}/terms-of-service`,
+      url: `${baseUrl}/terms-of-service`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
