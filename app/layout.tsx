@@ -8,8 +8,6 @@ import Footer from './components/UI/Footer';
 import Navbar from './components/UI/Navbar';
 import BackgroundGradients from './components/UI/BackgroundGradients';
 import CookiesProvider from './providers/cookies/CookieProvider';
-import { BASE_URL } from './consts/consts';
-
 
 const figtree = Figtree({
   variable: '--font-figtree',
@@ -21,7 +19,7 @@ export const metadata: Metadata = {
     default: 'Digitree',
     template: '%s | Digitree',
   },
-  manifest: `${BASE_URL}/manifest.webmanifest`
+  manifest: '/manifest.webmanifest'
 };
 
 export default function RootLayout({

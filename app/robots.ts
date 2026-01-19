@@ -1,8 +1,11 @@
 import type { MetadataRoute } from 'next';
+import { headers } from 'next/headers';
 
-import { BASE_URL, isProduction } from './consts/consts';
+import { getBaseUrlFromHeaders, isProduction } from './consts/consts';
 
-export default function robots(): MetadataRoute.Robots {
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const baseUrl = getBaseUrlFromHeaders(await headers());
+
   return {
     rules: {
       userAgent: '*',
@@ -11,6 +14,6 @@ export default function robots(): MetadataRoute.Robots {
       ? ['/cookies', '/privacy-policy', '/terms-of-service']
       : ['/'],
     },
-    sitemap: isProduction ? `${BASE_URL}/sitemap.xml` : undefined,
+    sitemap: isProduction ? `${baseUrl}/sitemap.xml` : undefined,
   };
 }
