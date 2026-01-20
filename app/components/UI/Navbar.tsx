@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 import NavbarItem from './NavbarItem';
-import Button from './Button';
+import Button from './buttons/Button';
 import PagePadding from './PagePadding';
 import { ROUTES } from '@/app/routes';
 import { useIsMobile } from '@/app/hooks/useMobile';

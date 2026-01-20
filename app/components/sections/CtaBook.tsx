@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-import Button from '../UI/Button';
+import Button from '../UI/buttons/Button';
 import { ROUTES } from '@/app/routes';
 import { useIsMobile } from '@/app/hooks/useMobile';
 import SectionHeading from '../UI/SectionHeading';

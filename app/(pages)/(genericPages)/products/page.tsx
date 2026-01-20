@@ -14,7 +14,7 @@ import {
 import RadarChartDefault from '@/app/components/UI/charts/radar/RadarChart';
 import Table from '@/app/components/UI/Table';
 import { ROUTES } from '@/app/routes';
-import NavigationButton from '@/app/components/UI/NavigationButton';
+import NavigationButton from '@/app/components/UI/buttons/NavigationButton';
 
 export const metadata = {
   title: 'Produkty',

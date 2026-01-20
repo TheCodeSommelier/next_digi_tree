@@ -3,7 +3,7 @@ import ImageWithOverlay from '../../../components/UI/ImageWithOverlay';
 import ThreePillarsSection from '../../../components/sections/ThreePillarsSection';
 import { ROUTES } from '../../../routes';
 import CtaBook from '@/app/components/sections/CtaBook';
-import NavigationButton from '@/app/components/UI/NavigationButton';
+import NavigationButton from '@/app/components/UI/buttons/NavigationButton';
 import GrowthSection from '@/app/components/sections/GrowthSection';
 
 export const metadata = {

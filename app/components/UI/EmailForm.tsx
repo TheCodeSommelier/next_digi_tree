@@ -2,7 +2,7 @@
 
 import { FC, FormEvent, useState } from 'react';
 
-import Button from './Button';
+import Button from './buttons/Button';
 import TextInput from './inputs/TextInput';
 import { validateEmailForm } from '@/app/utils/feValidations/validateEmailForm';
 import { setFieldErrorState } from '@/app/utils/setFieldErrorState';
@@ -10,6 +10,7 @@ import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ROUTES } from '@/app/routes';
+import { ButtonVariant } from '@/app/types/Button';
 
 type Props = {
   title?: string;
@@ -65,7 +66,7 @@ const EmailForm: FC<Props> = ({ buttonLabel = 'Poslat zprávu' }) => {
               Vážíme si Vaší zprávy a v nejbližší době se jí budeme věnovat. {' '}
               Zatímco se věnujeme Vaší žádosti, projděte si naše <Link className='hover:text-accent border-b pb-px duration-200' href={ROUTES.products()}>produkty</Link>.
             </p>
-            <Button className='mt-8' primary={false} onClick={() => setIsSent(false)}>Chci poslat další email</Button>
+            <Button className='mt-8' variant={ButtonVariant.Secondary} onClick={() => setIsSent(false)}>Chci poslat další email</Button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="relative mt-6 space-y-4 animate-fade-in-8">
@@ -93,7 +94,7 @@ const EmailForm: FC<Props> = ({ buttonLabel = 'Poslat zprávu' }) => {
               defaultValue={defaultMessage}
             />
 
-            <Button primary={false} disabled={isSent} type="submit" className="w-1/2 mt-3">
+            <Button variant={ButtonVariant.Secondary} disabled={isSent} type="submit" className="w-1/2 mt-3">
               {buttonLabel}
             </Button>
           </form>
