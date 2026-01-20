@@ -6,8 +6,9 @@ import CtaSection from './components/sections/CtaSection';
 import PagePadding from './components/UI/PagePadding';
 import { ROUTES } from './routes';
 import HowItWorksSection from './components/sections/HowWorksItSection/HowItWorksSection';
-import NavigationButton from './components/UI/NavigationButton';
+import NavigationButton from './components/UI/buttons/NavigationButton';
 import ImageWithOverlay from './components/UI/ImageWithOverlay';
+import { ButtonVariant } from './types/Button';
 
 export const metadata = {
   title: 'Domů | Digitree',
@@ -32,7 +33,7 @@ export default function Home() {
               </p>
               <div className="flex gap-3 mt-9">
                 <NavigationButton href={ROUTES.products()}>Přehled balíčků</NavigationButton>
-                <NavigationButton primary={false} href={ROUTES.contact()}>Kontakt</NavigationButton>
+                <NavigationButton variant={ButtonVariant.Secondary} href={ROUTES.contact()}>Kontakt</NavigationButton>
               </div>
             </div>
 
@@ -72,7 +73,12 @@ export default function Home() {
 
           <CtaSection title='Domluvte si zdarma audit vašich procesů' subtitle='Integrace AI, robustního softwaru a bezpečnosti už není jen trend, ale kritický faktor pro přežití a dominantní růst ve vašem odvětví. Čekání znamená zaostávání.' >
             <NavigationButton href={ROUTES.contact()}>Konuzltace zdarma</NavigationButton>
-            <NavigationButton primary={false} href={ROUTES.products()}>Přehled balíčků</NavigationButton>
+            <NavigationButton
+              variant={ButtonVariant.Secondary}
+              href={ROUTES.products()}
+            >
+              Přehled balíčků
+            </NavigationButton>
           </CtaSection>
         </PagePadding>
       </main>

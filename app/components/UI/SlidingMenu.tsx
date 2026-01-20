@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 import NavbarItem from './NavbarItem';
-import Button from './Button';
+import Button from './buttons/Button';
 import { ROUTES } from '@/app/routes';
 
 type Props = {

@@ -4,16 +4,17 @@ import { useRouter } from 'next/navigation';
 import { FC, ReactNode } from 'react';
 
 import Button from './Button';
+import { ButtonVariant } from '@/app/types/Button';
 
 type Props = {
-  primary?: boolean;
+  variant?: ButtonVariant;
   href: string
   children: ReactNode;
   className?: string
 };
 
 const NavigationButton: FC<Props> = ({
-  primary = true,
+  variant = ButtonVariant.Primary,
   href,
   children,
   className
@@ -26,7 +27,7 @@ const NavigationButton: FC<Props> = ({
 
     return (
       <Button
-        primary={primary}
+        variant={variant}
         onClick={handleNavigation}
         className={className}
       >
