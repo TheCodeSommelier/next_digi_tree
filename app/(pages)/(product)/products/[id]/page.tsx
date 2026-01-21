@@ -107,7 +107,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
           }}
       >
         <PagePadding>
-          <div className="flex flex-col gap-10 max-w-full md:max-w-4/7 xl:max-w-3/7 justify-self-center md:justify-self-end rounded-2xl bg-white/10 backdrop-blur-lg p-6">
+          <div className="flex flex-col gap-10 max-w-full md:max-w-4/7 xl:max-w-3/7 mx-auto md:mx-0 md:ml-auto rounded-2xl bg-white/10 backdrop-blur-lg p-6">
             <div className="space-y-6">
               <h2 className="text-2xl md:text-5xl font-semibold">{midHeroTitle}</h2>
               <p className="text-sm text-white/80">{midHeroDescription}</p>
