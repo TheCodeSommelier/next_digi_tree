@@ -95,7 +95,7 @@ const Footer: FC = () => {
 
           <p>
             Designed by {' '}
-            <Link href="https://www.keyspace.cz" className='text-accent hover:text-white duration-200'>KeySpace</Link>
+            <Link href="https://www.keyspace.cz" target='_blank' className='text-accent hover:text-white duration-200'>KeySpace</Link>
           </p>
         </div>
       </PagePadding>
