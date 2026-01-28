@@ -11,6 +11,9 @@ export type CookiePreferences = {
 type CookiesContextValue = {
   preferences: CookiePreferences;
   setPreferences: (prefs: CookiePreferences) => void;
+  acceptAll: () => void;
+  rejectAll: () => void;
+  save: () => void;
 };
 
 export const CookiesContext = createContext<CookiesContextValue | undefined>(undefined);
