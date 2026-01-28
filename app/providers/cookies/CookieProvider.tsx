@@ -41,11 +41,6 @@ const CookiesProvider = ({ children }: { children: ReactNode }) => {
     updateGtmConsent(preferences);
   }, [preferences, hasConsented]);
 
-  const value = useMemo(
-    () => ({ preferences, setPreferences }),
-    [preferences]
-  );
-
   const acceptAll = () => {
     setPreferences({ necessary: true, analytics: true, marketing: true });
     setHasConsented(true);
@@ -60,17 +55,16 @@ const CookiesProvider = ({ children }: { children: ReactNode }) => {
     setHasConsented(true);
   };
 
+  const value = useMemo(
+    () => ({ preferences, setPreferences, acceptAll, rejectAll, save }),
+    [preferences]
+  );
+
   return (
     <CookiesContext.Provider value={value}>
       {children}
       {!hasConsented && (
-        <CookieBanner
-          preferences={preferences}
-          onChange={setPreferences}
-          onAcceptAll={acceptAll}
-          onRejectAll={rejectAll}
-          onSave={save}
-        />
+        <CookieBanner />
       )}
     </CookiesContext.Provider>
   );

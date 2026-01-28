@@ -34,7 +34,7 @@ const Button: FC<Props> = ({
   }
 
   if (variant === ButtonVariant.Ghost) {
-    variantClasses = 'border border-transparent text-primary hover:border-primary hover:bg-primary hover:text-white';
+    variantClasses = 'border border-transparent text-primary hover:text-accent';
   }
 
   const handleClick = (e: MouseEvent) => {

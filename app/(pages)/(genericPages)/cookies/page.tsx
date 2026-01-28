@@ -1,4 +1,5 @@
 import ContactSection from '@/app/components/sections/ContactSection';
+import CookieSettings from '@/app/components/UI/CookieSettings';
 
 export const metadata = {
   title: 'Cookies',
@@ -62,6 +63,7 @@ export default function CookiesPage() {
     <main className="flex w-full flex-col gap-8 py-26">
       <header className="space-y-2 py-4">
         <h1 className="text-4xl font-bold text-primary">Zásady používání cookies a ochrany osobních údajů</h1>
+        <CookieSettings isPage={true} />
         <p className="text-primary/80">
           Vážení návštěvníci, vážíme si vašeho soukromí a transparentnosti. Níže popisujeme, jak používáme cookies, {' '}
           jak shromažďujeme a chráníme vaše data, a jaká práva máte.
