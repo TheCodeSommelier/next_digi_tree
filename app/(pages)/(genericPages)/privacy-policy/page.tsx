@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
           1. Úvodní ustanovení
         </h2>
         <p className="text-primary/80 leading-relaxed">
-          Společnost DigiTree Education, s.r.o., IČ: {contacts.ico}, se sídlem
+          Společnost DigiTree Education, s.r.o., IČ: {contacts.ico}, se sídlem{" "}
           {contacts.address} (dále jen „Společnost“), jakožto správce osobních
           údajů, prohlašuje, že veškeré zpracování osobních údajů je prováděno v
           souladu s platnými právními předpisy České republiky a Evropské unie,
