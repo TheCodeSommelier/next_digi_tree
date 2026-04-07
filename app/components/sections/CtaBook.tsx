@@ -17,7 +17,7 @@ const CtaBook = () => {
     <section className="grid gap-8 py-26">
       <div className="relative flex flex-col md:flex-row w-full justify-start items-center gap-24 xl:gap-48">
         <Image
-          src="/images/book.jpg"
+          src="/images/book.JPG"
           alt="Digitální zlato kniha"
           width={320}
           height={400}
