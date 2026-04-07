@@ -8,7 +8,7 @@ import Link from "next/link";
 const CoursesSection = () => {
   return (
     <section className="space-y-6 py-26">
-      <SectionHeading>3 pilíře, které změní vaše podnikání</SectionHeading>
+      <SectionHeading>Oblasti poradenství</SectionHeading>
       <div className="grid gap-6 md:grid-cols-3">
         <Link href={ROUTES.courses({ courseId: "processes" })}>
           <Card

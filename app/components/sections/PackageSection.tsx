@@ -12,7 +12,6 @@ const PackageSection = () => {
             key={product.id}
             productId={product.id}
             title={product.title}
-            description={product.description}
             imageUrl={product.heroImageUrl}
           />
         ))}

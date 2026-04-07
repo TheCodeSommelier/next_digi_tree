@@ -1,50 +1,84 @@
-import CtaSection from '../../../components/sections/CtaSection';
-import DropdownCard from '../../../components/UI/DropdownCard';
-import { FaqItem } from '../../../types/Faq';
-import { ROUTES } from '../../../routes';
-import NavigationButton from '@/app/components/UI/buttons/NavigationButton';
-import { ButtonVariant } from '@/app/types/Button';
+import CtaSection from "../../../components/sections/CtaSection";
+import DropdownCard from "../../../components/UI/DropdownCard";
+import { FaqItem } from "../../../types/Faq";
+import { ROUTES } from "../../../routes";
+import NavigationButton from "@/app/components/UI/buttons/NavigationButton";
+import { ButtonVariant } from "@/app/types/Button";
 
 export const metadata = {
-  title: 'FAQ',
+  title: "FAQ",
 };
 
 const faqItems: FaqItem[] = [
   {
-    question: 'Kdy uvidíme reálné výsledky?',
+    question: "Kdy uvidíme reálné výsledky?",
     answer:
-      'Žádné čekání. Naše řešení doručují viditelné výsledky již v měsících, ne rocích. S balíčkem šitým na míru máte první hmatatelné výstupy do dvou měsíců. Začínáme pracovat HNED, ne za měsíce.',
+      "Žádné čekání. Naše řešení doručují viditelné výsledky již v měsících, ne rocích. S balíčkem šitým na míru máte první hmatatelné výstupy do dvou měsíců. Začínáme pracovat HNED, ne za měsíce.",
   },
   {
-    question: 'Jak chráníte naše data a zajišťujete compliance?',
+    question: "Jak chráníte naše data a zajišťujete compliance?",
     answer:
-      'Implementujeme standardy bezpečnosti a compliance, včetně GDPR, NIS2 a připravovaného AI Act. Data zpracováváme striktně podle GDPR a jsme připraveni podepsat NDA před spoluprací.',
+      "Implementujeme standardy bezpečnosti a compliance, včetně GDPR, NIS2 a připravovaného AI Act. Data zpracováváme striktně podle GDPR a jsme připraveni podepsat NDA před spoluprací.",
   },
   {
-    question: 'Potřebujeme AI bez cloudu. Jste schopni to řešit?',
+    question: "Potřebujeme AI bez cloudu. Jste schopni to řešit?",
     answer:
-      'Absolutně. Chcete držet data u sebe? Navrhneme a implementujeme on-premise nebo edge AI řešení s open-source LLM (LLAMA, Mistral). Získáte tak 100% kontrolu nad vašimi daty, přímo ve vaší infrastruktuře.',
+      "Absolutně. Chcete držet data u sebe? Navrhneme a implementujeme on-premise nebo edge AI řešení s open-source LLM (LLAMA, Mistral). Získáte tak 100% kontrolu nad vašimi daty, přímo ve vaší infrastruktuře.",
   },
   {
-    question: 'Můžete prověřit náš stávající kód a architekturu?',
+    question: "Můžete prověřit náš stávající kód a architekturu?",
     answer:
-      'To je naše silná stránka! Provedeme hloubkovou analýzu vašeho kódu, odhalíme bezpečnostní trhliny, technický dluh a kritické bottlenecky. Dostanete prioritizovaný akční plán refaktoringu, který okamžitě sníží rizika a zvýší výkon.',
+      "To je naše silná stránka! Provedeme hloubkovou analýzu vašeho kódu, odhalíme bezpečnostní trhliny, technický dluh a kritické bottlenecky. Dostanete prioritizovaný akční plán refaktoringu, který okamžitě sníží rizika a zvýší výkon.",
   },
   {
-    question: 'Jak zajistíte, že náš tým vše plně pochopí a převezme?',
+    question: "Jak zajistíte, že náš tým vše plně pochopí a převezme?",
     answer:
-      'Žádné černé skříňky. Školíme formou intenzivních workshopů (2–4 hodiny) nebo 1:1 sessionů. Předáváme kompletní dokumentaci, praktické playbooky a videozáznamy. Náš cíl je jasný: Váš tým bude soběstačný a plně kompetentní.',
+      "Žádné černé skříňky. Školíme formou intenzivních workshopů (2–4 hodiny) nebo 1:1 sessionů. Předáváme kompletní dokumentaci, praktické playbooky a videozáznamy. Náš cíl je jasný: Váš tým bude soběstačný a plně kompetentní.",
   },
   {
-    question: 'Jak měříte náš společný úspěch a reportujete pokrok?',
+    question: "Jak měříte náš společný úspěch a reportujete pokrok?",
     answer:
-      'Měříme jen to podstatné. Na startu společně definujeme 3–5 klíčových, měřitelných KPI (např. snížení času na report o 50 %, pokles incidentů o 30 %, optimalizace cloudových nákladů o 40 %). Každý týden transparentní status report, na konci projektu detailní zpráva s prokázaným dosažením cílů.',
+      "Měříme jen to podstatné. Na startu společně definujeme 3–5 klíčových, měřitelných KPI (např. snížení času na report o 50 %, pokles incidentů o 30 %, optimalizace cloudových nákladů o 40 %). Každý týden transparentní status report, na konci projektu detailní zpráva s prokázaným dosažením cílů.",
+  },
+  {
+    question: "Pro jaké firmy jsou vaše služby vhodné?",
+    answer:
+      "Naše služby jsou vhodné pro firmy, které chtějí zlepšit fungování procesů, managementu, spolupráce mezi týmy nebo rozvoj lidí. Nejčastěji spolupracujeme s organizacemi, které rostou, procházejí změnou, chtějí posílit vedení lidí nebo lépe propojit procesy, komunikaci a modernizaci firmy.",
+  },
+  {
+    question:
+      "Pomůžete nám i v případě, že si nejsme jistí, co přesně potřebujeme?",
+    answer:
+      "Ano. Právě s tím firmám často pomáháme na začátku spolupráce. Ne každá organizace umí přesně pojmenovat, jestli je hlavní problém v procesech, komunikaci, managementu nebo technologiích. Pomůžeme vám zorientovat se v situaci, pojmenovat klíčové potřeby a navrhnout smysluplný další postup.",
+  },
+  {
+    question: "Děláte jen školení, nebo i skutečné změny ve fungování firmy?",
+    answer:
+      "Neděláme jen školení. Vzdělávání je pro nás jedna z částí celkového rozvoje firmy, ale často navazuje na procesní poradenství, změny v řízení, nastavení odpovědností nebo zlepšení spolupráce mezi týmy. Naším cílem je, aby se změny propsaly i do každodenní praxe, ne aby zůstaly jen u jednorázového workshopu.",
+  },
+  {
+    question:
+      "Umíte pomoci i s komunikací mezi odděleními nebo mezi managementem a týmy?",
+    answer:
+      "Ano. To je jedna z oblastí, kterou firmy řeší velmi často. Pomáháme zlepšovat komunikaci mezi odděleními, nastavovat jasnější očekávání, snižovat tření mezi týmy a podporovat spolupráci tam, kde se firmy potýkají s nepochopením, frustrací nebo nejasným rozdělením odpovědností.",
+  },
+  {
+    question:
+      "Jak probíhá spolupráce, pokud chceme zlepšit management nebo fungování firmy?",
+    answer:
+      "Spolupráce vždy záleží na konkrétní situaci firmy, ale obvykle začíná úvodní konzultací nebo analýzou vybrané oblasti. Na základě toho navrhneme vhodný postup, který může zahrnovat procesní audit, úpravu odpovědností, rozvoj managementu, workshopy pro týmy nebo podporu při zavádění změn. Snažíme se, aby spolupráce byla praktická, srozumitelná a navázaná na reálné fungování organizace.",
+  },
+  {
+    question:
+      "Dokážete propojit procesy, lidi a digitalizaci do jednoho řešení?",
+    answer:
+      "Ano. Právě v tom je náš přístup silný. Firmám nepomáháme jen s jednou izolovanou oblastí, ale díváme se na fungování organizace jako na celek. Když dává smysl spojit procesní změnu, rozvoj managementu, vzdělávání lidí a digitalizaci nebo AI, navrhujeme řešení tak, aby jednotlivé části na sebe navazovaly a podporovaly jeden společný cíl.",
   },
 ];
 
 export default function FaqPage() {
   return (
-    <main className='text-primary py-26'>
+    <main className="text-primary py-26">
       <header className="space-y-3 w-full flex justify-center items-center mb-10">
         <h1 className="text-4xl font-semibold leading-tight">FAQ</h1>
       </header>
@@ -60,12 +94,18 @@ export default function FaqPage() {
       </section>
 
       <CtaSection
-        title='Máte jiné dotazy?' subtitle='Naším cílem je transparentnost a rychlá akcelerace vašeho růstu.
+        title="Máte jiné dotazy?"
+        subtitle="Naším cílem je transparentnost a rychlá akcelerace vašeho růstu.
           Pokud potřebujete probrat specifický problém nebo se ujistit o
-          detailech služeb, neváhejte nás kontaktovat.'
+          detailech služeb, neváhejte nás kontaktovat."
       >
         <NavigationButton href={ROUTES.contact()}>Kontaktovat</NavigationButton>
-        <NavigationButton href={ROUTES.products()} variant={ButtonVariant.Secondary}>Přehled balíčků</NavigationButton>
+        <NavigationButton
+          href={ROUTES.products()}
+          variant={ButtonVariant.Secondary}
+        >
+          Přehled balíčků
+        </NavigationButton>
       </CtaSection>
     </main>
   );

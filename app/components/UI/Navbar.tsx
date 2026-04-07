@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { FC, useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { FC, useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-import NavbarItem from './NavbarItem';
-import Button from './buttons/Button';
-import PagePadding from './PagePadding';
-import { ROUTES } from '@/app/routes';
-import { useIsMobile } from '@/app/hooks/useMobile';
-import SlidingMenu from './SlidingMenu';
+import NavbarItem from "./NavbarItem";
+import Button from "./buttons/Button";
+import PagePadding from "./PagePadding";
+import { ROUTES } from "@/app/routes";
+import { useIsMobile } from "@/app/hooks/useMobile";
+import SlidingMenu from "./SlidingMenu";
 
 const Navbar: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,10 +19,10 @@ const Navbar: FC = () => {
   const isTicking = useRef(false);
 
   const navigation = [
-    { href: ROUTES.products(), label: 'Produkty' },
-    { href: ROUTES.aboutUs(), label: 'O nás' },
-    { href: ROUTES.faq(), label: 'FAQ' },
-    { href: ROUTES.contact(), label: 'Kontakty' },
+    { href: ROUTES.products(), label: "Produkty" },
+    { href: ROUTES.aboutUs(), label: "O nás" },
+    { href: ROUTES.faq(), label: "FAQ" },
+    { href: ROUTES.contact(), label: "Kontakty" },
   ];
 
   const router = useRouter();
@@ -56,24 +56,29 @@ const Navbar: FC = () => {
       });
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <div
       className={`fixed left-0 right-0 top-0 z-50 w-ful pt-6 transition-transform duration-300 ease-out ${
-        isHidden ? '-translate-y-[100px]' : 'translate-y-0'
+        isHidden ? "-translate-y-[100px]" : "translate-y-0"
       }`}
     >
       {isMobile && (
-        <SlidingMenu isOpen={isOpen} navigation={navigation} onClick={setIsOpen} />
+        <SlidingMenu
+          isOpen={isOpen}
+          navigation={navigation}
+          onClick={setIsOpen}
+        />
       )}
       <PagePadding>
-        <nav className="relative flex items-center justify-between gap-6 bg-white
+        <nav
+          className="relative flex items-center justify-between gap-6 bg-white
       rounded-full border px-6 py-2 shadow-sm shadow-primary/10"
         >
           <div className="relative flex items-center gap-3">
@@ -97,7 +102,12 @@ const Navbar: FC = () => {
                 aria-controls="mobile-menu"
                 onClick={handleClick}
               >
-                <Image src="/images/burger_menu_icon.svg" width={25} height={25} alt='Burger menu Icon' />
+                <Image
+                  src="/images/burger_menu_icon.svg"
+                  width={25}
+                  height={25}
+                  alt="Burger menu Icon"
+                />
               </button>
             </div>
           ) : (
@@ -107,11 +117,13 @@ const Navbar: FC = () => {
                   <NavbarItem key={item.href} href={item.href}>
                     {item.label}
                   </NavbarItem>
-              ))}
+                ))}
               </div>
 
               <div className="relative flex items-center gap-3">
-                <Button onClick={() => router.push(ROUTES.products())}>Přehled balíčků</Button>
+                <Button onClick={() => router.push(ROUTES.products())}>
+                  Přehled produktů
+                </Button>
               </div>
             </>
           )}

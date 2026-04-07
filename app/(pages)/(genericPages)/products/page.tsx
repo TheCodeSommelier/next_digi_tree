@@ -57,13 +57,11 @@ export default function ProductsPage() {
       </section>
 
       <section className="space-y-6 py-26">
-        <SectionHeading>
-          Hlavní technologické výzvy a jejich řešení
-        </SectionHeading>
+        <SectionHeading>Hlavní výzvy a jejich řešení</SectionHeading>
 
         <Table
           tableRows={productsTableRows}
-          headings={["Detailní služba", "bez Digitree", "s Digitree"]}
+          headings={["Oblast", "bez Digitree", "s Digitree"]}
         />
       </section>
 

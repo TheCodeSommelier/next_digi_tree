@@ -24,45 +24,50 @@ export const packages = [
 
 export const productsTableRows: Record<string, string>[] = [
   {
-    service: "AI a digitalizace",
-    column1: "Ztráta dechu v digitální éře / Chybí strategie pro AI.",
-    column2: "Funkční PoC, AI Policy a on-prem LLM řešení.",
-  },
-  {
-    service: "SW architektura a code review",
-    column1: "Prorůstá neudržitelným kódem a stoupá technický dluh.",
-    column2: "Detailní issue list, roadmapa refaktoringu, zvýšení výkonu.",
-  },
-  {
-    service: "Kyberbezpečnost a compliance",
-    column1: "Riziko sankcí (NIS2/AI Act) a úniků dat.",
-    column2: "Provozní check-listy, směrnice, audit reporty.",
-  },
-  {
-    service: "Cloud a TCO strategie",
-    column1: "Nekontrolované cloudové náklady dusí rozpočet.",
+    service: "Procesy a odpovědnosti",
+    column1: "Nejasné role, zdržování a chaos v rozhodování",
     column2:
-      "Snížení TCO až o 40%, Cost Optimization Plan, migrace bez downtime.",
+      "Jasnější odpovědnosti, přehlednější řízení a funkčnější spolupráce",
   },
   {
-    service: "Procesy a automatizace",
-    column1: "Týmy se topí v repetitivních úkolech (až 60% ztráty).",
-    column2: "Flexibilní KPI dashboardy, optimalizovaný workflow (JIRA, CRM).",
+    service: "Management a vedení lidí",
+    column1: "Slabá komunikace, nejasná očekávání a nízká odpovědnost",
+    column2:
+      "Silnější management, lepší vedení lidí a větší srozumitelnost ve firmě",
   },
   {
-    service: "IoT & Telematika",
-    column1: "Ztráta přehledu o vozovém parku a plýtvání zdroji.",
-    column2: "Funkční přehled vozového parku a efektivní správa.",
+    service: "Spolupráce mezi týmy",
+    column1: "Tření mezi odděleními, nedorozumění a ztráta času",
+    column2:
+      "Transparentnější komunikace a efektivnější spolupráce napříč firmou",
+  },
+  {
+    service: "Firemní vzdělávání",
+    column1: "Školení bez reálného dopadu do praxe",
+    column2:
+      "Praktický rozvoj lidí, managementu i týmů s návazností na každodenní fungování",
+  },
+  {
+    service: "Digitalizace a AI",
+    column1: "Nákup nástrojů bez jasného přínosu a strategie",
+    column2:
+      "Smysluplné využití technologií, které podporují reálné potřeby firmy",
+  },
+  {
+    service: "Software, compliance a modernizace",
+    column1: "Technologický dluh, rizika a nejasný další směr",
+    column2:
+      "Lepší architektura, doporučení, compliance a dlouhodobě udržitelný rozvoj",
   },
 ];
 
 export const chartWithoutDigiData = [
-  { month: "AI", desktop: 150 },
-  { month: "Software", desktop: 182 },
+  { month: "Komunikace", desktop: 150 },
+  { month: "Digitalizace", desktop: 182 },
   { month: "Compliance", desktop: 191 },
-  { month: "Cloud", desktop: 110 },
+  { month: "AI", desktop: 110 },
   { month: "Procesy", desktop: 65 },
-  { month: "Telematika", desktop: 75 },
+  { month: "Management", desktop: 75 },
 ] as ChartData[];
 
 export const chartWithoutDigiConfig = {
@@ -73,12 +78,12 @@ export const chartWithoutDigiConfig = {
 } satisfies ChartConfig;
 
 export const chartWithDigiData = [
-  { month: "AI", desktop: 200 },
-  { month: "Software", desktop: 210 },
+  { month: "Komunikace", desktop: 200 },
+  { month: "Digitalizace", desktop: 210 },
   { month: "Compliance", desktop: 200 },
-  { month: "Cloud", desktop: 210 },
+  { month: "AI", desktop: 210 },
   { month: "Procesy", desktop: 200 },
-  { month: "Telematika", desktop: 210 },
+  { month: "Management", desktop: 210 },
 ];
 
 export const chartWithDigiConfig = {
@@ -90,12 +95,12 @@ export const chartWithDigiConfig = {
 
 export const chartDiffData = [
   {
-    month: "AI",
+    month: "Komunikace",
     desktop: chartWithoutDigiData[0].desktop,
     mobile: chartWithDigiData[0].desktop,
   },
   {
-    month: "Software",
+    month: "Digitalizace",
     desktop: chartWithoutDigiData[1].desktop,
     mobile: chartWithDigiData[1].desktop,
   },
@@ -105,7 +110,7 @@ export const chartDiffData = [
     mobile: chartWithDigiData[2].desktop,
   },
   {
-    month: "Cloud",
+    month: "AI",
     desktop: chartWithoutDigiData[3].desktop,
     mobile: chartWithDigiData[3].desktop,
   },
@@ -115,7 +120,7 @@ export const chartDiffData = [
     mobile: chartWithDigiData[4].desktop,
   },
   {
-    month: "Telematika",
+    month: "Management",
     desktop: chartWithoutDigiData[5].desktop,
     mobile: chartWithDigiData[5].desktop,
   },

@@ -89,8 +89,8 @@ export default function Home() {
           <HowItWorksSection />
 
           <CtaSection
-            title="Domluvte si zdarma audit vašich procesů"
-            subtitle="Integrace AI, robustního softwaru a bezpečnosti už není jen trend, ale kritický faktor pro přežití a dominantní růst ve vašem odvětví. Čekání znamená zaostávání."
+            title="Domluvte si nezávaznou úvodní konzultaci"
+            subtitle="Pomůžeme vám pojmenovat, kde má vaše firma největší prostor pro zlepšení a společně navrhneme další krok, který bude dávat smysl vaší firmě i jejím lidem."
           >
             <NavigationButton href={ROUTES.contact()}>
               Konuzltace zdarma
@@ -99,7 +99,7 @@ export default function Home() {
               variant={ButtonVariant.Secondary}
               href={ROUTES.products()}
             >
-              Přehled balíčků
+              Přehled produktů
             </NavigationButton>
           </CtaSection>
         </PagePadding>

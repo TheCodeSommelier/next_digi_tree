@@ -53,7 +53,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
       images: [
         `${baseUrl}/images/david_presenting.jpg`,
-        `${baseUrl}/images/book.png`,
+        `${baseUrl}/images/book.jpg`,
         ...threePillarsPics,
       ],
     },
