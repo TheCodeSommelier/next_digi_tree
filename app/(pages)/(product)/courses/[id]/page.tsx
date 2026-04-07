@@ -1,19 +1,22 @@
-import PagePadding from "@/app/components/UI/PagePadding";
-import SectionHeading from "@/app/components/UI/SectionHeading";
-import Table from "@/app/components/UI/Table";
-import { tableRowsHashLookup } from "../consts";
-import ProductHeroSection from "@/app/components/sections/ProductHeroSection";
-import ServiceForm from "@/app/components/UI/form/ServiceForm";
+import PagePadding from '@/app/components/UI/PagePadding';
+import SectionHeading from '@/app/components/UI/SectionHeading';
+import Table from '@/app/components/UI/Table';
+import ProductHeroSection from '@/app/components/sections/ProductHeroSection';
+import ServiceForm from '@/app/components/UI/form/ServiceForm';
 
-export type CourseId = "processes" | "digitalization" | "education";
+import { tableRowsHashLookup } from '../consts';
 
-type Params = Promise<{
-  params: {
-    id: CourseId;
-  };
-}>;
+export type CourseId = 'processes' | 'digitalization' | 'education';
 
-export default async function CoursePage({ params }: Params) {
+type Params = {
+  id: CourseId;
+};
+
+type Props = {
+  params: Promise<Params>;
+};
+
+export default async function CoursePage({ params }: Props) {
   const { id } = await params;
 
   const courseData = tableRowsHashLookup[id as CourseId];
@@ -36,7 +39,7 @@ export default async function CoursePage({ params }: Params) {
         <div>
           <Table
             tableRows={courseData.rows}
-            headings={["Služba", "Co řeší", "Typ výstupu"]}
+            headings={['Služba', 'Co řeší', 'Typ výstupu']}
           />
         </div>
 
