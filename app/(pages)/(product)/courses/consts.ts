@@ -121,21 +121,32 @@ export const courseEducationTableRows: Record<string, string>[] = [
 ];
 
 export interface CourseData {
-  heading: string;
+  title: string;
+  subtitle: string;
+  imageUrl: string;
   rows: Record<string, string>[];
 }
 
 export const tableRowsHashLookup: Record<CourseId, CourseData> = {
   processes: {
-    heading: "Procesy, řízení a rozvoj firmy",
+    title: "Procesy, řízení a rozvoj firmy",
+    subtitle:
+      "Zlepšujeme fungování firem od procesů a odpovědností až po spolupráci mezi odděleními. Výsledkem je přehlednější řízení, méně vnitřního chaosu a organizace, která funguje stabilněji a efektivněji.",
+    imageUrl: "/images/metrics.png",
     rows: courseProcessesTableRows,
   },
   digitalization: {
-    heading: "Digitalizace, software a AI",
+    title: "Digitalizace, software a AI",
+    imageUrl: "/images/cyber_sec.png",
+    subtitle:
+      "Navrhujeme smysluplnou digitalizaci, využití AI a technologická řešení, která firmám skutečně pomáhají fungovat lépe. Od architektury a automatizace až po compliance a modernizační doporučení propojujeme technologie s reálnými potřebami byznysu.",
     rows: courseDigitalizationTableRows,
   },
   education: {
-    heading: "Firemní vzdělávání",
+    title: "Firemní vzdělávání",
+    imageUrl: "/images/presenting_room.jpg",
+    subtitle:
+      "Pomáháme firmám rozvíjet vedoucí pracovníky, posilovat leadership a zlepšovat komunikaci napříč týmy. Díky praktickým školením a workshopům podporujeme management i zaměstnance v tom, aby fungovali jistěji, srozumitelněji a efektivněji.",
     rows: courseEducationTableRows,
   },
 };

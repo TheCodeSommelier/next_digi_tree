@@ -41,7 +41,7 @@ const gradientsByRoute: Record<string, GradientConfig[]> = {
     getGradientConfig({
       key: GradientKey.BOTTOM,
       height: "50%",
-      top: "5%",
+      top: "20%",
     }),
   ],
 };
