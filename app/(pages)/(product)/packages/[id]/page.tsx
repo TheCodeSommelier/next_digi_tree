@@ -1,0 +1,156 @@
+import Image from "next/image";
+import { Metadata } from "next";
+
+import SectionHeading from "@/app/components/UI/SectionHeading";
+import { products } from "@/app/consts/packages/products";
+import DropdownCard from "@/app/components/UI/DropdownCard";
+import CtaSection from "@/app/components/sections/CtaSection";
+import PagePadding from "@/app/components/UI/PagePadding";
+import NavigationButton from "@/app/components/UI/buttons/NavigationButton";
+import { ROUTES } from "@/app/routes";
+import { ProductId } from "@/app/types/Product";
+import ProductHeroSection from "@/app/components/sections/ProductHeroSection";
+
+type Params = {
+  id: ProductId;
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const product = products.find((item) => item.id === resolvedParams.id);
+
+  if (!product) {
+    return {
+      title: "Produkt nenalezen",
+    };
+  }
+
+  return {
+    title: product.title,
+    description: product.subtitle,
+  };
+}
+
+export default async function ProductPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { id } = await params;
+
+  const product = products.find((item) => item.id === id);
+
+  if (!product) {
+    throw new Error("No product to be found");
+  }
+
+  const {
+    title,
+    subtitle,
+    heroImageUrl,
+    packageInfo,
+    results,
+    midHeroDescription,
+    midHeroTitle,
+  } = product;
+
+  if (!id) return null;
+
+  return (
+    <main className="relative min-h-screen text-primary flex w-full flex-col gap-16 py-26">
+      <PagePadding>
+        {/* Hero */}
+        <ProductHeroSection
+          title={title}
+          subtitle={subtitle}
+          imageUrl={heroImageUrl}
+          href={ROUTES.contact()}
+          btnText="Chci balíček"
+        />
+
+        {/* Results */}
+        <section className="space-y-8 text-center py-26">
+          <SectionHeading>Transparentní výsledky</SectionHeading>
+          <div className="grid gap-8 md:grid-cols-3">
+            {results.map((item) => (
+              <div
+                key={item.description}
+                className="flex flex-col items-center gap-3 p-4"
+              >
+                <Image
+                  src={item.iconUrl}
+                  alt={item.iconAlt}
+                  width={48}
+                  height={48}
+                  className="h-12 w-12"
+                />
+                <p className="text-primary w-3/4">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </PagePadding>
+
+      {/* Mid hero */}
+      <section
+        className="flex items-end py-26 relative overflow-hidden w-full text-white h-[600px]"
+        style={{
+          backgroundImage: `linear-gradient(120deg, rgba(26,26,65,0.40), rgba(26,26,65,0.7)), url('/images/david_presenting_2.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "top",
+        }}
+      >
+        <PagePadding>
+          <div className="flex flex-col gap-10 max-w-full md:max-w-4/7 xl:max-w-3/7 mx-auto md:mx-0 md:ml-auto rounded-2xl bg-white/10 backdrop-blur-lg p-6">
+            <div className="space-y-6">
+              <h2 className="text-2xl md:text-5xl font-semibold">
+                {midHeroTitle}
+              </h2>
+              <p className="text-sm text-white/80">{midHeroDescription}</p>
+            </div>
+            <NavigationButton
+              className="w-1/2 md:w-1/3"
+              href={ROUTES.contact()}
+            >
+              Chci balíček
+            </NavigationButton>
+          </div>
+        </PagePadding>
+      </section>
+
+      <PagePadding>
+        {/* Package content */}
+        <section className="space-y-6 text-center py-26">
+          <SectionHeading>Obsah balíčku</SectionHeading>
+          <div className="space-y-3">
+            {packageInfo.map((info, index) => (
+              <DropdownCard key={index} title={info.title}>
+                <div className="space-y-2 px-6 py-3 text-left">
+                  <p className="text-primary/75">{info.text}</p>
+                  <ul className="list-disc space-y-1 pl-5">
+                    {info.list.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </DropdownCard>
+            ))}
+          </div>
+        </section>
+
+        <CtaSection
+          title="Podpořte svůj růst s Digitree!"
+          subtitle="Nyní je čas proměnit strategii ve funční procesní řešení, které garantuje měřitelné zisky. Udělejte první krok k dominanci na trhu."
+        >
+          <NavigationButton href={ROUTES.contact()}>
+            Chci balíček
+          </NavigationButton>
+        </CtaSection>
+      </PagePadding>
+    </main>
+  );
+}

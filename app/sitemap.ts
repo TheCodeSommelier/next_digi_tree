@@ -1,7 +1,7 @@
-import type { MetadataRoute } from 'next';
-import { headers } from 'next/headers';
-import { getBaseUrlFromHeaders } from './consts/consts';
-import { products } from './consts/products/products';
+import type { MetadataRoute } from "next";
+import { headers } from "next/headers";
+import { getBaseUrlFromHeaders } from "./consts/consts";
+import { products } from "./consts/packages/products";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = getBaseUrlFromHeaders(await headers());
@@ -20,16 +20,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const productUrls = products.map((product) => ({
     url: `${baseUrl}/products/${product.id}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
+    changeFrequency: "monthly" as const,
     priority: 0.85,
-    images: product.heroImageUrl ? [`${baseUrl}${product.heroImageUrl}`] : undefined,
+    images: product.heroImageUrl
+      ? [`${baseUrl}${product.heroImageUrl}`]
+      : undefined,
   }));
 
   return [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 1.0,
       images: [
         `${baseUrl}/images/david_classroom.png`,
@@ -40,14 +42,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: `${baseUrl}/products`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.9,
       images: productsPics,
     },
     {
       url: `${baseUrl}/about-us`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
       images: [
         `${baseUrl}/images/david_presenting.jpg`,
@@ -58,34 +60,34 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.85,
       images: [`${baseUrl}/images/david_classroom.png`],
     },
     {
       url: `${baseUrl}/faq`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/cookies`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/privacy-policy`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms-of-service`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: "yearly",
       priority: 0.3,
     },
-    ...productUrls
+    ...productUrls,
   ];
 }

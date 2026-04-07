@@ -1,19 +1,25 @@
-import { ProductId } from './types/Product';
+import { CourseId } from "./(pages)/(product)/courses/[id]/page";
+import { ProductId } from "./types/Product";
 
 type ProductArgs = {
-  productId: ProductId
-}
+  productId: ProductId;
+};
+
+type CourseArgs = {
+  courseId: CourseId;
+};
 
 export const ROUTES = {
-  home: () => '/',
-  products: () => '/products',
-  product: ({ productId }: ProductArgs) => `/products/${productId}`,
-  contact: () => '/contacts',
-  aboutUs: () => '/about-us',
-  faq: () => '/faq',
-  termsOfService: () => '/terms-of-service',
-  privacPolicy: () => '/privacy-policy',
-  cookies: () => '/cookies',
+  home: () => "/",
+  products: () => "/products",
+  product: ({ productId }: ProductArgs) => `/packages/${productId}`,
+  contact: () => "/contacts",
+  aboutUs: () => "/about-us",
+  faq: () => "/faq",
+  termsOfService: () => "/terms-of-service",
+  privacPolicy: () => "/privacy-policy",
+  cookies: () => "/cookies",
+  courses: ({ courseId }: CourseArgs) => `/courses/${courseId}`,
   getBook: ({ isMobile }: { isMobile: boolean }) => {
     const message = `Dobrý den,
 
@@ -28,6 +34,6 @@ Jméno Zde`;
 
     const params = new URLSearchParams({ message });
 
-    return `/contacts?${params.toString()}${isMobile ? '#contact-form' : ''}`;
-  }
+    return `/contacts?${params.toString()}${isMobile ? "#contact-form" : ""}`;
+  },
 };

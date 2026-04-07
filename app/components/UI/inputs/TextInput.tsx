@@ -1,19 +1,29 @@
-import { FC, FormEvent, InputHTMLAttributes, TextareaHTMLAttributes, useEffect, useRef } from 'react';
+"use client";
+
+import {
+  FC,
+  FormEvent,
+  InputHTMLAttributes,
+  TextareaHTMLAttributes,
+  useEffect,
+  useRef,
+} from "react";
 
 type Props = {
   label?: string;
   helperText?: string;
   className?: string;
-  isTextArea?: boolean
-  rows?: number
-  defaultValue?: string | null
-  autoResize?: boolean
-} & InputHTMLAttributes<HTMLInputElement> & TextareaHTMLAttributes<HTMLTextAreaElement>;
+  isTextArea?: boolean;
+  rows?: number;
+  defaultValue?: string | null;
+  autoResize?: boolean;
+} & InputHTMLAttributes<HTMLInputElement> &
+  TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 const TextInput: FC<Props> = ({
   label,
   helperText,
-  className = '',
+  className = "",
   id,
   isTextArea = false,
   rows,
@@ -23,13 +33,13 @@ const TextInput: FC<Props> = ({
   onInput,
   ...rest
 }) => {
-  const inputId = id || rest.name || 'text-input';
+  const inputId = id || rest.name || "text-input";
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const resizeTextarea = () => {
     const textarea = textareaRef.current;
     if (!textarea) return;
-    textarea.style.height = 'auto';
+    textarea.style.height = "auto";
     textarea.style.height = `${textarea.scrollHeight}px`;
   };
 
@@ -42,7 +52,9 @@ const TextInput: FC<Props> = ({
     if (autoResize) {
       resizeTextarea();
     }
-    (onInput as TextareaHTMLAttributes<HTMLTextAreaElement>['onInput'])?.(event);
+    (onInput as TextareaHTMLAttributes<HTMLTextAreaElement>["onInput"])?.(
+      event,
+    );
   };
 
   return (
@@ -82,9 +94,7 @@ const TextInput: FC<Props> = ({
         />
       )}
 
-      {helperText && (
-        <p className="text-xs text-primary/60">{helperText}</p>
-      )}
+      {helperText && <p className="text-xs text-primary/60">{helperText}</p>}
     </div>
   );
 };
