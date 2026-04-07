@@ -68,11 +68,13 @@ export default function Home() {
                 Poznejte DigiTree
               </h2>
               <p className="w-full text-base leading-relaxed text-white/85">
-                Transformujeme strategii v měřitelné zisky. Dodáváme konkrétní,
-                akční řešení, která spojují umělou inteligenci, moderní software
-                a kybernetickou bezpečnost do jednoho systému. Implementujeme
-                řešení bez vendor lock-inu, s prokazatelným dopadem už v prvních
-                měsících spolupráce.
+                V DigiTree věříme, že dobře fungující firma nestojí jen na
+                technologiích, ale především na lidech, procesech a kvalitním
+                řízení. Proto propojujeme poradenství v oblasti managementu,
+                procesů a rozvoje organizací s firemním vzděláváním,
+                digitalizací a moderními technologiemi. Naším cílem je pomáhat
+                firmám zavádět změny, které jsou srozumitelné, funkční a
+                dlouhodobě udržitelné.
               </p>
               <NavigationButton href={ROUTES.aboutUs()}>
                 Více o nás
