@@ -34,7 +34,7 @@ export default function Home() {
               </p>
               <div className="flex gap-3 mt-9">
                 <NavigationButton href={ROUTES.products()}>
-                  Přehled balíčků
+                  Produkty
                 </NavigationButton>
                 <NavigationButton
                   variant={ButtonVariant.Secondary}
