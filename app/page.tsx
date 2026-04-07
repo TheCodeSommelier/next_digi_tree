@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import ThreePillarsSection from "./components/sections/ThreePillarsSection";
-import ProductsSection from "./components/sections/ProductsSection";
+import CoursesSection from "./components/sections/CoursesSection";
+import PackageSection from "./components/sections/PackageSection";
 import CtaSection from "./components/sections/CtaSection";
 import PagePadding from "./components/UI/PagePadding";
 import { ROUTES } from "./routes";
@@ -54,7 +54,7 @@ export default function Home() {
             />
           </section>
 
-          <ThreePillarsSection />
+          <CoursesSection />
         </PagePadding>
 
         {/* About us section */}
@@ -84,7 +84,7 @@ export default function Home() {
         </ImageWithOverlay>
 
         <PagePadding>
-          <ProductsSection />
+          <PackageSection />
 
           <HowItWorksSection />
 

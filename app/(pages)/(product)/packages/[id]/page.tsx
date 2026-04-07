@@ -1,28 +1,30 @@
-import Image from 'next/image';
-import { Metadata } from 'next';
+import Image from "next/image";
+import { Metadata } from "next";
 
-import SectionHeading from '@/app/components/UI/SectionHeading';
-import { products } from '@/app/consts/products/products';
-import DropdownCard from '@/app/components/UI/DropdownCard';
-import CtaSection from '@/app/components/sections/CtaSection';
-import PagePadding from '@/app/components/UI/PagePadding';
-import NavigationButton from '@/app/components/UI/buttons/NavigationButton';
-import { ROUTES } from '@/app/routes';
-import { ProductId } from '@/app/types/Product';
+import SectionHeading from "@/app/components/UI/SectionHeading";
+import { products } from "@/app/consts/packages/products";
+import DropdownCard from "@/app/components/UI/DropdownCard";
+import CtaSection from "@/app/components/sections/CtaSection";
+import PagePadding from "@/app/components/UI/PagePadding";
+import NavigationButton from "@/app/components/UI/buttons/NavigationButton";
+import { ROUTES } from "@/app/routes";
+import { ProductId } from "@/app/types/Product";
 
 type Params = {
-  id: ProductId
-}
+  id: ProductId;
+};
 
-export async function generateMetadata(
-  { params }: { params: Promise<Params> }
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
   const resolvedParams = await params;
   const product = products.find((item) => item.id === resolvedParams.id);
 
   if (!product) {
     return {
-      title: 'Produkt nenalezen',
+      title: "Produkt nenalezen",
     };
   }
 
@@ -32,13 +34,17 @@ export async function generateMetadata(
   };
 }
 
-export default async function ProductPage({ params }: { params: Promise<Params> }) {
+export default async function ProductPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
   const { id } = await params;
 
   const product = products.find((item) => item.id === id);
 
   if (!product) {
-    throw new Error('No product to be found');
+    throw new Error("No product to be found");
   }
 
   const {
@@ -48,7 +54,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
     packageInfo,
     results,
     midHeroDescription,
-    midHeroTitle
+    midHeroTitle,
   } = product;
 
   if (!id) return null;
@@ -60,20 +66,22 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
         <section
           className="relative overflow-hidden flex flex-col justify-center items-center rounded-2xl h-[500px] md:h-[700px] w-full text-white shadow-xl shadow-primary/20"
           style={{
-            backgroundImage: `linear-gradient(180deg, rgba(26,26,65,0.4), rgba(26,26,65,0.85)), url('${heroImageUrl || '/images/ai_hand.png'}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundImage: `linear-gradient(180deg, rgba(26,26,65,0.4), rgba(26,26,65,0.85)), url('${heroImageUrl || "/images/ai_hand.png"}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         >
           <div className="absolute inset-0" aria-hidden />
           <div className="relative w-full flex flex-col items-center gap-14 px-4 py-8 md:px-8 md:py-16 text-center">
-            <h1 className="text-3xl font-semibold leading-tight md:text-7xl">{title}</h1>
+            <h1 className="text-3xl font-semibold leading-tight md:text-7xl">
+              {title}
+            </h1>
             <div className="w-full md:w-4/7 lg:w-5/7 xl:w-3/7 rounded-lg text-lg md:text-2xl bg-white/10 px-5 md:px-10 py-6 md:py-8 backdrop-blur-lg shadow-lg shadow-black/20">
-              <p className="font-medium text-white mb-4">
-                {subtitle}
-              </p>
+              <p className="font-medium text-white mb-4">{subtitle}</p>
               <div className="w-full md:w-auto mt-3 flex justify-center">
-                <NavigationButton href={ROUTES.contact()}>Chci balíček</NavigationButton>
+                <NavigationButton href={ROUTES.contact()}>
+                  Chci balíček
+                </NavigationButton>
               </div>
             </div>
           </div>
@@ -88,7 +96,13 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
                 key={item.description}
                 className="flex flex-col items-center gap-3 p-4"
               >
-                <Image src={item.iconUrl} alt={item.iconAlt} width={48} height={48} className="h-12 w-12" />
+                <Image
+                  src={item.iconUrl}
+                  alt={item.iconAlt}
+                  width={48}
+                  height={48}
+                  className="h-12 w-12"
+                />
                 <p className="text-primary w-3/4">{item.description}</p>
               </div>
             ))}
@@ -100,19 +114,25 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
       <section
         className="flex items-end py-26 relative overflow-hidden w-full text-white h-[600px]"
         style={{
-            backgroundImage:
-              `linear-gradient(120deg, rgba(26,26,65,0.40), rgba(26,26,65,0.7)), url('/images/david_presenting_2.jpg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'top',
-          }}
+          backgroundImage: `linear-gradient(120deg, rgba(26,26,65,0.40), rgba(26,26,65,0.7)), url('/images/david_presenting_2.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "top",
+        }}
       >
         <PagePadding>
           <div className="flex flex-col gap-10 max-w-full md:max-w-4/7 xl:max-w-3/7 mx-auto md:mx-0 md:ml-auto rounded-2xl bg-white/10 backdrop-blur-lg p-6">
             <div className="space-y-6">
-              <h2 className="text-2xl md:text-5xl font-semibold">{midHeroTitle}</h2>
+              <h2 className="text-2xl md:text-5xl font-semibold">
+                {midHeroTitle}
+              </h2>
               <p className="text-sm text-white/80">{midHeroDescription}</p>
             </div>
-            <NavigationButton className="w-1/2 md:w-1/3" href={ROUTES.contact()}>Chci balíček</NavigationButton>
+            <NavigationButton
+              className="w-1/2 md:w-1/3"
+              href={ROUTES.contact()}
+            >
+              Chci balíček
+            </NavigationButton>
           </div>
         </PagePadding>
       </section>
@@ -137,8 +157,13 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
           </div>
         </section>
 
-        <CtaSection title="Podpořte svůj růst s Digitree!" subtitle='Nyní je čas proměnit strategii ve funční procesní řešení, které garantuje měřitelné zisky. Udělejte první krok k dominanci na trhu.'>
-          <NavigationButton href={ROUTES.contact()}>Chci balíček</NavigationButton>
+        <CtaSection
+          title="Podpořte svůj růst s Digitree!"
+          subtitle="Nyní je čas proměnit strategii ve funční procesní řešení, které garantuje měřitelné zisky. Udělejte první krok k dominanci na trhu."
+        >
+          <NavigationButton href={ROUTES.contact()}>
+            Chci balíček
+          </NavigationButton>
         </CtaSection>
       </PagePadding>
     </main>
