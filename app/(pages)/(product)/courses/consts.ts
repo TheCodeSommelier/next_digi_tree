@@ -4,12 +4,12 @@ export const courseProcessesTableRows: Record<string, string>[] = [
   {
     service: "Procesní audit",
     column1:
-      "Nepřehledné fungování firmy, nejasné návaznosti a slabá mista v procesech",
+      "Nepřehledné fungování firmy, nejasné návaznosti a slabá místa v procesech",
     column2: "Audit, doporučení, návrh změn",
   },
   {
     service: "Nastavení odpovědností",
-    column1: "Nejasné role, překryvy kompetenci, zdržování rozhodnutí",
+    column1: "Nejasné role, překryvy kompetencí, zdržování rozhodnutí",
     column2: "Návrh rolí, odpovědností a rozhodovacích pravidel",
   },
   {
@@ -29,7 +29,7 @@ export const courseProcessesTableRows: Record<string, string>[] = [
   },
   {
     service: "Interní komunikace",
-    column1: "Informace se ztrácí, týmy si nerozumi",
+    column1: "Informace se ztrácí, týmy si nerozumí",
     column2: "Návrh zlepšení komunikace, školení, facilitace",
   },
 ];
@@ -42,11 +42,11 @@ export const courseDigitalizationTableRows: Record<string, string>[] = [
   },
   {
     service: "Návrh využití Al",
-    column1: "Tlak na Al bez jasného use case a přínosu",
-    column2: "Konkrétní scénáře využití Al pro vaši firmu",
+    column1: "Tlak na Ai bez jasného use case a přínosu",
+    column2: "Konkrétní scénáře využití Ai pro vaší firmu",
   },
   {
-    service: "Software a systémové poradenstvi",
+    service: "Software a systémové poradenství",
     column1: "Nevhodné nástroje nebo neefektivní systémové nastavení",
     column2: "Doporučení vhodnějšího řešení a lepšího propojení systémů",
   },
@@ -71,7 +71,7 @@ export const courseDigitalizationTableRows: Record<string, string>[] = [
     column2: "Praktická doporučení odpovídající potřebám firmy",
   },
   {
-    service: "Al Act / NIS2 / compliance",
+    service: "Al Act / NIS2 / Compliance",
     column1: "Nejistota v regulatorních požadavcích a riziko nesouladu",
     column2: "Přehled povinností a doporučený rámec dalšího postupu",
   },
@@ -80,7 +80,7 @@ export const courseDigitalizationTableRows: Record<string, string>[] = [
 export const courseEducationTableRows: Record<string, string>[] = [
   {
     service: "Firemní školení",
-    column1: "Potřebu rozvoje konkrétních dovedností ve firmě",
+    column1: "Potřeba rozvoje konkrétních dovedností ve firmě",
     column2: "Praktické školení zaměřené na reálné situace z praxe",
   },
   {
@@ -90,7 +90,7 @@ export const courseEducationTableRows: Record<string, string>[] = [
   },
   {
     service: "Leadership programy",
-    column1: "Nejistotu ve vedení lidí a slabou manažerskou jistotu",
+    column1: "Nejasnost ve vedení lidí a slabou manažerskou jistotu",
     column2: "Silnější leadership a efektivnější vedení týmů",
   },
   {
