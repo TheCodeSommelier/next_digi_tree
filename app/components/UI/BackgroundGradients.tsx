@@ -44,6 +44,10 @@ const gradientsByRoute: Record<string, GradientConfig[]> = {
       top: "20%",
     }),
   ],
+  "/packages": [
+    getGradientConfig({ key: GradientKey.PAGE_QUARTER_TOP, height: "35%" }),
+    getGradientConfig({ key: GradientKey.PAGE_QUARTER_BOTTOM, height: "45%" }),
+  ],
 };
 
 const BackgroundGradients = () => {

@@ -24,15 +24,17 @@ export default function AboutUsPage() {
           </h1>
           <div className="flex flex-col gap-4 w-full md:w-1/2">
             <p className="text-lg leading-relaxed text-white">
-              Naše společnost se specializuje na rychlou a efektivní
-              implementaci technologií, které skutečně mění způsob, jakým firmy
-              fungují.
+              Naše společnost se specializuje na rychlou a efektivní podporu
+              firem v oblastech procesů, řízení, rozvoje lidí a modernizace
+              fungování organizací. Pomáháme zavádět změny, které skutečně
+              zlepšují způsob, jakým firmy fungují.
             </p>
 
             <p className="text-lg leading-relaxed text-white">
-              Spojujeme umělou inteligenci, moderní softwarová řešení a
-              kybernetickou bezpečnost do komplexního přístupu, který přináší
-              hmatatelné výsledky, ve vašich procesech, již v prvních měsících
+              Propojujeme procesní a manažerské poradenství, firemní vzdělávání,
+              moderní softwarová řešení, digitalizaci a využití AI do
+              komplexního přístupu, který přináší hmatatelné výsledky ve vašem
+              fungování, procesech i spolupráci už v prvních měsících
               spolupráce.
             </p>
           </div>
