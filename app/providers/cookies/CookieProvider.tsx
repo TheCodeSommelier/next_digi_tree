@@ -2,32 +2,29 @@
 
 import { ReactNode, useEffect, useMemo, useState } from 'react';
 
-import { CookiePreferences, CookiesContext } from './CookiesContext';
+import { CookiesContext } from './CookiesContext';
+import {
+  COOKIE_PREFERENCES_STORAGE_KEY,
+  DEFAULT_COOKIE_PREFERENCES,
+  type CookiePreferences,
+} from './preferences';
 import { updateGtmConsent } from '@/app/utils/updateGtmPreferences';
 import CookieBanner from './CookiesBanner';
 
-const STORAGE_KEY = 'cookie-preferences';
-
-const defaultPreferences: CookiePreferences = {
-  necessary: true,
-  analytics: false,
-  marketing: false,
-};
-
 const CookiesProvider = ({ children }: { children: ReactNode }) => {
-  const [preferences, setPreferences] = useState<CookiePreferences>(defaultPreferences);
+  const [preferences, setPreferences] = useState<CookiePreferences>(DEFAULT_COOKIE_PREFERENCES);
   const [hasConsented, setHasConsented] = useState(false);
 
   // Initial load
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
+    const stored = localStorage.getItem(COOKIE_PREFERENCES_STORAGE_KEY);
     if (stored) {
       try {
         const parsed = JSON.parse(stored) as CookiePreferences;
         // eslint-disable-next-line
-        setPreferences({ ...defaultPreferences, ...parsed });
+        setPreferences({ ...DEFAULT_COOKIE_PREFERENCES, ...parsed });
         setHasConsented(true);
-        updateGtmConsent({ ...defaultPreferences, ...parsed });
+        updateGtmConsent({ ...DEFAULT_COOKIE_PREFERENCES, ...parsed });
       } catch {
         // ignore invalid storage
       }
@@ -37,7 +34,7 @@ const CookiesProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     if (!hasConsented) return;
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences));
+    localStorage.setItem(COOKIE_PREFERENCES_STORAGE_KEY, JSON.stringify(preferences));
     updateGtmConsent(preferences);
   }, [preferences, hasConsented]);
 
