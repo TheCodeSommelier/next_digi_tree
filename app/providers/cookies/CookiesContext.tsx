@@ -1,12 +1,9 @@
 'use client';
 
 import { createContext, useContext } from 'react';
+import type { CookiePreferences } from './preferences';
 
-export type CookiePreferences = {
-  necessary: boolean;
-  analytics: boolean;
-  marketing: boolean;
-};
+export type { CookiePreferences } from './preferences';
 
 type CookiesContextValue = {
   preferences: CookiePreferences;
