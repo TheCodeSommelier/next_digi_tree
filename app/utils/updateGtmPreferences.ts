@@ -73,8 +73,8 @@ export const updateGtmConsent = (prefs: CookiePreferences) => {
   if (!win.dataLayer) win.dataLayer = [];
   win.gtag =
     win.gtag ||
-    function gtag() {
-      win.dataLayer?.push(arguments);
+    function gtag(...args: unknown[]) {
+      win.dataLayer?.push(args);
     };
   win.gtag('consent', 'update', getGtmConsentState(prefs));
 };
